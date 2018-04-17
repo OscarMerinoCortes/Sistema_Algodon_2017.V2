@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ALGODON_2VDataSet" targetNamespace="http://tempuri.org/ALGODON_2VDataSet.xsd" xmlns:mstns="http://tempuri.org/ALGODON_2VDataSet.xsd" xmlns="http://tempuri.org/ALGODON_2VDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ALGODON_2V" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ALGODON_2V (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Capa_Presentacion.My.MySettings.GlobalReference.Default.ALGODON_2V" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ALGODON_2VDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ALGODON_2VDataSet" msprop:Generator_UserDSName="ALGODON_2VDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RepClientes" msprop:Generator_TableClassName="RepClientesDataTable" msprop:Generator_TableVarName="tableRepClientes" msprop:Generator_TablePropName="RepClientes" msprop:Generator_RowDeletingName="RepClientesRowDeleting" msprop:Generator_RowChangingName="RepClientesRowChanging" msprop:Generator_RowEvHandlerName="RepClientesRowChangeEventHandler" msprop:Generator_RowDeletedName="RepClientesRowDeleted" msprop:Generator_UserTableName="RepClientes" msprop:Generator_RowChangedName="RepClientesRowChanged" msprop:Generator_RowEvArgName="RepClientesRowChangeEvent" msprop:Generator_RowClassName="RepClientesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" minOccurs="0" />
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="Asociacion" msprop:Generator_ColumnVarNameInTable="columnAsociacion" msprop:Generator_ColumnPropNameInRow="Asociacion" msprop:Generator_ColumnPropNameInTable="AsociacionColumn" msprop:Generator_UserColumnName="Asociacion" type="xs:string" minOccurs="0" />
+              <xs:element name="TipoPersona" msprop:Generator_ColumnVarNameInTable="columnTipoPersona" msprop:Generator_ColumnPropNameInRow="TipoPersona" msprop:Generator_ColumnPropNameInTable="TipoPersonaColumn" msprop:Generator_UserColumnName="TipoPersona" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
