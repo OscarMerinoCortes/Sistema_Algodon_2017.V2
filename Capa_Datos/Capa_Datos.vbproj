@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Catalogos\Asociaciones.vb" />
+    <Compile Include="Catalogos\Camiones.vb" />
     <Compile Include="Catalogos\CastigoLargoFibra.vb" />
     <Compile Include="Catalogos\CastigoPorQuintal.vb" />
     <Compile Include="Catalogos\CastigoResistenciaFibra.vb" />
