@@ -4,5 +4,12 @@
     Public NumeroPaca As Integer
     Public TrashId As Integer
     Public GradoColor As String
-    Public TablaGeneral As DataTable
+    '------
+    Public IdPaquete As Integer
+    Public IdPlanta As Integer
+    Public IdClase As Integer
+    Public CantidadPacas As Integer
+    Public Descripcion As String
+    Public chkrevisado As Boolean
+    Public IdEstatus As Integer
 End Class

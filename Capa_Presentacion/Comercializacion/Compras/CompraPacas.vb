@@ -7,16 +7,29 @@ Public Class CompraPacas
         Close()
     End Sub
     Private Sub CargaCombos()
-        '---Planta Origen--
-        Dim EntidadProduccion As New Capa_Entidad.Produccion
-        Dim NegocioProduccion As New Capa_Negocio.Produccion
+        '---Plantas--
+        Dim EntidadCompraPacas As New Capa_Entidad.CompraPacas
+        Dim NegocioCompraPacas As New Capa_Negocio.CompraPacas
         Dim Tabla As New DataTable
-        EntidadProduccion.Consulta = Consulta.ConsultaExterna
-        NegocioProduccion.Consultar(EntidadProduccion)
-        Tabla = EntidadProduccion.TablaConsulta
+        EntidadCompraPacas.Consulta = Consulta.ConsultaExterna
+        NegocioCompraPacas.Consultar(EntidadCompraPacas)
+        Tabla = EntidadCompraPacas.TablaConsulta
         CbPlanta.DataSource = Tabla
         CbPlanta.ValueMember = "IdPlanta"
         CbPlanta.DisplayMember = "Descripcion"
         CbPlanta.SelectedValue = 1
+        '---Productores---
+        Dim Tabla2 As New DataTable
+        EntidadCompraPacas.Consulta = Consulta.ConsultaProductores
+        NegocioCompraPacas.Consultar(EntidadCompraPacas)
+        Tabla2 = EntidadCompraPacas.TablaConsulta
+        CbProductor.DataSource = Tabla2
+        CbProductor.ValueMember = "IdCliente"
+        CbProductor.DisplayMember = "Nombre"
+        CbProductor.SelectedValue = 1
+    End Sub
+
+    Private Sub GuardarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuardarToolStripMenuItem.Click
+
     End Sub
 End Class

@@ -28,6 +28,10 @@ Partial Class CompraPacas
         Me.ConsultarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GbDatosGenerales = New System.Windows.Forms.GroupBox()
+        Me.BtCastigosLargoFibra = New System.Windows.Forms.Button()
+        Me.BtDiferenciasPorClases = New System.Windows.Forms.Button()
+        Me.BtCastigoResistenciaFibra = New System.Windows.Forms.Button()
+        Me.BtCastigosPorMicros = New System.Windows.Forms.Button()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -59,38 +63,34 @@ Partial Class CompraPacas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TbIdCompraPaca = New System.Windows.Forms.TextBox()
         Me.GbCompras = New System.Windows.Forms.GroupBox()
-        Me.DgvCompraPacas = New System.Windows.Forms.DataGridView()
         Me.TcCompras = New System.Windows.Forms.TabControl()
         Me.TP1LiquidacionesCompras = New System.Windows.Forms.TabPage()
+        Me.DgvCompraPacas = New System.Windows.Forms.DataGridView()
         Me.TP2LiquidacionesCompradas = New System.Windows.Forms.TabPage()
-        Me.TP3CompraPacasIndividual = New System.Windows.Forms.TabPage()
-        Me.TP4IndividualCompraPaca = New System.Windows.Forms.TabPage()
-        Me.TP5PacasSinClasificar = New System.Windows.Forms.TabPage()
-        Me.TP6Observaciones = New System.Windows.Forms.TabPage()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.TP3CompraPacasIndividual = New System.Windows.Forms.TabPage()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.TP4IndividualCompraPaca = New System.Windows.Forms.TabPage()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.TP5PacasSinClasificar = New System.Windows.Forms.TabPage()
         Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.TP6Observaciones = New System.Windows.Forms.TabPage()
         Me.DataGridView5 = New System.Windows.Forms.DataGridView()
-        Me.BtCastigosPorMicros = New System.Windows.Forms.Button()
-        Me.BtCastigoResistenciaFibra = New System.Windows.Forms.Button()
-        Me.BtDiferenciasPorClases = New System.Windows.Forms.Button()
-        Me.BtCastigosLargoFibra = New System.Windows.Forms.Button()
         Me.MSMenu.SuspendLayout()
         Me.GbDatosGenerales.SuspendLayout()
         Me.GbCompras.SuspendLayout()
-        CType(Me.DgvCompraPacas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TcCompras.SuspendLayout()
         Me.TP1LiquidacionesCompras.SuspendLayout()
+        CType(Me.DgvCompraPacas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TP2LiquidacionesCompradas.SuspendLayout()
-        Me.TP3CompraPacasIndividual.SuspendLayout()
-        Me.TP4IndividualCompraPaca.SuspendLayout()
-        Me.TP5PacasSinClasificar.SuspendLayout()
-        Me.TP6Observaciones.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TP3CompraPacasIndividual.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TP4IndividualCompraPaca.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TP5PacasSinClasificar.SuspendLayout()
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TP6Observaciones.SuspendLayout()
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -170,6 +170,42 @@ Partial Class CompraPacas
         Me.GbDatosGenerales.TabStop = False
         Me.GbDatosGenerales.Text = "Datos Generales"
         '
+        'BtCastigosLargoFibra
+        '
+        Me.BtCastigosLargoFibra.Location = New System.Drawing.Point(1028, 13)
+        Me.BtCastigosLargoFibra.Name = "BtCastigosLargoFibra"
+        Me.BtCastigosLargoFibra.Size = New System.Drawing.Size(75, 62)
+        Me.BtCastigosLargoFibra.TabIndex = 16
+        Me.BtCastigosLargoFibra.Text = "Castigos de Largo Fibra"
+        Me.BtCastigosLargoFibra.UseVisualStyleBackColor = True
+        '
+        'BtDiferenciasPorClases
+        '
+        Me.BtDiferenciasPorClases.Location = New System.Drawing.Point(947, 13)
+        Me.BtDiferenciasPorClases.Name = "BtDiferenciasPorClases"
+        Me.BtDiferenciasPorClases.Size = New System.Drawing.Size(75, 62)
+        Me.BtDiferenciasPorClases.TabIndex = 16
+        Me.BtDiferenciasPorClases.Text = "Diferencias Por Clases"
+        Me.BtDiferenciasPorClases.UseVisualStyleBackColor = True
+        '
+        'BtCastigoResistenciaFibra
+        '
+        Me.BtCastigoResistenciaFibra.Location = New System.Drawing.Point(866, 13)
+        Me.BtCastigoResistenciaFibra.Name = "BtCastigoResistenciaFibra"
+        Me.BtCastigoResistenciaFibra.Size = New System.Drawing.Size(75, 62)
+        Me.BtCastigoResistenciaFibra.TabIndex = 16
+        Me.BtCastigoResistenciaFibra.Text = "Castigos Por Resistencia de Fibra"
+        Me.BtCastigoResistenciaFibra.UseVisualStyleBackColor = True
+        '
+        'BtCastigosPorMicros
+        '
+        Me.BtCastigosPorMicros.Location = New System.Drawing.Point(785, 13)
+        Me.BtCastigosPorMicros.Name = "BtCastigosPorMicros"
+        Me.BtCastigosPorMicros.Size = New System.Drawing.Size(75, 62)
+        Me.BtCastigosPorMicros.TabIndex = 16
+        Me.BtCastigosPorMicros.Text = "Castigos Por Micros"
+        Me.BtCastigosPorMicros.UseVisualStyleBackColor = True
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -233,7 +269,7 @@ Partial Class CompraPacas
         '
         Me.TbSemilla.Location = New System.Drawing.Point(116, 203)
         Me.TbSemilla.Name = "TbSemilla"
-        Me.TbSemilla.Size = New System.Drawing.Size(100, 20)
+        Me.TbSemilla.Size = New System.Drawing.Size(173, 20)
         Me.TbSemilla.TabIndex = 12
         '
         'Label13
@@ -249,7 +285,7 @@ Partial Class CompraPacas
         '
         Me.TbPlumas.Location = New System.Drawing.Point(116, 177)
         Me.TbPlumas.Name = "TbPlumas"
-        Me.TbPlumas.Size = New System.Drawing.Size(100, 20)
+        Me.TbPlumas.Size = New System.Drawing.Size(173, 20)
         Me.TbPlumas.TabIndex = 11
         '
         'TbDolar
@@ -263,7 +299,7 @@ Partial Class CompraPacas
         '
         Me.TbNoPacas.Location = New System.Drawing.Point(116, 151)
         Me.TbNoPacas.Name = "TbNoPacas"
-        Me.TbNoPacas.Size = New System.Drawing.Size(100, 20)
+        Me.TbNoPacas.Size = New System.Drawing.Size(173, 20)
         Me.TbNoPacas.TabIndex = 10
         '
         'Label12
@@ -296,7 +332,7 @@ Partial Class CompraPacas
         Me.CbProductor.FormattingEnabled = True
         Me.CbProductor.Location = New System.Drawing.Point(116, 124)
         Me.CbProductor.Name = "CbProductor"
-        Me.CbProductor.Size = New System.Drawing.Size(121, 21)
+        Me.CbProductor.Size = New System.Drawing.Size(173, 21)
         Me.CbProductor.TabIndex = 8
         '
         'TbHastaPaca
@@ -329,7 +365,7 @@ Partial Class CompraPacas
         Me.DtFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DtFecha.Location = New System.Drawing.Point(116, 98)
         Me.DtFecha.Name = "DtFecha"
-        Me.DtFecha.Size = New System.Drawing.Size(121, 20)
+        Me.DtFecha.Size = New System.Drawing.Size(173, 20)
         Me.DtFecha.TabIndex = 6
         '
         'Label10
@@ -361,7 +397,7 @@ Partial Class CompraPacas
         '
         Me.TbPredio.Location = New System.Drawing.Point(116, 72)
         Me.TbPredio.Name = "TbPredio"
-        Me.TbPredio.Size = New System.Drawing.Size(100, 20)
+        Me.TbPredio.Size = New System.Drawing.Size(173, 20)
         Me.TbPredio.TabIndex = 4
         '
         'Label9
@@ -394,7 +430,7 @@ Partial Class CompraPacas
         Me.CbPlanta.FormattingEnabled = True
         Me.CbPlanta.Location = New System.Drawing.Point(116, 45)
         Me.CbPlanta.Name = "CbPlanta"
-        Me.CbPlanta.Size = New System.Drawing.Size(121, 21)
+        Me.CbPlanta.Size = New System.Drawing.Size(173, 21)
         Me.CbPlanta.TabIndex = 2
         '
         'Label1
@@ -408,6 +444,7 @@ Partial Class CompraPacas
         '
         'TbIdCompraPaca
         '
+        Me.TbIdCompraPaca.Enabled = False
         Me.TbIdCompraPaca.Location = New System.Drawing.Point(116, 19)
         Me.TbIdCompraPaca.Name = "TbIdCompraPaca"
         Me.TbIdCompraPaca.Size = New System.Drawing.Size(100, 20)
@@ -422,15 +459,6 @@ Partial Class CompraPacas
         Me.GbCompras.Size = New System.Drawing.Size(1109, 485)
         Me.GbCompras.TabIndex = 2
         Me.GbCompras.TabStop = False
-        '
-        'DgvCompraPacas
-        '
-        Me.DgvCompraPacas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvCompraPacas.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DgvCompraPacas.Location = New System.Drawing.Point(3, 3)
-        Me.DgvCompraPacas.Name = "DgvCompraPacas"
-        Me.DgvCompraPacas.Size = New System.Drawing.Size(1089, 434)
-        Me.DgvCompraPacas.TabIndex = 3
         '
         'TcCompras
         '
@@ -458,6 +486,15 @@ Partial Class CompraPacas
         Me.TP1LiquidacionesCompras.TabIndex = 0
         Me.TP1LiquidacionesCompras.Text = "Liquidaciones a Comprar"
         '
+        'DgvCompraPacas
+        '
+        Me.DgvCompraPacas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvCompraPacas.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvCompraPacas.Location = New System.Drawing.Point(3, 3)
+        Me.DgvCompraPacas.Name = "DgvCompraPacas"
+        Me.DgvCompraPacas.Size = New System.Drawing.Size(1089, 434)
+        Me.DgvCompraPacas.TabIndex = 3
+        '
         'TP2LiquidacionesCompradas
         '
         Me.TP2LiquidacionesCompradas.Controls.Add(Me.DataGridView1)
@@ -468,6 +505,15 @@ Partial Class CompraPacas
         Me.TP2LiquidacionesCompradas.TabIndex = 1
         Me.TP2LiquidacionesCompradas.Text = "Liquidaciones Compradas"
         Me.TP2LiquidacionesCompradas.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(1089, 434)
+        Me.DataGridView1.TabIndex = 0
         '
         'TP3CompraPacasIndividual
         '
@@ -480,6 +526,15 @@ Partial Class CompraPacas
         Me.TP3CompraPacasIndividual.Text = "Pacas a Comprar (Individual)"
         Me.TP3CompraPacasIndividual.UseVisualStyleBackColor = True
         '
+        'DataGridView2
+        '
+        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView2.Location = New System.Drawing.Point(3, 3)
+        Me.DataGridView2.Name = "DataGridView2"
+        Me.DataGridView2.Size = New System.Drawing.Size(1089, 434)
+        Me.DataGridView2.TabIndex = 0
+        '
         'TP4IndividualCompraPaca
         '
         Me.TP4IndividualCompraPaca.Controls.Add(Me.DataGridView3)
@@ -490,6 +545,15 @@ Partial Class CompraPacas
         Me.TP4IndividualCompraPaca.TabIndex = 3
         Me.TP4IndividualCompraPaca.Text = "Compra Individual por Paca"
         Me.TP4IndividualCompraPaca.UseVisualStyleBackColor = True
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView3.Location = New System.Drawing.Point(3, 3)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(1089, 434)
+        Me.DataGridView3.TabIndex = 1
         '
         'TP5PacasSinClasificar
         '
@@ -502,6 +566,15 @@ Partial Class CompraPacas
         Me.TP5PacasSinClasificar.Text = "Pacas Sin Clasificar"
         Me.TP5PacasSinClasificar.UseVisualStyleBackColor = True
         '
+        'DataGridView4
+        '
+        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DataGridView4.Location = New System.Drawing.Point(3, 3)
+        Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.Size = New System.Drawing.Size(1089, 434)
+        Me.DataGridView4.TabIndex = 1
+        '
         'TP6Observaciones
         '
         Me.TP6Observaciones.Controls.Add(Me.DataGridView5)
@@ -513,42 +586,6 @@ Partial Class CompraPacas
         Me.TP6Observaciones.Text = "Observaciones"
         Me.TP6Observaciones.UseVisualStyleBackColor = True
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1089, 434)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView2.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(1089, 434)
-        Me.DataGridView2.TabIndex = 0
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView3.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(1089, 434)
-        Me.DataGridView3.TabIndex = 1
-        '
-        'DataGridView4
-        '
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView4.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.Size = New System.Drawing.Size(1089, 434)
-        Me.DataGridView4.TabIndex = 1
-        '
         'DataGridView5
         '
         Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -557,42 +594,6 @@ Partial Class CompraPacas
         Me.DataGridView5.Name = "DataGridView5"
         Me.DataGridView5.Size = New System.Drawing.Size(1089, 434)
         Me.DataGridView5.TabIndex = 1
-        '
-        'BtCastigosPorMicros
-        '
-        Me.BtCastigosPorMicros.Location = New System.Drawing.Point(785, 13)
-        Me.BtCastigosPorMicros.Name = "BtCastigosPorMicros"
-        Me.BtCastigosPorMicros.Size = New System.Drawing.Size(75, 62)
-        Me.BtCastigosPorMicros.TabIndex = 16
-        Me.BtCastigosPorMicros.Text = "Castigos Por Micros"
-        Me.BtCastigosPorMicros.UseVisualStyleBackColor = True
-        '
-        'BtCastigoResistenciaFibra
-        '
-        Me.BtCastigoResistenciaFibra.Location = New System.Drawing.Point(866, 13)
-        Me.BtCastigoResistenciaFibra.Name = "BtCastigoResistenciaFibra"
-        Me.BtCastigoResistenciaFibra.Size = New System.Drawing.Size(75, 62)
-        Me.BtCastigoResistenciaFibra.TabIndex = 16
-        Me.BtCastigoResistenciaFibra.Text = "Castigos Por Resistencia de Fibra"
-        Me.BtCastigoResistenciaFibra.UseVisualStyleBackColor = True
-        '
-        'BtDiferenciasPorClases
-        '
-        Me.BtDiferenciasPorClases.Location = New System.Drawing.Point(947, 13)
-        Me.BtDiferenciasPorClases.Name = "BtDiferenciasPorClases"
-        Me.BtDiferenciasPorClases.Size = New System.Drawing.Size(75, 62)
-        Me.BtDiferenciasPorClases.TabIndex = 16
-        Me.BtDiferenciasPorClases.Text = "Diferencias Por Clases"
-        Me.BtDiferenciasPorClases.UseVisualStyleBackColor = True
-        '
-        'BtCastigosLargoFibra
-        '
-        Me.BtCastigosLargoFibra.Location = New System.Drawing.Point(1028, 13)
-        Me.BtCastigosLargoFibra.Name = "BtCastigosLargoFibra"
-        Me.BtCastigosLargoFibra.Size = New System.Drawing.Size(75, 62)
-        Me.BtCastigosLargoFibra.TabIndex = 16
-        Me.BtCastigosLargoFibra.Text = "Castigos de Largo Fibra"
-        Me.BtCastigosLargoFibra.UseVisualStyleBackColor = True
         '
         'CompraPacas
         '
@@ -606,24 +607,23 @@ Partial Class CompraPacas
         Me.Name = "CompraPacas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Compra de Pacas"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MSMenu.ResumeLayout(False)
         Me.MSMenu.PerformLayout()
         Me.GbDatosGenerales.ResumeLayout(False)
         Me.GbDatosGenerales.PerformLayout()
         Me.GbCompras.ResumeLayout(False)
-        CType(Me.DgvCompraPacas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TcCompras.ResumeLayout(False)
         Me.TP1LiquidacionesCompras.ResumeLayout(False)
+        CType(Me.DgvCompraPacas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TP2LiquidacionesCompradas.ResumeLayout(False)
-        Me.TP3CompraPacasIndividual.ResumeLayout(False)
-        Me.TP4IndividualCompraPaca.ResumeLayout(False)
-        Me.TP5PacasSinClasificar.ResumeLayout(False)
-        Me.TP6Observaciones.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TP3CompraPacasIndividual.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TP4IndividualCompraPaca.ResumeLayout(False)
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TP5PacasSinClasificar.ResumeLayout(False)
         CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TP6Observaciones.ResumeLayout(False)
         CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
