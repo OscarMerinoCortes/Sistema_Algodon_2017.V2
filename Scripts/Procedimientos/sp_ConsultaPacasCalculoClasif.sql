@@ -1,4 +1,4 @@
-alter procedure sp_ConsultaPacasCalculoClasif
+create procedure sp_ConsultaPacasCalculoClasif
 @IdPaquete int 
 as
 select a.BaleId,
@@ -12,5 +12,6 @@ select a.BaleId,
 	   a.IdHviDetalle
 from [dbo].[CalculoClasificacion] a
 where a.IdPaqueteEncabezado = @IdPaquete
+order by a.BaleId asc
 
-
+select * from [CalculoClasificacion]

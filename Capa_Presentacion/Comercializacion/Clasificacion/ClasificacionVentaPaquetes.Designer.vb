@@ -34,7 +34,7 @@ Partial Class ClasificacionVentaPaquetes
         Me.TbNoPaca = New System.Windows.Forms.TextBox()
         Me.CbPlanta = New System.Windows.Forms.ComboBox()
         Me.BtIgualarClasificacion = New System.Windows.Forms.Button()
-        Me.BtRestaurarClasificacion = New System.Windows.Forms.Button()
+        Me.BtRevisarClases = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -71,7 +71,7 @@ Partial Class ClasificacionVentaPaquetes
         Me.GbProductos.Controls.Add(Me.TbNoPaca)
         Me.GbProductos.Controls.Add(Me.CbPlanta)
         Me.GbProductos.Controls.Add(Me.BtIgualarClasificacion)
-        Me.GbProductos.Controls.Add(Me.BtRestaurarClasificacion)
+        Me.GbProductos.Controls.Add(Me.BtRevisarClases)
         Me.GbProductos.Controls.Add(Me.Label7)
         Me.GbProductos.Controls.Add(Me.Label5)
         Me.GbProductos.Controls.Add(Me.Label4)
@@ -176,15 +176,15 @@ Partial Class ClasificacionVentaPaquetes
         Me.BtIgualarClasificacion.Text = "Igualar Clasificacion"
         Me.BtIgualarClasificacion.UseVisualStyleBackColor = True
         '
-        'BtRestaurarClasificacion
+        'BtRevisarClases
         '
-        Me.BtRestaurarClasificacion.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BtRestaurarClasificacion.Location = New System.Drawing.Point(952, 16)
-        Me.BtRestaurarClasificacion.Name = "BtRestaurarClasificacion"
-        Me.BtRestaurarClasificacion.Size = New System.Drawing.Size(119, 90)
-        Me.BtRestaurarClasificacion.TabIndex = 1
-        Me.BtRestaurarClasificacion.Text = "Restaurar Clasificacion"
-        Me.BtRestaurarClasificacion.UseVisualStyleBackColor = True
+        Me.BtRevisarClases.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BtRevisarClases.Location = New System.Drawing.Point(952, 16)
+        Me.BtRevisarClases.Name = "BtRevisarClases"
+        Me.BtRevisarClases.Size = New System.Drawing.Size(119, 90)
+        Me.BtRevisarClases.TabIndex = 1
+        Me.BtRevisarClases.Text = "Revisar Clases De  Paquete"
+        Me.BtRevisarClases.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -347,7 +347,7 @@ Partial Class ClasificacionVentaPaquetes
     Friend WithEvents ImprimirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BtIgualarClasificacion As Button
-    Friend WithEvents BtRestaurarClasificacion As Button
+    Friend WithEvents BtRevisarClases As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label

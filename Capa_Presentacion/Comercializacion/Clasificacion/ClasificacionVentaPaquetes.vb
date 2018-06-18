@@ -3,6 +3,7 @@ Public Class ClasificacionVentaPaquetes
     Private TablaClasificacionGrid, TablaClasificacionGlobal As New DataTable
     Private Sub ClasificacionVentaPaquetes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargaCombos()
+        'Consultar()
         propiedadesDgv1()
         CreaTabla()
         Limpiar()
@@ -61,6 +62,7 @@ Public Class ClasificacionVentaPaquetes
                 Exit Sub
             Else
                 DgvPacasClasificacion1.CurrentRow.Cells("Clase").Value = Tabla2.Rows(0).Item("ClaveCorta")
+                IdentificaColor()
                 Exit Sub
             End If
         Else
@@ -113,8 +115,9 @@ Public Class ClasificacionVentaPaquetes
         Select Case e.KeyData
             Case Keys.Enter
                 If TbNoPaca.Text <> "" Then
-                    Consultar()
+                    InsertaPaca()
                     TbNoPaca.Text = ""
+                    Guardar()
                 Else
                     MsgBox("Ingrese el ID de la orden de trabajo...")
                     Exit Sub
@@ -122,14 +125,28 @@ Public Class ClasificacionVentaPaquetes
         End Select
         ContarPacas()
     End Sub
-
-    Private Sub Consultar()
+    Private Sub TbIdPaquete_TextChanged(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TbIdPaquete.KeyDown
+        Select Case e.KeyData
+            Case Keys.Enter
+                If TbIdPaquete.Text <> "" Then
+                    TbIdPaquete.Enabled = False
+                    Consultar()
+                    TbNoPaca.Text = ""
+                    TbNoPaca.Focus()
+                Else
+                    MsgBox("Ingrese el ID del paquete...")
+                    Exit Sub
+                End If
+        End Select
+        ContarPacas()
+    End Sub
+    Private Sub InsertaPaca()
         Dim EntidadClasificacionVentaPaquetes As New Capa_Entidad.ClasificacionVentaPaquetes
         Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
         Dim Tabla As New DataTable
         Dim VerificaDuplicado As Boolean
         EntidadClasificacionVentaPaquetes.Consulta = Consulta.ConsultaPaca
-        EntidadClasificacionVentaPaquetes.NumeroPaca = CInt(TbNoPaca.Text)
+        EntidadClasificacionVentaPaquetes.NumeroPaca = CInt(IIf(TbNoPaca.Text = "", 0, TbNoPaca.Text))
         NegocioClasificacionVentaPaquetes.Consultar(EntidadClasificacionVentaPaquetes)
         Tabla = EntidadClasificacionVentaPaquetes.TablaConsulta
         If Tabla.Rows.Count = 0 Then
@@ -139,6 +156,7 @@ Public Class ClasificacionVentaPaquetes
         Else
             MsgBox("El numero de paca ya se encuentra registrado.")
         End If
+        IdentificaColor()
     End Sub
     Public Function VerificaPacaRepetida(ByVal VerificaDuplicado As Boolean)
         VerificaDuplicado = False
@@ -222,7 +240,6 @@ Public Class ClasificacionVentaPaquetes
     End Sub
     Private Sub propiedadesDgv1()
         DgvPacasClasificacion1.Columns.Clear()
-
         If DgvPacasClasificacion1.Columns("BaleId") Is Nothing Then
             Dim colBaleId As New DataGridViewTextBoxColumn
             colBaleId.Name = "BaleId"
@@ -279,11 +296,11 @@ Public Class ClasificacionVentaPaquetes
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
-
     Private Sub Guardar()
+        'If DgvPacasClasificacion1.RowCount > 0 Then
         Dim EntidadClasificacionVentaPaquetes As New Capa_Entidad.ClasificacionVentaPaquetes
         Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
-        If IdentificaColor() > 0 Then
+        If IdentificaColor() > 0 And chkfinalizado.Checked = True Then
             MsgBox("Por favor, verificar que los datos esten correctos.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
         Else
             EntidadClasificacionVentaPaquetes.IdPaquete = IIf(TbIdPaquete.Text = "", 0, TbIdPaquete.Text)
@@ -300,9 +317,14 @@ Public Class ClasificacionVentaPaquetes
             DataGridViewToTable()
             EntidadClasificacionVentaPaquetes.TablaGeneral = TablaClasificacionGlobal
             NegocioClasificacionVentaPaquetes.GuardarTablas(EntidadClasificacionVentaPaquetes)
-            MsgBox("Registro guardado con exito.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Aviso")
             TbIdPaquete.Text = EntidadClasificacionVentaPaquetes.IdPaquete
+            MsgBox("Paquete guardado con exito.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Aviso")
+            DgvPacasClasificacion1.Enabled = False
         End If
+
+        'Else
+        '    MsgBox("No hay datos para guardar.", MsgBoxStyle.Exclamation)
+        'End If
     End Sub
     Private Sub GuardarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GuardarToolStripMenuItem.Click
         Guardar()
@@ -339,8 +361,7 @@ Public Class ClasificacionVentaPaquetes
         Next viewRow
         Return dt
     End Function
-
-    Private Sub BuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem.Click
+    Private Sub Consultar()
         Dim EntidadClasificacionVentaPaquetes As New Capa_Entidad.ClasificacionVentaPaquetes
         Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
         If TbIdPaquete.Text <> "" Then
@@ -367,19 +388,34 @@ Public Class ClasificacionVentaPaquetes
                 Next
             Else
                 MsgBox("No se encontraron registros con esos criterios.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
+                TbIdPaquete.Enabled = True
+                TbIdPaquete.Text = ""
             End If
         Else
             MsgBox("Por favor, verificar que los datos esten correctos.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
         End If
+        IdentificaColor()
+        If chkfinalizado.Checked = True Then  DgvPacasClasificacion1.Enabled = False
+    End Sub
+
+    Private Sub BuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem.Click
+        Consultar()
+    End Sub
+
+    Private Sub BtRevisarClases_Click(sender As Object, e As EventArgs) Handles BtRevisarClases.Click
+        IdentificaColor()
     End Sub
 
     Private Sub Limpiar()
         TbIdPaquete.Text = ""
+        TbIdPaquete.Enabled = True
+        TbIdPaquete.Focus()
         CbPlanta.SelectedValue = 1
         CbClases.SelectedValue = 1
         CbEstatus.SelectedValue = 1
         chkfinalizado.Checked = False
         TbDescripcion.Text = ""
         TbCantidadPacas.Text = ""
+        DgvPacasClasificacion1.Enabled = True
     End Sub
 End Class
