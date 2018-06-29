@@ -312,6 +312,30 @@
     <Compile Include="Comercializacion\ContratoSemillas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosMicros.Designer.vb">
+      <DependentUpon>CastigosMicros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosMicros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosLargoFibra.Designer.vb">
+      <DependentUpon>CastigosLargoFibra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosLargoFibra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosResistenciasFibras.Designer.vb">
+      <DependentUpon>CastigosResistenciasFibras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosResistenciasFibras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\ClasesDif.Designer.vb">
+      <DependentUpon>ClasesDif.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\ClasesDif.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comercializacion\Ventas\VentaPacas.Designer.vb">
       <DependentUpon>VentaPacas.vb</DependentUpon>
     </Compile>
@@ -435,13 +459,31 @@
     <Compile Include="Catalogos\RegimenHidrico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\RepClasificacion.Designer.vb">
+      <DependentUpon>RepClasificacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RepClasificacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Reportes\RepClientes.Designer.vb">
       <DependentUpon>RepClientes.vb</DependentUpon>
     </Compile>
     <Compile Include="Reportes\RepClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\RPTReporteClientes.vb">
+    <Compile Include="Reportes\RPT\REPORTE HVI DETALLE.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>REPORTE HVI DETALLE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RPT\RPTClasificacion.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTClasificacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\RPT\RPTReporteClientes.vb">
       <DependentUpon>RPTReporteClientes.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
@@ -564,6 +606,18 @@
     <EmbeddedResource Include="Comercializacion\ContratoSemillas.resx">
       <DependentUpon>ContratoSemillas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\CastigosLargoFibra.resx">
+      <DependentUpon>CastigosLargoFibra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\CastigosMicros.resx">
+      <DependentUpon>CastigosMicros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\CastigosResistenciasFibras.resx">
+      <DependentUpon>CastigosResistenciasFibras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\ClasesDif.resx">
+      <DependentUpon>ClasesDif.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comercializacion\Ventas\VentaPacas.resx">
       <DependentUpon>VentaPacas.vb</DependentUpon>
     </EmbeddedResource>
@@ -624,10 +678,21 @@
     <EmbeddedResource Include="Catalogos\RegimenHidrico.resx">
       <DependentUpon>RegimenHidrico.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RepClasificacion.resx">
+      <DependentUpon>RepClasificacion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\RepClientes.resx">
       <DependentUpon>RepClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\RPTReporteClientes.rpt">
+    <EmbeddedResource Include="Reportes\RPT\REPORTE HVI DETALLE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>REPORTE HVI DETALLE.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RPT\RPTClasificacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTClasificacion.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RPT\RPTReporteClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPTReporteClientes.vb</LastGenOutput>
     </EmbeddedResource>
@@ -675,7 +740,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administracion\" />
-    <Folder Include="Reportes\RPT\" />
     <Folder Include="Utilerias\" />
   </ItemGroup>
   <ItemGroup>
