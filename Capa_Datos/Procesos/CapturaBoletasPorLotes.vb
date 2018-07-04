@@ -51,8 +51,33 @@ Public Class CapturaBoletasPorLotes
             cmdGuardar.Parameters.Add(New SqlParameter("@Idboleta", EntidadCapturaBoletasPorLotes1.Idboleta))
             cmdGuardar.Parameters.Add(New SqlParameter("@Bruto", EntidadCapturaBoletasPorLotes1.Bruto))
             cmdGuardar.Parameters.Add(New SqlParameter("@Tara", EntidadCapturaBoletasPorLotes1.Tara))
-            cmdGuardar.Parameters.Add(New SqlParameter("@Total", EntidadCapturaBoletasPorLotes1.Total))
-            'cmdGuardar.Parameters("@IdColonia").Direction = ParameterDirection.InputOutput
+            cmdGuardar.Parameters.Add(New SqlParameter("@Total", EntidadCapturaBoletasPorLotes1.Neto))
+            cmdGuardar.ExecuteNonQuery()
+            'If EntidadCapturaBoletasPorLotes1.Idboleta = 0 Then
+            '    EntidadCapturaBoletasPorLotes1.Idboleta = cmdGuardar.Parameters("@Idboleta").Value
+            'End If
+        Catch ex As Exception
+        Finally
+            cnn.Close()
+            EntidadCapturaBoletasPorLotes = EntidadCapturaBoletasPorLotes1
+        End Try
+    End Sub
+    Public Overridable Sub UpsertAuto(ByRef EntidadCapturaBoletasPorLotes As Capa_Entidad.CapturaBoletasPorLotes)
+        Dim EntidadCapturaBoletasPorLotes1 As New Capa_Entidad.CapturaBoletasPorLotes
+        EntidadCapturaBoletasPorLotes1 = EntidadCapturaBoletasPorLotes
+        Dim cnn As New SqlConnection(conexionPrincipal)
+        Dim cmdGuardar As SqlCommand
+        Try
+            cnn.Open()
+            cmdGuardar = New SqlCommand("ActualizaBoletaPesoAuto", cnn)
+            cmdGuardar.CommandType = CommandType.StoredProcedure
+            cmdGuardar.Parameters.Add(New SqlParameter("@Idboleta", EntidadCapturaBoletasPorLotes1.Idboleta))
+            cmdGuardar.Parameters.Add(New SqlParameter("@NoTransporte", EntidadCapturaBoletasPorLotes1.NoTransporte))
+            cmdGuardar.Parameters.Add(New SqlParameter("@PesoBruto", EntidadCapturaBoletasPorLotes1.Bruto))
+            cmdGuardar.Parameters.Add(New SqlParameter("@Tara", EntidadCapturaBoletasPorLotes1.Tara))
+            cmdGuardar.Parameters.Add(New SqlParameter("@Neto", EntidadCapturaBoletasPorLotes1.Neto))
+            cmdGuardar.Parameters.Add(New SqlParameter("@FechaActualizacion", EntidadCapturaBoletasPorLotes1.FechaActualizacion))
+            cmdGuardar.Parameters.Add(New SqlParameter("@TipoFlete", EntidadCapturaBoletasPorLotes1.TipoFlete))
             cmdGuardar.ExecuteNonQuery()
             'If EntidadCapturaBoletasPorLotes1.Idboleta = 0 Then
             '    EntidadCapturaBoletasPorLotes1.Idboleta = cmdGuardar.Parameters("@Idboleta").Value

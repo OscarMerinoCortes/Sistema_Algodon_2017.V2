@@ -91,7 +91,7 @@ Public Class Menu
         Produccion.ShowDialog()
     End Sub
     Private Sub CapturaDeBoletasPorLotesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CapturaDeBoletasPorLotesToolStripMenuItem.Click
-        CapturaBoletasPorLotes.ShowDialog()
+        CapturaBoletasPorLotes.Show()
     End Sub
     Private Sub LiquidacionesPorRomaneajeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LiquidacionesPorRomaneajeToolStripMenuItem.Click
         LiquidacionesPorRomaneaje.ShowDialog()

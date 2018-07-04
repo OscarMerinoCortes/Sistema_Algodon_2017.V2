@@ -328,6 +328,7 @@ Partial Class ClasificacionVentaPaquetes
         Me.Name = "ClasificacionVentaPaquetes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clasificacion de Venta "
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GbProductos.ResumeLayout(False)
         Me.GbProductos.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)

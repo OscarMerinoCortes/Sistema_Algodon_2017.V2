@@ -14,4 +14,8 @@
         Dim DatosCapturaBoletasPorLotes As New Capa_Datos.CapturaBoletasPorLotes
         DatosCapturaBoletasPorLotes.Upsert(EntidadCapturaBoletasPorLotes)
     End Sub
+    Public Overridable Sub upsertAuto(ByRef EntidadCapturaBoletasPorLotes As Capa_Entidad.CapturaBoletasPorLotes)
+        Dim DatosCapturaBoletasPorLotes As New Capa_Datos.CapturaBoletasPorLotes
+        DatosCapturaBoletasPorLotes.UpsertAuto(EntidadCapturaBoletasPorLotes)
+    End Sub
 End Class
