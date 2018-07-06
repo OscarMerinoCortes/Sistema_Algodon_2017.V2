@@ -36,6 +36,7 @@ Partial Class CapturaBoletasPorLotes
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvModulos = New System.Windows.Forms.DataGridView()
         Me.TiActualizaDgvModulos = New System.Windows.Forms.Timer(Me.components)
+        Me.SpCapturaAuto = New System.IO.Ports.SerialPort(Me.components)
         Me.MSMenu.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -196,4 +197,5 @@ Partial Class CapturaBoletasPorLotes
     Friend WithEvents BtAutomatico As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents LbStatus As Label
+    Friend WithEvents SpCapturaAuto As IO.Ports.SerialPort
 End Class

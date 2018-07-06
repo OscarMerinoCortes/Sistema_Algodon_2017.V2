@@ -5,11 +5,59 @@ Public Class CapturaBoletasPorLotes
     Dim com1 As IO.Ports.SerialPort = Nothing
     Dim bandera As Boolean = True
     Dim Salir As Boolean 'True sale del bucle, false sigue
-    Dim th As New Threading.Thread(AddressOf ReceiveSerialData)
+    'Dim th As New Threading.Thread(AddressOf ReceiveSerialData)
     Private Sub CapturaBoletasPorLotes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConsultaModulos()
         GetSerialPortNames()
         CheckForIllegalCrossThreadCalls = False
+        LbStatus.Text = "CAPTURA AUTOMATICA DESACTIVADA"
+    End Sub
+    Sub Setup_Puerto_Serie()
+
+        Try
+
+            With SpCapturaAuto
+
+                If .IsOpen Then
+
+                    .Close()
+
+                End If
+
+                .PortName = CbPuertosSeriales.Text
+
+                .BaudRate = 9600 '// 9600 baud rate
+
+                .DataBits = 8 '// 8 data bits
+
+                .StopBits = IO.Ports.StopBits.One '// 1 Stop bit
+
+                .Parity = IO.Ports.Parity.None '
+
+                .DtrEnable = False
+
+                .Handshake = IO.Ports.Handshake.None
+
+                .ReadBufferSize = 4096
+
+                .WriteBufferSize = 2048
+
+                '.ReceivedBytesThreshold = 1
+
+                .WriteTimeout = 500
+
+                .Encoding = System.Text.Encoding.Default
+
+                .Open() ' ABRE EL PUERTO SERIE
+
+            End With
+
+        Catch ex As Exception
+
+            MsgBox("Error al abrir el puerto serial: " & ex.Message, MsgBoxStyle.Critical)
+
+        End Try
+
     End Sub
     Private Sub ConsultaModulos()
         Dim EntidadCapturaBoletasPorLotes As New Capa_Entidad.CapturaBoletasPorLotes
@@ -20,56 +68,67 @@ Public Class CapturaBoletasPorLotes
         DgvModulos.DataSource = EntidadCapturaBoletasPorLotes.TablaConsulta
         propiedadesDgv()
     End Sub
-    Function ReceiveSerialData() As String
-        While bandera = True
-            Dim NoTransporte, IdBoleta As Integer
-            Dim Bruto, Tara, Neto As Double
-            Dim TipoFlete As String = ""
-            Dim returnStr As String = ""
-            Dim FechaActualizacion As DateTime
+    Sub ReceiveSerialData_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles SpCapturaAuto.DataReceived
+        'While bandera = True
+        Dim NoTransporte, IdBoleta As Integer
+        Dim Bruto, Tara, Neto As Double
+        Dim TipoFlete As String = ""
+        Dim returnStr As String = ""
+        Dim FechaActualizacion As DateTime
+        Dim numeroRecorrido As Integer = 0
+        Dim az As String     'utilizada para almacenar los datos que se reciben por el puerto
+        Dim sib As Integer    ' sera utilizada como contador
+        Dim msn(1000) As String
+        Try
+            '
+            ''com1 = My.Computer.Ports.OpenSerialPort(CbPuertosSeriales.Text)
+            'Dim i = 0
+            'Do Until i = 6
+            '    Dim Incoming As String = com1.ReadLine
 
-            Try
-                Dim numeroRecorrido As Integer = 0
-                com1 = My.Computer.Ports.OpenSerialPort(Puerto)
-                Dim i = 0
-                Do Until i = 6
-                    Dim Incoming As String = com1.ReadLine
+            '    If Incoming Is Nothing Then
+            '        Exit Do
+            '    Else
+            '        returnStr &= IIf(Incoming = vbCr, "", Incoming & vbCrLf)
+            '    End If
+            '    i += 1
+            'Loop
 
-                    If Incoming Is Nothing Then
-                        Exit Do
-                    Else
-                        returnStr &= IIf(Incoming = vbCr, "", Incoming & vbCrLf)
-                    End If
-                    i += 1
-                Loop
-            Catch ex As TimeoutException
-                returnStr = "Error: Serial Port read timed out."
-            Finally
-                If com1 IsNot Nothing Then com1.Close()
-            End Try
-            If returnStr.Contains("INBOUND") Then
-                NoTransporte = returnStr.Substring(3, 2)
-                IdBoleta = LTrim(returnStr.Substring(6, 5))
-                Bruto = LTrim(returnStr.Substring(19, 10))
-                Tara = 0
-                Neto = 0
-                FechaActualizacion = Now
-                TipoFlete = "INBOUND"
-                ActualizaPesoModuloAutomatico(NoTransporte, IdBoleta, Bruto, Tara, Neto, FechaActualizacion, TipoFlete)
-            ElseIf returnStr.Contains("RECALLED") Then
-                NoTransporte = returnStr.Substring(3, 2)
-                IdBoleta = LTrim(returnStr.Substring(6, 5))
-                Bruto = 0
-                Tara = LTrim(returnStr.Substring(48, 11))
-                Neto = LTrim(returnStr.Substring(68, 12))
-                FechaActualizacion = Now
-                TipoFlete = "RECALLED"
-                ActualizaPesoModuloAutomatico(NoTransporte, IdBoleta, Bruto, Tara, Neto, FechaActualizacion, TipoFlete)
+            az = SpCapturaAuto.ReadExisting.Trim
 
-            End If
-        End While
-        ConsultaModulos()
-    End Function
+            msn(sib) = az
+
+            returnStr += msn(sib) + " "
+
+            sib = sib + 1
+        Catch ex As TimeoutException
+            returnStr = "Error: Serial Port read timed out."
+        Finally
+            ' If com1 IsNot Nothing Then com1.Close()
+        End Try
+        If returnStr.Contains("INBOUND") Then
+            NoTransporte = returnStr.Substring(3, 2)
+            IdBoleta = LTrim(returnStr.Substring(6, 5))
+            Bruto = LTrim(returnStr.Substring(20, 10))
+            Tara = 0
+            Neto = 0
+            FechaActualizacion = Now
+            TipoFlete = "INBOUND"
+            ActualizaPesoModuloAutomatico(NoTransporte, IdBoleta, Bruto, Tara, Neto, FechaActualizacion, TipoFlete)
+        ElseIf returnStr.Contains("RECALLED") Then
+            NoTransporte = returnStr.Substring(3, 2)
+            IdBoleta = LTrim(returnStr.Substring(6, 5))
+            Bruto = 0
+            Tara = LTrim(returnStr.Substring(48, 11))
+            Neto = LTrim(returnStr.Substring(68, 12))
+            FechaActualizacion = Now
+            TipoFlete = "RECALLED"
+            ActualizaPesoModuloAutomatico(NoTransporte, IdBoleta, Bruto, Tara, Neto, FechaActualizacion, TipoFlete)
+
+        End If
+        ' End While
+        'ConsultaModulos()
+    End Sub
     Private Sub propiedadesDgv()
         DgvModulos.Columns("IdPlanta").HeaderText = "ID Planta"
         DgvModulos.Columns("FechaOrden").HeaderText = "Fecha de Orden"
@@ -174,30 +233,38 @@ Public Class CapturaBoletasPorLotes
     End Sub
     Private Sub BtAutomatico_Click(sender As Object, e As EventArgs) Handles BtAutomatico.Click
         'If th.ThreadState = Threading.ThreadState.Unstarted Or th.ThreadState = Threading.ThreadState.WaitSleepJoin Or th.ThreadState = Threading.ThreadState.Aborted Or th.ThreadState = Threading.ThreadState.Stopped Then
-        If th.ThreadState <> Threading.ThreadState.WaitSleepJoin Then hacer()
-        If TiActualizaDgvModulos.Enabled = False Then
+
+        ' If th.ThreadState <> Threading.ThreadState.WaitSleepJoin Then hacer()
+        If LbStatus.Text = "CAPTURA AUTOMATICA DESACTIVADA" Then
             TiActualizaDgvModulos.Enabled = True
             LbStatus.Text = "CAPTURA AUTOMATICA ACTIVADA"
+            Setup_Puerto_Serie()
         Else
             TiActualizaDgvModulos.Enabled = False
             LbStatus.Text = "CAPTURA AUTOMATICA DESACTIVADA"
+            SpCapturaAuto.Close()
         End If
         '    LbStatus.Text = TiActualizaDgvModulos.Tag.ToString
 
+        'If com1 IsNot Nothing Then
+        '    MsgBox("Puerto Abierto")
+        'Else
+        '    MsgBox("Puerto Cerrado")
+        'End If
 
         'End If
     End Sub
     Private Sub hacer()
         'Controlamos los estados
-        If th.ThreadState = Threading.ThreadState.Unstarted Or th.ThreadState = Threading.ThreadState.WaitSleepJoin Or th.ThreadState = Threading.ThreadState.Aborted Or th.ThreadState = Threading.ThreadState.Stopped Then
-            th = New Threading.Thread(AddressOf ReceiveSerialData)
-            bandera = True
-            Salir = False 'indica False para que el bucle pueda seguir
-            th.Start() 'Inicia el hilo
+        'If th.ThreadState = Threading.ThreadState.Unstarted Or th.ThreadState = Threading.ThreadState.WaitSleepJoin Or th.ThreadState = Threading.ThreadState.Aborted Or th.ThreadState = Threading.ThreadState.Stopped Then
+        '    th = New Threading.Thread(AddressOf ReceiveSerialData)
+        '    bandera = True
+        '    Salir = False 'indica False para que el bucle pueda seguir
+        '    th.Start() 'Inicia el hilo
 
-        Else
-            Label1.Text = th.ThreadState.ToString 'asigna al label el estado del hilo
-        End If
+        'Else
+        '    Label1.Text = th.ThreadState.ToString 'asigna al label el estado del hilo
+        'End If
     End Sub
     Private Sub TiActualizaDgvModulos_Tick(sender As Object, e As EventArgs) Handles TiActualizaDgvModulos.Tick
         ConsultaModulos()
