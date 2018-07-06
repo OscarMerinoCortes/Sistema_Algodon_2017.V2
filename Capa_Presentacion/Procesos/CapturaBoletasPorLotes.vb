@@ -2,6 +2,7 @@
 Imports System.IO.Ports
 Public Class CapturaBoletasPorLotes
     Dim Puerto As String
+    Dim com1 As IO.Ports.SerialPort = Nothing
     Dim bandera As Boolean = True
     Dim Salir As Boolean 'True sale del bucle, false sigue
     Dim th As New Threading.Thread(AddressOf ReceiveSerialData)
@@ -26,7 +27,7 @@ Public Class CapturaBoletasPorLotes
             Dim TipoFlete As String = ""
             Dim returnStr As String = ""
             Dim FechaActualizacion As DateTime
-            Dim com1 As IO.Ports.SerialPort = Nothing
+
             Try
                 Dim numeroRecorrido As Integer = 0
                 com1 = My.Computer.Ports.OpenSerialPort(Puerto)
@@ -169,10 +170,22 @@ Public Class CapturaBoletasPorLotes
     End Sub
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
+        com1.Close()
     End Sub
+    Private Sub BtAutomatico_Click(sender As Object, e As EventArgs) Handles BtAutomatico.Click
+        'If th.ThreadState = Threading.ThreadState.Unstarted Or th.ThreadState = Threading.ThreadState.WaitSleepJoin Or th.ThreadState = Threading.ThreadState.Aborted Or th.ThreadState = Threading.ThreadState.Stopped Then
+        If th.ThreadState <> Threading.ThreadState.WaitSleepJoin Then hacer()
+        If TiActualizaDgvModulos.Enabled = False Then
+            TiActualizaDgvModulos.Enabled = True
+            LbStatus.Text = "CAPTURA AUTOMATICA ACTIVADA"
+        Else
+            TiActualizaDgvModulos.Enabled = False
+            LbStatus.Text = "CAPTURA AUTOMATICA DESACTIVADA"
+        End If
+        '    LbStatus.Text = TiActualizaDgvModulos.Tag.ToString
 
-    Private Sub BtAutomatico_Click(sender As Object, e As EventArgs)
-        hacer()
+
+        'End If
     End Sub
     Private Sub hacer()
         'Controlamos los estados
@@ -189,12 +202,13 @@ Public Class CapturaBoletasPorLotes
     Private Sub TiActualizaDgvModulos_Tick(sender As Object, e As EventArgs) Handles TiActualizaDgvModulos.Tick
         ConsultaModulos()
     End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtIniciar.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         TiActualizaDgvModulos.Start()
     End Sub
-
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BtDetener.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         TiActualizaDgvModulos.Stop()
+    End Sub
+    Private Sub BtAutomatico_Click_1(sender As Object, e As EventArgs)
+        hacer()
     End Sub
 End Class
