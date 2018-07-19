@@ -29,14 +29,14 @@ Partial Class CapturaBoletasPorLotes
         Me.ConsultarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BtDetener = New System.Windows.Forms.Button()
-        Me.BtIniciar = New System.Windows.Forms.Button()
+        Me.LbStatus = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.CbPuertosSeriales = New System.Windows.Forms.ComboBox()
+        Me.BtAutomatico = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.DgvModulos = New System.Windows.Forms.DataGridView()
         Me.TiActualizaDgvModulos = New System.Windows.Forms.Timer(Me.components)
-        Me.BtAutomatico = New System.Windows.Forms.Button()
-        Me.CbPuertosSeriales = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.SpCapturaAuto = New System.IO.Ports.SerialPort(Me.components)
         Me.MSMenu.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -77,11 +77,10 @@ Partial Class CapturaBoletasPorLotes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LbStatus)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.CbPuertosSeriales)
         Me.GroupBox1.Controls.Add(Me.BtAutomatico)
-        Me.GroupBox1.Controls.Add(Me.BtDetener)
-        Me.GroupBox1.Controls.Add(Me.BtIniciar)
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupBox1.Location = New System.Drawing.Point(0, 24)
         Me.GroupBox1.Name = "GroupBox1"
@@ -90,23 +89,41 @@ Partial Class CapturaBoletasPorLotes
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Generales"
         '
-        'BtDetener
+        'LbStatus
         '
-        Me.BtDetener.Location = New System.Drawing.Point(12, 55)
-        Me.BtDetener.Name = "BtDetener"
-        Me.BtDetener.Size = New System.Drawing.Size(75, 23)
-        Me.BtDetener.TabIndex = 60
-        Me.BtDetener.Text = "Detener Hilo"
-        Me.BtDetener.UseVisualStyleBackColor = True
+        Me.LbStatus.AutoSize = True
+        Me.LbStatus.Dock = System.Windows.Forms.DockStyle.Right
+        Me.LbStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LbStatus.Location = New System.Drawing.Point(1117, 16)
+        Me.LbStatus.Name = "LbStatus"
+        Me.LbStatus.Size = New System.Drawing.Size(85, 29)
+        Me.LbStatus.TabIndex = 64
+        Me.LbStatus.Text = "Status"
         '
-        'BtIniciar
+        'Label1
         '
-        Me.BtIniciar.Location = New System.Drawing.Point(12, 26)
-        Me.BtIniciar.Name = "BtIniciar"
-        Me.BtIniciar.Size = New System.Drawing.Size(75, 23)
-        Me.BtIniciar.TabIndex = 59
-        Me.BtIniciar.Text = "Iniciar Hilo"
-        Me.BtIniciar.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(200, 65)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(0, 13)
+        Me.Label1.TabIndex = 63
+        '
+        'CbPuertosSeriales
+        '
+        Me.CbPuertosSeriales.FormattingEnabled = True
+        Me.CbPuertosSeriales.Location = New System.Drawing.Point(6, 19)
+        Me.CbPuertosSeriales.Name = "CbPuertosSeriales"
+        Me.CbPuertosSeriales.Size = New System.Drawing.Size(121, 21)
+        Me.CbPuertosSeriales.TabIndex = 62
+        '
+        'BtAutomatico
+        '
+        Me.BtAutomatico.Location = New System.Drawing.Point(133, 19)
+        Me.BtAutomatico.Name = "BtAutomatico"
+        Me.BtAutomatico.Size = New System.Drawing.Size(147, 50)
+        Me.BtAutomatico.TabIndex = 61
+        Me.BtAutomatico.Text = "Captura Automatica de Datos"
+        Me.BtAutomatico.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
@@ -141,33 +158,7 @@ Partial Class CapturaBoletasPorLotes
         '
         'TiActualizaDgvModulos
         '
-        Me.TiActualizaDgvModulos.Enabled = True
         Me.TiActualizaDgvModulos.Interval = 2000
-        '
-        'BtAutomatico
-        '
-        Me.BtAutomatico.Location = New System.Drawing.Point(93, 28)
-        Me.BtAutomatico.Name = "BtAutomatico"
-        Me.BtAutomatico.Size = New System.Drawing.Size(101, 50)
-        Me.BtAutomatico.TabIndex = 61
-        Me.BtAutomatico.Text = "Captura Automatica de Datos"
-        Me.BtAutomatico.UseVisualStyleBackColor = True
-        '
-        'CbPuertosSeriales
-        '
-        Me.CbPuertosSeriales.FormattingEnabled = True
-        Me.CbPuertosSeriales.Location = New System.Drawing.Point(200, 28)
-        Me.CbPuertosSeriales.Name = "CbPuertosSeriales"
-        Me.CbPuertosSeriales.Size = New System.Drawing.Size(121, 21)
-        Me.CbPuertosSeriales.TabIndex = 62
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(200, 65)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(0, 13)
-        Me.Label1.TabIndex = 63
         '
         'CapturaBoletasPorLotes
         '
@@ -202,9 +193,9 @@ Partial Class CapturaBoletasPorLotes
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents DgvModulos As DataGridView
     Friend WithEvents TiActualizaDgvModulos As Timer
-    Friend WithEvents BtIniciar As Button
-    Friend WithEvents BtDetener As Button
     Friend WithEvents CbPuertosSeriales As ComboBox
     Friend WithEvents BtAutomatico As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents LbStatus As Label
+    Friend WithEvents SpCapturaAuto As IO.Ports.SerialPort
 End Class
