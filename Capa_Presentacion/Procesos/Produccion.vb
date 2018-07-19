@@ -206,8 +206,6 @@ Public Class Produccion
                                     Consultar()
                                     TbFolioCIA.Text = ""
                                     TbKilos.Text = ""
-
-
                                 Else
                                     Dim EntidadProduccion As New Capa_Entidad.Produccion
                                     Dim NegocioProduccion As New Capa_Negocio.Produccion
@@ -249,7 +247,6 @@ Public Class Produccion
                                     Consultar()
                                     TbFolioCIA.Text = ""
                                     TbKilos.Text = ""
-                                    'ActualizarUltimaEtiqueta()
                                 End If
                             Else
                                 Dim EntidadProduccion As New Capa_Entidad.Produccion

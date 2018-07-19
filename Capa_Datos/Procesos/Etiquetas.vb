@@ -20,6 +20,13 @@ Public Class Etiquetas
                     sqlcom1.Parameters.Clear()
                     sqlcom1.Parameters.Add(New SqlParameter("@IdPlantaOrigen", EntidadEtiquetas1.IdPlanta))
                     sqldat1.Fill(EntidadEtiquetas1.TablaConsulta)
+                Case Capa_Operacion.Configuracion.Consulta.ConsultaOrden
+                    sqlcom1 = New SqlCommand("sp_ConsultaOrdenProduccion", cnn)
+                    sqldat1 = New SqlDataAdapter(sqlcom1)
+                    sqlcom1.CommandType = CommandType.StoredProcedure
+                    sqlcom1.Parameters.Clear()
+                    sqlcom1.Parameters.Add(New SqlParameter("@IdProduccion", EntidadEtiquetas1.IdProduccion))
+                    sqldat1.Fill(EntidadEtiquetas1.TablaConsulta)
             End Select
         Catch ex As Exception
         Finally
