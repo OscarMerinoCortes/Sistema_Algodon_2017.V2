@@ -25,10 +25,8 @@ Partial Class CapturaBoletasPorLotes
         Me.components = New System.ComponentModel.Container()
         Me.MSMenu = New System.Windows.Forms.MenuStrip()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GuardarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GbGenerales = New System.Windows.Forms.GroupBox()
         Me.LbStatus = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CbPuertosSeriales = New System.Windows.Forms.ComboBox()
@@ -37,15 +35,16 @@ Partial Class CapturaBoletasPorLotes
         Me.DgvModulos = New System.Windows.Forms.DataGridView()
         Me.TiActualizaDgvModulos = New System.Windows.Forms.Timer(Me.components)
         Me.SpCapturaAuto = New System.IO.Ports.SerialPort(Me.components)
+        Me.IncidenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MSMenu.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.GbGenerales.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvModulos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MSMenu
         '
-        Me.MSMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.GuardarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MSMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.IncidenciasToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MSMenu.Location = New System.Drawing.Point(0, 0)
         Me.MSMenu.Name = "MSMenu"
         Me.MSMenu.Size = New System.Drawing.Size(1205, 24)
@@ -57,37 +56,25 @@ Partial Class CapturaBoletasPorLotes
         Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
-        'GuardarToolStripMenuItem
-        '
-        Me.GuardarToolStripMenuItem.Name = "GuardarToolStripMenuItem"
-        Me.GuardarToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
-        Me.GuardarToolStripMenuItem.Text = "Guardar"
-        '
-        'ConsultarToolStripMenuItem
-        '
-        Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
-        Me.ConsultarToolStripMenuItem.Text = "Consultar"
-        '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
-        'GroupBox1
+        'GbGenerales
         '
-        Me.GroupBox1.Controls.Add(Me.LbStatus)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.CbPuertosSeriales)
-        Me.GroupBox1.Controls.Add(Me.BtAutomatico)
-        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 24)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1205, 102)
-        Me.GroupBox1.TabIndex = 30
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos Generales"
+        Me.GbGenerales.Controls.Add(Me.LbStatus)
+        Me.GbGenerales.Controls.Add(Me.Label1)
+        Me.GbGenerales.Controls.Add(Me.CbPuertosSeriales)
+        Me.GbGenerales.Controls.Add(Me.BtAutomatico)
+        Me.GbGenerales.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GbGenerales.Location = New System.Drawing.Point(0, 24)
+        Me.GbGenerales.Name = "GbGenerales"
+        Me.GbGenerales.Size = New System.Drawing.Size(1205, 102)
+        Me.GbGenerales.TabIndex = 30
+        Me.GbGenerales.TabStop = False
+        Me.GbGenerales.Text = "Datos Generales"
         '
         'LbStatus
         '
@@ -160,13 +147,22 @@ Partial Class CapturaBoletasPorLotes
         '
         Me.TiActualizaDgvModulos.Interval = 2000
         '
+        'SpCapturaAuto
+        '
+        '
+        'IncidenciasToolStripMenuItem
+        '
+        Me.IncidenciasToolStripMenuItem.Name = "IncidenciasToolStripMenuItem"
+        Me.IncidenciasToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
+        Me.IncidenciasToolStripMenuItem.Text = "Incidencias"
+        '
         'CapturaBoletasPorLotes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1205, 718)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GbGenerales)
         Me.Controls.Add(Me.MSMenu)
         Me.MainMenuStrip = Me.MSMenu
         Me.Name = "CapturaBoletasPorLotes"
@@ -175,8 +171,8 @@ Partial Class CapturaBoletasPorLotes
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MSMenu.ResumeLayout(False)
         Me.MSMenu.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GbGenerales.ResumeLayout(False)
+        Me.GbGenerales.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.DgvModulos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -186,10 +182,8 @@ Partial Class CapturaBoletasPorLotes
 
     Friend WithEvents MSMenu As MenuStrip
     Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GuardarToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ConsultarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SalirToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GbGenerales As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents DgvModulos As DataGridView
     Friend WithEvents TiActualizaDgvModulos As Timer
@@ -198,4 +192,5 @@ Partial Class CapturaBoletasPorLotes
     Friend WithEvents Label1 As Label
     Friend WithEvents LbStatus As Label
     Friend WithEvents SpCapturaAuto As IO.Ports.SerialPort
+    Friend WithEvents IncidenciasToolStripMenuItem As ToolStripMenuItem
 End Class

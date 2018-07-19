@@ -5,7 +5,6 @@ Public Class CapturaBoletasPorLotes
     Dim com1 As IO.Ports.SerialPort = Nothing
     Dim bandera As Boolean = True
     Dim Salir As Boolean 'True sale del bucle, false sigue
-    'Dim th As New Threading.Thread(AddressOf ReceiveSerialData)
     Private Sub CapturaBoletasPorLotes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ConsultaModulos()
         GetSerialPortNames()
@@ -80,20 +79,6 @@ Public Class CapturaBoletasPorLotes
         Dim sib As Integer    ' sera utilizada como contador
         Dim msn(1000) As String
         Try
-            '
-            ''com1 = My.Computer.Ports.OpenSerialPort(CbPuertosSeriales.Text)
-            'Dim i = 0
-            'Do Until i = 6
-            '    Dim Incoming As String = com1.ReadLine
-
-            '    If Incoming Is Nothing Then
-            '        Exit Do
-            '    Else
-            '        returnStr &= IIf(Incoming = vbCr, "", Incoming & vbCrLf)
-            '    End If
-            '    i += 1
-            'Loop
-
             az = SpCapturaAuto.ReadExisting.Trim
 
             msn(sib) = az
@@ -104,7 +89,6 @@ Public Class CapturaBoletasPorLotes
         Catch ex As TimeoutException
             returnStr = "Error: Serial Port read timed out."
         Finally
-            ' If com1 IsNot Nothing Then com1.Close()
         End Try
         If returnStr.Contains("INBOUND") Then
             NoTransporte = returnStr.Substring(3, 2)
@@ -124,10 +108,7 @@ Public Class CapturaBoletasPorLotes
             FechaActualizacion = Now
             TipoFlete = "RECALLED"
             ActualizaPesoModuloAutomatico(NoTransporte, IdBoleta, Bruto, Tara, Neto, FechaActualizacion, TipoFlete)
-
         End If
-        ' End While
-        'ConsultaModulos()
     End Sub
     Private Sub propiedadesDgv()
         DgvModulos.Columns("IdPlanta").HeaderText = "ID Planta"
@@ -150,7 +131,7 @@ Public Class CapturaBoletasPorLotes
         DgvModulos.Columns("FlagCancelada").ReadOnly = False
         DgvModulos.Columns("FlagRevisada").ReadOnly = False
     End Sub
-    Private Sub DataGridView1_RowEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs)
+    Private Sub DataGridView1_RowEnter(ByVal sender As Object, ByVal e As DataGridViewCellEventArgs) Handles DgvModulos.CellEnter
         Dim Total, Bruto, Tara As Double
         Dim IndexCell As Integer = IIf(e.RowIndex > 0, e.RowIndex - 1, e.RowIndex)
         Bruto = CDbl(DgvModulos.Rows(IndexCell).Cells("Bruto").Value)
@@ -224,58 +205,34 @@ Public Class CapturaBoletasPorLotes
         End Try
 
     End Sub
-    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsultarToolStripMenuItem.Click
+    Private Sub ConsultarToolStripMenuItem_Click(sender As Object, e As EventArgs)
         ConsultaModulos()
     End Sub
-    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
-        Close()
-        com1.Close()
-    End Sub
     Private Sub BtAutomatico_Click(sender As Object, e As EventArgs) Handles BtAutomatico.Click
-        'If th.ThreadState = Threading.ThreadState.Unstarted Or th.ThreadState = Threading.ThreadState.WaitSleepJoin Or th.ThreadState = Threading.ThreadState.Aborted Or th.ThreadState = Threading.ThreadState.Stopped Then
-
-        ' If th.ThreadState <> Threading.ThreadState.WaitSleepJoin Then hacer()
         If LbStatus.Text = "CAPTURA AUTOMATICA DESACTIVADA" Then
             TiActualizaDgvModulos.Enabled = True
+            CbPuertosSeriales.Enabled = False
             LbStatus.Text = "CAPTURA AUTOMATICA ACTIVADA"
             Setup_Puerto_Serie()
         Else
+            CbPuertosSeriales.Enabled = True
             TiActualizaDgvModulos.Enabled = False
             LbStatus.Text = "CAPTURA AUTOMATICA DESACTIVADA"
             SpCapturaAuto.Close()
         End If
-        '    LbStatus.Text = TiActualizaDgvModulos.Tag.ToString
-
-        'If com1 IsNot Nothing Then
-        '    MsgBox("Puerto Abierto")
-        'Else
-        '    MsgBox("Puerto Cerrado")
-        'End If
-
-        'End If
-    End Sub
-    Private Sub hacer()
-        'Controlamos los estados
-        'If th.ThreadState = Threading.ThreadState.Unstarted Or th.ThreadState = Threading.ThreadState.WaitSleepJoin Or th.ThreadState = Threading.ThreadState.Aborted Or th.ThreadState = Threading.ThreadState.Stopped Then
-        '    th = New Threading.Thread(AddressOf ReceiveSerialData)
-        '    bandera = True
-        '    Salir = False 'indica False para que el bucle pueda seguir
-        '    th.Start() 'Inicia el hilo
-
-        'Else
-        '    Label1.Text = th.ThreadState.ToString 'asigna al label el estado del hilo
-        'End If
     End Sub
     Private Sub TiActualizaDgvModulos_Tick(sender As Object, e As EventArgs) Handles TiActualizaDgvModulos.Tick
         ConsultaModulos()
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        TiActualizaDgvModulos.Start()
+    Private Sub IncidenciasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncidenciasToolStripMenuItem.Click
+        IncidenciasBoletasPorLotes.ShowDialog()
     End Sub
-    Private Sub Button2_Click(sender As Object, e As EventArgs)
-        TiActualizaDgvModulos.Stop()
-    End Sub
-    Private Sub BtAutomatico_Click_1(sender As Object, e As EventArgs)
-        hacer()
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        If TiActualizaDgvModulos.Enabled = Enabled Then
+            MessageBox.Show("No se puede cerrar la ventana con la funcion de captura automatica activada!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            Close()
+        End If
+
     End Sub
 End Class
