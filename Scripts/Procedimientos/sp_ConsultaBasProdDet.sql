@@ -5,6 +5,7 @@ as
 select [IdProduccionDetalle],
        [IdProduccion],
 	   [IdOrdenTrabajo],
+	   IdPlantaOrigen,
 	   [FolioCIA],
        [Tipo],
        [Kilos],

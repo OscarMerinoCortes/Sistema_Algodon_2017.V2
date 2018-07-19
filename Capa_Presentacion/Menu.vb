@@ -123,4 +123,8 @@ Public Class Menu
     Private Sub ClientesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem1.Click
         RepClientes.ShowDialog()
     End Sub
+
+    Private Sub ChequearEtiquetaDePacaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChequearEtiquetaDePacaToolStripMenuItem.Click
+        Etiquetas.ShowDialog()
+    End Sub
 End Class

@@ -491,7 +491,7 @@ Partial Class Menu
         '
         Me.ChequearEtiquetaDePacaToolStripMenuItem.Name = "ChequearEtiquetaDePacaToolStripMenuItem"
         Me.ChequearEtiquetaDePacaToolStripMenuItem.Size = New System.Drawing.Size(303, 22)
-        Me.ChequearEtiquetaDePacaToolStripMenuItem.Text = "Chequear Etiqueta de Paca"
+        Me.ChequearEtiquetaDePacaToolStripMenuItem.Text = "Etiqueta de Paca"
         '
         'LiquidacionesPorRomaneajeToolStripMenuItem
         '

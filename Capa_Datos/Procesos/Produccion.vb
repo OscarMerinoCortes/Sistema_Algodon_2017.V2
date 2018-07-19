@@ -18,7 +18,6 @@ Public Class Produccion
             cmdGuardar.Parameters.Add(New SqlParameter("@Tipo", EntidadProduccion1.Tipo))
             cmdGuardar.Parameters.Add(New SqlParameter("@IdCliente", EntidadProduccion1.IdCliente))
             cmdGuardar.Parameters.Add(New SqlParameter("@IdEstatus", 1))
-
             cmdGuardar.Parameters.Add(New SqlParameter("@TotalHueso", EntidadProduccion1.TotalHueso))
             cmdGuardar.Parameters.Add(New SqlParameter("@Pacas", EntidadProduccion1.Pacas))
             cmdGuardar.Parameters.Add(New SqlParameter("@PlumaPacas", EntidadProduccion1.PlumaPacas))
@@ -30,7 +29,6 @@ Public Class Produccion
             cmdGuardar.Parameters.Add(New SqlParameter("@PorcentajePluma", EntidadProduccion1.PorcentajePluma))
             cmdGuardar.Parameters.Add(New SqlParameter("@PorcentajeSemilla", EntidadProduccion1.PorcentajeSemilla))
             cmdGuardar.Parameters.Add(New SqlParameter("@PorcentajeMerma", EntidadProduccion1.PorcentajeMerma))
-
             cmdGuardar.Parameters.Add(New SqlParameter("@IdUsuarioCreacion", EntidadProduccion1.IdUsuarioCreacion))
             cmdGuardar.Parameters.Add(New SqlParameter("@FechaCreacion", EntidadProduccion1.FechaCreacion))
             cmdGuardar.Parameters.Add(New SqlParameter("@IdUsuarioActualizacion", EntidadProduccion1.IdUsuarioActualizacion))
@@ -58,6 +56,7 @@ Public Class Produccion
             cmdGuardar.Parameters.Add(New SqlParameter("@IdProduccionDetalle", EntidadProduccion1.IdProduccionDetalle))
             cmdGuardar.Parameters.Add(New SqlParameter("@IdProduccion", EntidadProduccion1.IdProduccion))
             cmdGuardar.Parameters.Add(New SqlParameter("@IdOrdenTrabajo", EntidadProduccion1.IdOrdenTrabajo))
+            cmdGuardar.Parameters.Add(New SqlParameter("@IdPlantaOrigen", EntidadProduccion1.IdPlantaOrigen))
             cmdGuardar.Parameters.Add(New SqlParameter("@FolioCIA", EntidadProduccion1.FolioCIA))
             cmdGuardar.Parameters.Add(New SqlParameter("@Tipo", EntidadProduccion1.Tipo))
             cmdGuardar.Parameters.Add(New SqlParameter("@Kilos", EntidadProduccion1.Kilos))
@@ -88,6 +87,28 @@ Public Class Produccion
             cmdGuardar.Parameters.Add(New SqlParameter("@ClavePaqueteHVI", EntidadProduccion1.ClavePaqueteHVI))
             cmdGuardar.Parameters.Add(New SqlParameter("@LargoFibra", EntidadProduccion1.CastigoLargoFibra))
             cmdGuardar.Parameters.Add(New SqlParameter("@ResistenciaFibra", EntidadProduccion1.ResistenciaFibra))
+            cmdGuardar.ExecuteNonQuery()
+            'If EntidadProduccion1.IdProduccion = 0 Then
+            '    EntidadProduccion1.IdProduccion = cmdGuardar.Parameters("@IdProduccion").Value
+            'End If
+        Catch ex As Exception
+        Finally
+            cnn.Close()
+            EntidadProduccion = EntidadProduccion1
+        End Try
+    End Sub
+
+    Public Overridable Sub UpsertEtiqueta(ByRef EntidadProduccion As Capa_Entidad.Produccion)
+        Dim EntidadProduccion1 As New Capa_Entidad.Produccion
+        EntidadProduccion1 = EntidadProduccion
+        Dim cnn As New SqlConnection(conexionPrincipal)
+        Dim cmdGuardar As SqlCommand
+        Try
+            cnn.Open()
+            cmdGuardar = New SqlCommand("sp_ConsultaUltimaEtiqueta", cnn)
+            cmdGuardar.CommandType = CommandType.StoredProcedure
+            cmdGuardar.Parameters.Add(New SqlParameter("@IdPlantaOrigen", EntidadProduccion1.IdPlantaOrigen))
+            cmdGuardar.Parameters.Add(New SqlParameter("@Etiqueta", EntidadProduccion1.FolioCIA))
             cmdGuardar.ExecuteNonQuery()
             'If EntidadProduccion1.IdProduccion = 0 Then
             '    EntidadProduccion1.IdProduccion = cmdGuardar.Parameters("@IdProduccion").Value
@@ -131,6 +152,7 @@ Public Class Produccion
                     sqlcom1.CommandType = CommandType.StoredProcedure
                     sqlcom1.Parameters.Clear()
                     sqlcom1.Parameters.Add(New SqlParameter("@IdProduccion", EntidadProduccion.IdProduccion))
+                    sqlcom1.Parameters.Add(New SqlParameter("@IdPlantaOrigen", EntidadProduccion.IdPlantaOrigen))
                     sqldat1.Fill(EntidadProduccion1.TablaConsulta)
                 Case Capa_Operacion.Configuracion.Consulta.ConsultaPorId
                     sqlcom1 = New SqlCommand("sp_ConsultaProdPorPorOrden", cnn)
@@ -145,6 +167,21 @@ Public Class Produccion
                     sqlcom1.CommandType = CommandType.StoredProcedure
                     sqlcom1.Parameters.Clear()
                     sqlcom1.Parameters.Add(New SqlParameter("@IdOrdenTrabajo", EntidadProduccion.IdOrdenTrabajo))
+                    sqldat1.Fill(EntidadProduccion1.TablaConsulta)
+                Case Capa_Operacion.Configuracion.Consulta.ConsultaPacaExistente
+                    sqlcom1 = New SqlCommand("sp_ConsultaPacaExistente", cnn)
+                    sqldat1 = New SqlDataAdapter(sqlcom1)
+                    sqlcom1.CommandType = CommandType.StoredProcedure
+                    sqlcom1.Parameters.Clear()
+                    sqlcom1.Parameters.Add(New SqlParameter("@FolioCIA", EntidadProduccion.FolioCIA))
+                    sqlcom1.Parameters.Add(New SqlParameter("@IdPlantaOrigen", EntidadProduccion.IdPlantaOrigen))
+                    sqldat1.Fill(EntidadProduccion1.TablaConsulta)
+                Case Capa_Operacion.Configuracion.Consulta.ConsultaSecuencia
+                    sqlcom1 = New SqlCommand("sp_ConsultaSecuencia", cnn)
+                    sqldat1 = New SqlDataAdapter(sqlcom1)
+                    sqlcom1.CommandType = CommandType.StoredProcedure
+                    sqlcom1.Parameters.Clear()
+                    sqlcom1.Parameters.Add(New SqlParameter("@IdPlantaOrigen", EntidadProduccion.IdPlantaOrigen))
                     sqldat1.Fill(EntidadProduccion1.TablaConsulta)
             End Select
         Catch ex As Exception

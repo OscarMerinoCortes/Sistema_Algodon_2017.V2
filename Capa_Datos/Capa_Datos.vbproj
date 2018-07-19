@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="Catalogos\RegimenHidrico.vb" />
     <Compile Include="Procesos\CapturaBoletasPorLotes.vb" />
+    <Compile Include="Procesos\Etiquetas.vb" />
     <Compile Include="Procesos\LiquidacionesPorRomaneaje.vb" />
     <Compile Include="Procesos\OrdenTrabajo.vb" />
     <Compile Include="Procesos\Produccion.vb" />

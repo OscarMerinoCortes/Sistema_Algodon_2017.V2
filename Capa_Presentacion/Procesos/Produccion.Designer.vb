@@ -44,39 +44,14 @@ Partial Class Produccion
         Me.TbNombreProductor = New System.Windows.Forms.TextBox()
         Me.TbPorCuentaDe = New System.Windows.Forms.TextBox()
         Me.TbIdProductor = New System.Windows.Forms.TextBox()
-        Me.TbTotalHueso = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TbPacas = New System.Windows.Forms.TextBox()
-        Me.TbPlumaPacas = New System.Windows.Forms.TextBox()
-        Me.TbBorregosPacas = New System.Windows.Forms.TextBox()
-        Me.TbPluma = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TbSemilla = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.TbMerma = New System.Windows.Forms.TextBox()
-        Me.TbBorra = New System.Windows.Forms.TextBox()
-        Me.TbPorcPluma = New System.Windows.Forms.TextBox()
-        Me.TbPorcSemilla = New System.Windows.Forms.TextBox()
-        Me.TbPorcMerma = New System.Windows.Forms.TextBox()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.GbResumen = New System.Windows.Forms.GroupBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.BtAbrirProduccion = New System.Windows.Forms.Button()
         Me.BtCerrarProduccion = New System.Windows.Forms.Button()
         Me.TbFolioCIA = New System.Windows.Forms.TextBox()
-        Me.TbFolioCliente = New System.Windows.Forms.TextBox()
         Me.TbKilos = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.GbDatosProduccion = New System.Windows.Forms.GroupBox()
@@ -101,7 +76,6 @@ Partial Class Produccion
         Me.DgvPacas = New System.Windows.Forms.DataGridView()
         Me.MSMenu.SuspendLayout()
         Me.GbDatosGenerales.SuspendLayout()
-        Me.GbResumen.SuspendLayout()
         Me.GbDatosProduccion.SuspendLayout()
         Me.GbModulos.SuspendLayout()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -186,7 +160,7 @@ Partial Class Produccion
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(76, 13)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Planta Elabora"
+        Me.Label3.Text = "Planta Destino"
         '
         'DtpFechaProduccion
         '
@@ -307,214 +281,6 @@ Partial Class Produccion
         Me.TbIdProductor.Size = New System.Drawing.Size(56, 20)
         Me.TbIdProductor.TabIndex = 15
         '
-        'TbTotalHueso
-        '
-        Me.TbTotalHueso.Location = New System.Drawing.Point(97, 19)
-        Me.TbTotalHueso.Name = "TbTotalHueso"
-        Me.TbTotalHueso.Size = New System.Drawing.Size(100, 20)
-        Me.TbTotalHueso.TabIndex = 16
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(9, 22)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(65, 13)
-        Me.Label8.TabIndex = 17
-        Me.Label8.Text = "Total Hueso"
-        '
-        'TbPacas
-        '
-        Me.TbPacas.Location = New System.Drawing.Point(97, 45)
-        Me.TbPacas.Name = "TbPacas"
-        Me.TbPacas.Size = New System.Drawing.Size(100, 20)
-        Me.TbPacas.TabIndex = 18
-        '
-        'TbPlumaPacas
-        '
-        Me.TbPlumaPacas.Location = New System.Drawing.Point(97, 71)
-        Me.TbPlumaPacas.Name = "TbPlumaPacas"
-        Me.TbPlumaPacas.Size = New System.Drawing.Size(100, 20)
-        Me.TbPlumaPacas.TabIndex = 19
-        '
-        'TbBorregosPacas
-        '
-        Me.TbBorregosPacas.Location = New System.Drawing.Point(97, 97)
-        Me.TbBorregosPacas.Name = "TbBorregosPacas"
-        Me.TbBorregosPacas.Size = New System.Drawing.Size(100, 20)
-        Me.TbBorregosPacas.TabIndex = 20
-        '
-        'TbPluma
-        '
-        Me.TbPluma.Location = New System.Drawing.Point(97, 123)
-        Me.TbPluma.Name = "TbPluma"
-        Me.TbPluma.Size = New System.Drawing.Size(100, 20)
-        Me.TbPluma.TabIndex = 21
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(9, 48)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(37, 13)
-        Me.Label9.TabIndex = 22
-        Me.Label9.Text = "Pacas"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(9, 74)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(75, 13)
-        Me.Label10.TabIndex = 23
-        Me.Label10.Text = "Pluma (Pacas)"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(9, 100)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(87, 13)
-        Me.Label11.TabIndex = 24
-        Me.Label11.Text = "Pluma (Borregos)"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(9, 126)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(36, 13)
-        Me.Label12.TabIndex = 25
-        Me.Label12.Text = "Pluma"
-        '
-        'TbSemilla
-        '
-        Me.TbSemilla.Location = New System.Drawing.Point(97, 149)
-        Me.TbSemilla.Name = "TbSemilla"
-        Me.TbSemilla.Size = New System.Drawing.Size(100, 20)
-        Me.TbSemilla.TabIndex = 26
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(9, 152)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(40, 13)
-        Me.Label13.TabIndex = 27
-        Me.Label13.Text = "Semilla"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(10, 178)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(39, 13)
-        Me.Label14.TabIndex = 28
-        Me.Label14.Text = "Merma"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(203, 48)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(32, 13)
-        Me.Label15.TabIndex = 29
-        Me.Label15.Text = "Borra"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(220, 126)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(15, 13)
-        Me.Label16.TabIndex = 30
-        Me.Label16.Text = "%"
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(220, 152)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(15, 13)
-        Me.Label17.TabIndex = 31
-        Me.Label17.Text = "%"
-        '
-        'TbMerma
-        '
-        Me.TbMerma.Location = New System.Drawing.Point(97, 175)
-        Me.TbMerma.Name = "TbMerma"
-        Me.TbMerma.Size = New System.Drawing.Size(100, 20)
-        Me.TbMerma.TabIndex = 32
-        '
-        'TbBorra
-        '
-        Me.TbBorra.Location = New System.Drawing.Point(241, 45)
-        Me.TbBorra.Name = "TbBorra"
-        Me.TbBorra.Size = New System.Drawing.Size(100, 20)
-        Me.TbBorra.TabIndex = 33
-        '
-        'TbPorcPluma
-        '
-        Me.TbPorcPluma.Location = New System.Drawing.Point(241, 123)
-        Me.TbPorcPluma.Name = "TbPorcPluma"
-        Me.TbPorcPluma.Size = New System.Drawing.Size(100, 20)
-        Me.TbPorcPluma.TabIndex = 34
-        '
-        'TbPorcSemilla
-        '
-        Me.TbPorcSemilla.Location = New System.Drawing.Point(241, 149)
-        Me.TbPorcSemilla.Name = "TbPorcSemilla"
-        Me.TbPorcSemilla.Size = New System.Drawing.Size(100, 20)
-        Me.TbPorcSemilla.TabIndex = 35
-        '
-        'TbPorcMerma
-        '
-        Me.TbPorcMerma.Location = New System.Drawing.Point(241, 175)
-        Me.TbPorcMerma.Name = "TbPorcMerma"
-        Me.TbPorcMerma.Size = New System.Drawing.Size(100, 20)
-        Me.TbPorcMerma.TabIndex = 36
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(220, 181)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(15, 13)
-        Me.Label18.TabIndex = 37
-        Me.Label18.Text = "%"
-        '
-        'GbResumen
-        '
-        Me.GbResumen.Controls.Add(Me.TbBorra)
-        Me.GbResumen.Controls.Add(Me.Label18)
-        Me.GbResumen.Controls.Add(Me.TbTotalHueso)
-        Me.GbResumen.Controls.Add(Me.TbPorcMerma)
-        Me.GbResumen.Controls.Add(Me.Label8)
-        Me.GbResumen.Controls.Add(Me.TbPorcSemilla)
-        Me.GbResumen.Controls.Add(Me.TbPacas)
-        Me.GbResumen.Controls.Add(Me.TbPorcPluma)
-        Me.GbResumen.Controls.Add(Me.TbPlumaPacas)
-        Me.GbResumen.Controls.Add(Me.TbBorregosPacas)
-        Me.GbResumen.Controls.Add(Me.TbMerma)
-        Me.GbResumen.Controls.Add(Me.TbPluma)
-        Me.GbResumen.Controls.Add(Me.Label17)
-        Me.GbResumen.Controls.Add(Me.Label9)
-        Me.GbResumen.Controls.Add(Me.Label16)
-        Me.GbResumen.Controls.Add(Me.Label10)
-        Me.GbResumen.Controls.Add(Me.Label15)
-        Me.GbResumen.Controls.Add(Me.Label11)
-        Me.GbResumen.Controls.Add(Me.Label14)
-        Me.GbResumen.Controls.Add(Me.Label12)
-        Me.GbResumen.Controls.Add(Me.Label13)
-        Me.GbResumen.Controls.Add(Me.TbSemilla)
-        Me.GbResumen.Enabled = False
-        Me.GbResumen.Location = New System.Drawing.Point(442, 30)
-        Me.GbResumen.Name = "GbResumen"
-        Me.GbResumen.Size = New System.Drawing.Size(353, 205)
-        Me.GbResumen.TabIndex = 38
-        Me.GbResumen.TabStop = False
-        Me.GbResumen.Text = "Resumen"
-        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -563,51 +329,37 @@ Partial Class Produccion
         'TbFolioCIA
         '
         Me.TbFolioCIA.Enabled = False
-        Me.TbFolioCIA.Location = New System.Drawing.Point(115, 126)
+        Me.TbFolioCIA.Location = New System.Drawing.Point(115, 145)
         Me.TbFolioCIA.Name = "TbFolioCIA"
         Me.TbFolioCIA.Size = New System.Drawing.Size(121, 20)
         Me.TbFolioCIA.TabIndex = 47
         '
-        'TbFolioCliente
-        '
-        Me.TbFolioCliente.Enabled = False
-        Me.TbFolioCliente.Location = New System.Drawing.Point(115, 152)
-        Me.TbFolioCliente.Name = "TbFolioCliente"
-        Me.TbFolioCliente.Size = New System.Drawing.Size(121, 20)
-        Me.TbFolioCliente.TabIndex = 48
-        '
         'TbKilos
         '
         Me.TbKilos.Enabled = False
-        Me.TbKilos.Location = New System.Drawing.Point(115, 178)
+        Me.TbKilos.Location = New System.Drawing.Point(115, 171)
+        Me.TbKilos.Multiline = True
         Me.TbKilos.Name = "TbKilos"
-        Me.TbKilos.Size = New System.Drawing.Size(121, 20)
+        Me.TbKilos.Size = New System.Drawing.Size(121, 27)
         Me.TbKilos.TabIndex = 49
         '
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(9, 129)
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(13, 141)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(49, 13)
+        Me.Label22.Size = New System.Drawing.Size(96, 24)
         Me.Label22.TabIndex = 50
         Me.Label22.Text = "Folio CIA"
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(9, 155)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(64, 13)
-        Me.Label23.TabIndex = 51
-        Me.Label23.Text = "Folio Cliente"
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(9, 181)
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(54, 171)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(29, 13)
+        Me.Label24.Size = New System.Drawing.Size(55, 24)
         Me.Label24.TabIndex = 52
         Me.Label24.Text = "Kilos"
         '
@@ -627,17 +379,15 @@ Partial Class Produccion
         Me.GbDatosProduccion.Controls.Add(Me.CbTurno)
         Me.GbDatosProduccion.Controls.Add(Me.Button3)
         Me.GbDatosProduccion.Controls.Add(Me.Label24)
-        Me.GbDatosProduccion.Controls.Add(Me.Label23)
         Me.GbDatosProduccion.Controls.Add(Me.Label19)
         Me.GbDatosProduccion.Controls.Add(Me.Label22)
         Me.GbDatosProduccion.Controls.Add(Me.Label20)
         Me.GbDatosProduccion.Controls.Add(Me.TbKilos)
         Me.GbDatosProduccion.Controls.Add(Me.Label21)
-        Me.GbDatosProduccion.Controls.Add(Me.TbFolioCliente)
         Me.GbDatosProduccion.Controls.Add(Me.BtAbrirProduccion)
         Me.GbDatosProduccion.Controls.Add(Me.TbFolioCIA)
         Me.GbDatosProduccion.Controls.Add(Me.BtCerrarProduccion)
-        Me.GbDatosProduccion.Location = New System.Drawing.Point(801, 30)
+        Me.GbDatosProduccion.Location = New System.Drawing.Point(442, 30)
         Me.GbDatosProduccion.Name = "GbDatosProduccion"
         Me.GbDatosProduccion.Size = New System.Drawing.Size(256, 205)
         Me.GbDatosProduccion.TabIndex = 54
@@ -843,7 +593,6 @@ Partial Class Produccion
         Me.Controls.Add(Me.GbCapturaAutomatica)
         Me.Controls.Add(Me.GbModulos)
         Me.Controls.Add(Me.GbDatosProduccion)
-        Me.Controls.Add(Me.GbResumen)
         Me.Controls.Add(Me.GbDatosGenerales)
         Me.Controls.Add(Me.MSMenu)
         Me.MainMenuStrip = Me.MSMenu
@@ -854,8 +603,6 @@ Partial Class Produccion
         Me.MSMenu.PerformLayout()
         Me.GbDatosGenerales.ResumeLayout(False)
         Me.GbDatosGenerales.PerformLayout()
-        Me.GbResumen.ResumeLayout(False)
-        Me.GbResumen.PerformLayout()
         Me.GbDatosProduccion.ResumeLayout(False)
         Me.GbDatosProduccion.PerformLayout()
         Me.GbModulos.ResumeLayout(False)
@@ -886,39 +633,14 @@ Partial Class Produccion
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents GbDatosGenerales As GroupBox
-    Friend WithEvents TbTotalHueso As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents TbPacas As TextBox
-    Friend WithEvents TbPlumaPacas As TextBox
-    Friend WithEvents TbBorregosPacas As TextBox
-    Friend WithEvents TbPluma As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents TbSemilla As TextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label16 As Label
-    Friend WithEvents Label17 As Label
-    Friend WithEvents TbMerma As TextBox
-    Friend WithEvents TbBorra As TextBox
-    Friend WithEvents TbPorcPluma As TextBox
-    Friend WithEvents TbPorcSemilla As TextBox
-    Friend WithEvents TbPorcMerma As TextBox
-    Friend WithEvents Label18 As Label
-    Friend WithEvents GbResumen As GroupBox
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents BtAbrirProduccion As Button
     Friend WithEvents BtCerrarProduccion As Button
     Friend WithEvents TbFolioCIA As TextBox
-    Friend WithEvents TbFolioCliente As TextBox
     Friend WithEvents TbKilos As TextBox
     Friend WithEvents Label22 As Label
-    Friend WithEvents Label23 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents GbDatosProduccion As GroupBox
