@@ -2,6 +2,7 @@ create table ProduccionDetalle (
 IdProduccionDetalle int not null identity(1,1) primary key,
 IdProduccion int not null,
 IdOrdenTrabajo int not null,
+IdPlantaOrigen int not null,
 FolioCIA int not null,
 Tipo varchar(15),
 Kilos float not null,

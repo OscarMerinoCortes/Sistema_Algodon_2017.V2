@@ -89,8 +89,10 @@ Namespace Configuracion
         ConsultaModulosLiquidacion = 25
         ConsultaPaca = 26
         ConsultaModoCompra = 27
-        ConsultaModulosEntradas = 28
-        ConsultaModulosIncidencias = 29
+        ConsultaPacaExistente = 28
+        ConsultaSecuencia = 29
+        ConsultaModulosEntradas = 30
+        ConsultaModulosIncidencias = 31
     End Enum
     Public Enum LlenaCombo
         LlenaComboCliente = 1
