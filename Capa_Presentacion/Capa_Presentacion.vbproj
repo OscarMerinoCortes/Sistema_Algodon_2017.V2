@@ -423,6 +423,12 @@
     <Compile Include="Procesos\CapturaBoletasPorLotes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Procesos\IncidenciasBoletasPorLotes.Designer.vb">
+      <DependentUpon>IncidenciasBoletasPorLotes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Procesos\IncidenciasBoletasPorLotes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Procesos\OrdenTrabajo.Designer.vb">
       <DependentUpon>OrdenTrabajo.vb</DependentUpon>
     </Compile>
@@ -659,6 +665,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\CapturaBoletasPorLotes.resx">
       <DependentUpon>CapturaBoletasPorLotes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Procesos\IncidenciasBoletasPorLotes.resx">
+      <DependentUpon>IncidenciasBoletasPorLotes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Procesos\OrdenTrabajo.resx">
       <DependentUpon>OrdenTrabajo.vb</DependentUpon>
