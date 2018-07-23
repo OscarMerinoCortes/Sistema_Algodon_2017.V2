@@ -74,6 +74,11 @@ Partial Class Produccion
         Me.BtSiguiente = New System.Windows.Forms.Button()
         Me.BtAnterior = New System.Windows.Forms.Button()
         Me.DgvPacas = New System.Windows.Forms.DataGridView()
+        Me.GbTipoCaptura = New System.Windows.Forms.GroupBox()
+        Me.RbManual = New System.Windows.Forms.RadioButton()
+        Me.RbAutomatico = New System.Windows.Forms.RadioButton()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TbFolioInicial = New System.Windows.Forms.TextBox()
         Me.MSMenu.SuspendLayout()
         Me.GbDatosGenerales.SuspendLayout()
         Me.GbDatosProduccion.SuspendLayout()
@@ -82,6 +87,7 @@ Partial Class Produccion
         Me.GbCapturaAutomatica.SuspendLayout()
         Me.GbLotes.SuspendLayout()
         CType(Me.DgvPacas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GbTipoCaptura.SuspendLayout()
         Me.SuspendLayout()
         '
         'MSMenu
@@ -328,7 +334,6 @@ Partial Class Produccion
         '
         'TbFolioCIA
         '
-        Me.TbFolioCIA.Enabled = False
         Me.TbFolioCIA.Location = New System.Drawing.Point(115, 145)
         Me.TbFolioCIA.Name = "TbFolioCIA"
         Me.TbFolioCIA.Size = New System.Drawing.Size(121, 20)
@@ -336,7 +341,6 @@ Partial Class Produccion
         '
         'TbKilos
         '
-        Me.TbKilos.Enabled = False
         Me.TbKilos.Location = New System.Drawing.Point(115, 171)
         Me.TbKilos.Multiline = True
         Me.TbKilos.Name = "TbKilos"
@@ -583,11 +587,67 @@ Partial Class Produccion
         Me.DgvPacas.Size = New System.Drawing.Size(724, 409)
         Me.DgvPacas.TabIndex = 64
         '
+        'GbTipoCaptura
+        '
+        Me.GbTipoCaptura.Controls.Add(Me.RbAutomatico)
+        Me.GbTipoCaptura.Controls.Add(Me.RbManual)
+        Me.GbTipoCaptura.Enabled = False
+        Me.GbTipoCaptura.Location = New System.Drawing.Point(704, 30)
+        Me.GbTipoCaptura.Name = "GbTipoCaptura"
+        Me.GbTipoCaptura.Size = New System.Drawing.Size(360, 92)
+        Me.GbTipoCaptura.TabIndex = 65
+        Me.GbTipoCaptura.TabStop = False
+        Me.GbTipoCaptura.Text = "Tipo Captura"
+        '
+        'RbManual
+        '
+        Me.RbManual.AutoSize = True
+        Me.RbManual.Checked = True
+        Me.RbManual.Location = New System.Drawing.Point(6, 22)
+        Me.RbManual.Name = "RbManual"
+        Me.RbManual.Size = New System.Drawing.Size(60, 17)
+        Me.RbManual.TabIndex = 0
+        Me.RbManual.TabStop = True
+        Me.RbManual.Text = "Manual"
+        Me.RbManual.UseVisualStyleBackColor = True
+        '
+        'RbAutomatico
+        '
+        Me.RbAutomatico.AutoSize = True
+        Me.RbAutomatico.Location = New System.Drawing.Point(6, 48)
+        Me.RbAutomatico.Name = "RbAutomatico"
+        Me.RbAutomatico.Size = New System.Drawing.Size(78, 17)
+        Me.RbAutomatico.TabIndex = 66
+        Me.RbAutomatico.Text = "Automatico"
+        Me.RbAutomatico.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(706, 132)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(117, 24)
+        Me.Label8.TabIndex = 57
+        Me.Label8.Text = "Folio Inicial"
+        '
+        'TbFolioInicial
+        '
+        Me.TbFolioInicial.Enabled = False
+        Me.TbFolioInicial.Location = New System.Drawing.Point(829, 129)
+        Me.TbFolioInicial.Multiline = True
+        Me.TbFolioInicial.Name = "TbFolioInicial"
+        Me.TbFolioInicial.Size = New System.Drawing.Size(235, 27)
+        Me.TbFolioInicial.TabIndex = 57
+        '
         'Produccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1076, 792)
+        Me.Controls.Add(Me.TbFolioInicial)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.GbTipoCaptura)
         Me.Controls.Add(Me.DgvPacas)
         Me.Controls.Add(Me.GbLotes)
         Me.Controls.Add(Me.GbCapturaAutomatica)
@@ -611,6 +671,8 @@ Partial Class Produccion
         Me.GbCapturaAutomatica.ResumeLayout(False)
         Me.GbLotes.ResumeLayout(False)
         CType(Me.DgvPacas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GbTipoCaptura.ResumeLayout(False)
+        Me.GbTipoCaptura.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -668,4 +730,9 @@ Partial Class Produccion
     Friend WithEvents Label26 As Label
     Friend WithEvents DgvPacas As DataGridView
     Friend WithEvents CbTipoProducto As ComboBox
+    Friend WithEvents GbTipoCaptura As GroupBox
+    Friend WithEvents RbAutomatico As RadioButton
+    Friend WithEvents RbManual As RadioButton
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TbFolioInicial As TextBox
 End Class
