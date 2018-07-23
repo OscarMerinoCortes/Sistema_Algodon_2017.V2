@@ -5,6 +5,7 @@ Public Class Etiquetas
     Dim IdPlantaOrigen As Integer
     Dim UltimaSecuencia As Integer
     Private Sub Etiquetas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LlenarCombos()
         Limpiar()
     End Sub
 
@@ -24,26 +25,28 @@ Public Class Etiquetas
 
     Private Sub LlenarCombos()
         '---Planta--
-        'Dim EntidadEtiquetas As New Capa_Entidad.Etiquetas
-        'Dim NegocioEtiquetas As New Capa_Negocio.Etiquetas
-        'Dim Tabla As New DataTable
-        'EntidadEtiquetas.Consulta = Consulta.ConsultaExterna
-        'NegocioEtiquetas.Consultar(EntidadEtiquetas)
-        'Tabla = EntidadEtiquetas.TablaConsulta
-        'CbPlanta.DataSource = Tabla
-        'CbPlanta.ValueMember = "IdPlanta"
-        'CbPlanta.DisplayMember = "Descripcion"
-        'CbPlanta.SelectedValue = 1
+        Dim EntidadEtiquetas As New Capa_Entidad.Etiquetas
+        Dim NegocioEtiquetas As New Capa_Negocio.Etiquetas
+        Dim Tabla As New DataTable
+        EntidadEtiquetas.Consulta = Consulta.ConsultaExterna
+        NegocioEtiquetas.Consultar(EntidadEtiquetas)
+        Tabla = EntidadEtiquetas.TablaConsulta
+        CbPlanta.DataSource = Tabla
+        CbPlanta.ValueMember = "IdPlanta"
+        CbPlanta.DisplayMember = "Descripcion"
+        CbPlanta.SelectedValue = 1
     End Sub
 
     Private Sub Limpiar()
+        TbFolioInicial.Text = ""
+        TbFolioInicial.Enabled = False
         TbIdProduccion.Enabled = True
         TbIdProduccion.Text = ""
         TbEtiquetaActual.Text = ""
         TbEtiquetaActual.Enabled = False
         TbIdProduccionInfo.Text = ""
         TbOrdenTrabajoInfo.Text = ""
-        TbIdPlantaInfo.Text = ""
+        CbPlanta.SelectedIndex = -1
     End Sub
 
     Private Sub TbEtiquetaActual_Enter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TbEtiquetaActual.KeyDown
@@ -189,6 +192,14 @@ Public Class Etiquetas
     Private Sub TbIdProduccion_Enter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TbIdProduccion.KeyDown
         Select Case e.KeyData
             Case Keys.Enter
+                TbIdProduccion.Enabled = False
+                TbFolioInicial.Enabled = True
+                TbFolioInicial.Focus()
+        End Select
+    End Sub
+    Private Sub TbFolioInicial_Enter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TbFolioInicial.KeyDown
+        Select Case e.KeyData
+            Case Keys.Enter
                 Dim EntidadEtiquetas As New Capa_Entidad.Etiquetas
                 Dim NegocioEtiquetas As New Capa_Negocio.Etiquetas
                 Dim Tabla As New DataTable
@@ -202,15 +213,15 @@ Public Class Etiquetas
                     IdPlantaOrigen = Tabla.Rows(0).Item("IdPlantaOrigen")
                     TbIdProduccionInfo.Text = IdProduccion
                     TbOrdenTrabajoInfo.Text = IdOrdenTrabajo
-                    TbIdPlantaInfo.Text = IdPlantaOrigen
+                    CbPlanta.SelectedValue = IdPlantaOrigen
+                    TbFolioInicial.Enabled = False
                     TbEtiquetaActual.Enabled = True
-                    TbIdProduccion.Enabled = False
+                    TbEtiquetaActual.Focus()
                 Else
                     MsgBox("No hay pacas registradas en producciòn", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
                 End If
         End Select
     End Sub
-
     Private Function ConsultarPacaExistente(ByVal FolioCIA As Integer, ByVal IdPlantaElabora As Integer)
         Dim EntidadProduccion As New Capa_Entidad.Produccion
         Dim NegocioProduccion As New Capa_Negocio.Produccion
