@@ -9,6 +9,7 @@ Public Class Produccion
     Public IdCliente As Integer
     Public Fecha As Date
     Public IdEstatus As Integer
+    Public FolioInicial As Integer
 
     Public TotalHueso As Double
     Public Pacas As Integer

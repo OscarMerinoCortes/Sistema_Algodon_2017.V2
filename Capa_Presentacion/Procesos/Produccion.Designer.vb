@@ -53,9 +53,11 @@ Partial Class Produccion
         Me.TbKilos = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BtActualizarFolio = New System.Windows.Forms.Button()
         Me.GbDatosProduccion = New System.Windows.Forms.GroupBox()
+        Me.TbFolioInicial = New System.Windows.Forms.TextBox()
         Me.CbTipoProducto = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.CbOperador = New System.Windows.Forms.ComboBox()
         Me.CbTurno = New System.Windows.Forms.ComboBox()
         Me.GbModulos = New System.Windows.Forms.GroupBox()
@@ -75,10 +77,8 @@ Partial Class Produccion
         Me.BtAnterior = New System.Windows.Forms.Button()
         Me.DgvPacas = New System.Windows.Forms.DataGridView()
         Me.GbTipoCaptura = New System.Windows.Forms.GroupBox()
-        Me.RbManual = New System.Windows.Forms.RadioButton()
         Me.RbAutomatico = New System.Windows.Forms.RadioButton()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TbFolioInicial = New System.Windows.Forms.TextBox()
+        Me.RbManual = New System.Windows.Forms.RadioButton()
         Me.MSMenu.SuspendLayout()
         Me.GbDatosGenerales.SuspendLayout()
         Me.GbDatosProduccion.SuspendLayout()
@@ -316,7 +316,7 @@ Partial Class Produccion
         '
         'BtAbrirProduccion
         '
-        Me.BtAbrirProduccion.Location = New System.Drawing.Point(12, 97)
+        Me.BtAbrirProduccion.Location = New System.Drawing.Point(12, 169)
         Me.BtAbrirProduccion.Name = "BtAbrirProduccion"
         Me.BtAbrirProduccion.Size = New System.Drawing.Size(95, 23)
         Me.BtAbrirProduccion.TabIndex = 45
@@ -325,7 +325,7 @@ Partial Class Produccion
         '
         'BtCerrarProduccion
         '
-        Me.BtCerrarProduccion.Location = New System.Drawing.Point(115, 97)
+        Me.BtCerrarProduccion.Location = New System.Drawing.Point(115, 169)
         Me.BtCerrarProduccion.Name = "BtCerrarProduccion"
         Me.BtCerrarProduccion.Size = New System.Drawing.Size(100, 23)
         Me.BtCerrarProduccion.TabIndex = 46
@@ -334,14 +334,14 @@ Partial Class Produccion
         '
         'TbFolioCIA
         '
-        Me.TbFolioCIA.Location = New System.Drawing.Point(115, 145)
+        Me.TbFolioCIA.Location = New System.Drawing.Point(807, 134)
         Me.TbFolioCIA.Name = "TbFolioCIA"
         Me.TbFolioCIA.Size = New System.Drawing.Size(121, 20)
         Me.TbFolioCIA.TabIndex = 47
         '
         'TbKilos
         '
-        Me.TbKilos.Location = New System.Drawing.Point(115, 171)
+        Me.TbKilos.Location = New System.Drawing.Point(807, 160)
         Me.TbKilos.Multiline = True
         Me.TbKilos.Name = "TbKilos"
         Me.TbKilos.Size = New System.Drawing.Size(121, 27)
@@ -351,7 +351,7 @@ Partial Class Produccion
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(13, 141)
+        Me.Label22.Location = New System.Drawing.Point(705, 130)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(96, 24)
         Me.Label22.TabIndex = 50
@@ -361,35 +361,33 @@ Partial Class Produccion
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(54, 171)
+        Me.Label24.Location = New System.Drawing.Point(746, 160)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(55, 24)
         Me.Label24.TabIndex = 52
         Me.Label24.Text = "Kilos"
         '
-        'Button3
+        'BtActualizarFolio
         '
-        Me.Button3.Location = New System.Drawing.Point(221, 97)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(25, 23)
-        Me.Button3.TabIndex = 53
-        Me.Button3.Text = "..."
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.BtActualizarFolio.Location = New System.Drawing.Point(186, 128)
+        Me.BtActualizarFolio.Name = "BtActualizarFolio"
+        Me.BtActualizarFolio.Size = New System.Drawing.Size(64, 23)
+        Me.BtActualizarFolio.TabIndex = 53
+        Me.BtActualizarFolio.Text = "Actualizar"
+        Me.BtActualizarFolio.UseVisualStyleBackColor = True
         '
         'GbDatosProduccion
         '
+        Me.GbDatosProduccion.Controls.Add(Me.TbFolioInicial)
         Me.GbDatosProduccion.Controls.Add(Me.CbTipoProducto)
+        Me.GbDatosProduccion.Controls.Add(Me.Label8)
         Me.GbDatosProduccion.Controls.Add(Me.CbOperador)
         Me.GbDatosProduccion.Controls.Add(Me.CbTurno)
-        Me.GbDatosProduccion.Controls.Add(Me.Button3)
-        Me.GbDatosProduccion.Controls.Add(Me.Label24)
+        Me.GbDatosProduccion.Controls.Add(Me.BtActualizarFolio)
         Me.GbDatosProduccion.Controls.Add(Me.Label19)
-        Me.GbDatosProduccion.Controls.Add(Me.Label22)
         Me.GbDatosProduccion.Controls.Add(Me.Label20)
-        Me.GbDatosProduccion.Controls.Add(Me.TbKilos)
         Me.GbDatosProduccion.Controls.Add(Me.Label21)
         Me.GbDatosProduccion.Controls.Add(Me.BtAbrirProduccion)
-        Me.GbDatosProduccion.Controls.Add(Me.TbFolioCIA)
         Me.GbDatosProduccion.Controls.Add(Me.BtCerrarProduccion)
         Me.GbDatosProduccion.Location = New System.Drawing.Point(442, 30)
         Me.GbDatosProduccion.Name = "GbDatosProduccion"
@@ -397,6 +395,14 @@ Partial Class Produccion
         Me.GbDatosProduccion.TabIndex = 54
         Me.GbDatosProduccion.TabStop = False
         Me.GbDatosProduccion.Text = "Datos de Produccion"
+        '
+        'TbFolioInicial
+        '
+        Me.TbFolioInicial.Location = New System.Drawing.Point(6, 125)
+        Me.TbFolioInicial.Multiline = True
+        Me.TbFolioInicial.Name = "TbFolioInicial"
+        Me.TbFolioInicial.Size = New System.Drawing.Size(174, 27)
+        Me.TbFolioInicial.TabIndex = 57
         '
         'CbTipoProducto
         '
@@ -406,6 +412,16 @@ Partial Class Produccion
         Me.CbTipoProducto.Name = "CbTipoProducto"
         Me.CbTipoProducto.Size = New System.Drawing.Size(121, 21)
         Me.CbTipoProducto.TabIndex = 56
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(19, 99)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(117, 24)
+        Me.Label8.TabIndex = 57
+        Me.Label8.Text = "Folio Inicial"
         '
         'CbOperador
         '
@@ -599,6 +615,16 @@ Partial Class Produccion
         Me.GbTipoCaptura.TabStop = False
         Me.GbTipoCaptura.Text = "Tipo Captura"
         '
+        'RbAutomatico
+        '
+        Me.RbAutomatico.AutoSize = True
+        Me.RbAutomatico.Location = New System.Drawing.Point(6, 48)
+        Me.RbAutomatico.Name = "RbAutomatico"
+        Me.RbAutomatico.Size = New System.Drawing.Size(78, 17)
+        Me.RbAutomatico.TabIndex = 66
+        Me.RbAutomatico.Text = "Automatico"
+        Me.RbAutomatico.UseVisualStyleBackColor = True
+        '
         'RbManual
         '
         Me.RbManual.AutoSize = True
@@ -611,50 +637,23 @@ Partial Class Produccion
         Me.RbManual.Text = "Manual"
         Me.RbManual.UseVisualStyleBackColor = True
         '
-        'RbAutomatico
-        '
-        Me.RbAutomatico.AutoSize = True
-        Me.RbAutomatico.Location = New System.Drawing.Point(6, 48)
-        Me.RbAutomatico.Name = "RbAutomatico"
-        Me.RbAutomatico.Size = New System.Drawing.Size(78, 17)
-        Me.RbAutomatico.TabIndex = 66
-        Me.RbAutomatico.Text = "Automatico"
-        Me.RbAutomatico.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(706, 132)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(117, 24)
-        Me.Label8.TabIndex = 57
-        Me.Label8.Text = "Folio Inicial"
-        '
-        'TbFolioInicial
-        '
-        Me.TbFolioInicial.Enabled = False
-        Me.TbFolioInicial.Location = New System.Drawing.Point(829, 129)
-        Me.TbFolioInicial.Multiline = True
-        Me.TbFolioInicial.Name = "TbFolioInicial"
-        Me.TbFolioInicial.Size = New System.Drawing.Size(235, 27)
-        Me.TbFolioInicial.TabIndex = 57
-        '
         'Produccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1076, 792)
-        Me.Controls.Add(Me.TbFolioInicial)
-        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.GbTipoCaptura)
         Me.Controls.Add(Me.DgvPacas)
+        Me.Controls.Add(Me.Label24)
         Me.Controls.Add(Me.GbLotes)
         Me.Controls.Add(Me.GbCapturaAutomatica)
+        Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.GbModulos)
         Me.Controls.Add(Me.GbDatosProduccion)
+        Me.Controls.Add(Me.TbKilos)
         Me.Controls.Add(Me.GbDatosGenerales)
         Me.Controls.Add(Me.MSMenu)
+        Me.Controls.Add(Me.TbFolioCIA)
         Me.MainMenuStrip = Me.MSMenu
         Me.Name = "Produccion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -704,7 +703,7 @@ Partial Class Produccion
     Friend WithEvents TbKilos As TextBox
     Friend WithEvents Label22 As Label
     Friend WithEvents Label24 As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents BtActualizarFolio As Button
     Friend WithEvents GbDatosProduccion As GroupBox
     Friend WithEvents GbModulos As GroupBox
     Friend WithEvents TbTotalModulos As TextBox

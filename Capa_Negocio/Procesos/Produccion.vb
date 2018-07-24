@@ -23,4 +23,10 @@ Public Class Produccion
         EntidadProduccion1 = EntidadProduccion
         DatosProduccion.UpsertEtiqueta(EntidadProduccion1)
     End Sub
+    Public Overridable Sub UpsertFolioInicial(ByRef EntidadProduccion As Capa_Entidad.Produccion)
+        Dim EntidadProduccion1 As New Capa_Entidad.Produccion
+        Dim DatosProduccion As New Capa_Datos.Produccion
+        EntidadProduccion1 = EntidadProduccion
+        DatosProduccion.UpsertFolioInicial(EntidadProduccion1)
+    End Sub
 End Class
