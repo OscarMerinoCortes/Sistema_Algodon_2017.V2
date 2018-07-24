@@ -93,6 +93,7 @@ Namespace Configuracion
         ConsultaSecuencia = 29
         ConsultaModulosEntradas = 30
         ConsultaModulosIncidencias = 31
+        ConsultaEncabezado = 32
     End Enum
     Public Enum LlenaCombo
         LlenaComboCliente = 1

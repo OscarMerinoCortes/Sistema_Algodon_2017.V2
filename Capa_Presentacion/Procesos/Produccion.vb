@@ -30,6 +30,7 @@ Public Class Produccion
         TbNombreProductor.Text = ""
         CbTurno.SelectedValue = 1
         CbOperador.SelectedValue = 1
+        TbFolioInicial.Text = ""
         TbFolioCIA.Text = ""
         TbKilos.Text = ""
         TbModulos.Text = ""
@@ -306,8 +307,10 @@ Public Class Produccion
         End Select
     End Sub
     Private Sub BtAbrirProduccion_Click(sender As Object, e As EventArgs) Handles BtAbrirProduccion.Click
+        TbFolioInicial.Enabled = True
         If TbFolioInicial.Text = "" Then
-            MsgBox("Por favor, abrir una produccion", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
+            MsgBox("Ingrese un folio inicial", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
+            Exit Sub
         Else
             UpsertFolioInicial()
         End If
@@ -380,6 +383,7 @@ Public Class Produccion
         DgvPacas.DataSource = Tabla
         PropiedadesDGV()
     End Sub
+
     Private Sub PropiedadesDGV()
         DgvPacas.Columns("IdProduccionDetalle").Visible = False
     End Sub
@@ -395,6 +399,13 @@ Public Class Produccion
             TbIdProduccion.Text = ""
         Else
             TbIdProduccion.Text = Tabla.Rows(0).Item("IdProduccion")
+            CbPlantaOrigen.SelectedValue = Tabla.Rows(0).Item("IdPlantaOrigen")
+            CBPlantaElabora.SelectedValue = Tabla.Rows(0).Item("IdPlantaDestino")
+            DtpFechaProduccion.Value = Tabla.Rows(0).Item("Fecha")
+            CbTipo.Text = Tabla.Rows(0).Item("Tipo")
+            TbIdProduccion.Text = Tabla.Rows(0).Item("IdCliente")
+            TbNombreProductor.Text = Tabla.Rows(0).Item("Nombre")
+            TbFolioInicial.Text = Tabla.Rows(0).Item("FolioInicial")
         End If
     End Sub
 

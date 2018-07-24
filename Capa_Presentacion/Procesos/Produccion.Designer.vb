@@ -408,7 +408,7 @@ Partial Class Produccion
         '
         Me.CbTipoProducto.FormattingEnabled = True
         Me.CbTipoProducto.Items.AddRange(New Object() {"PACA"})
-        Me.CbTipoProducto.Location = New System.Drawing.Point(115, 42)
+        Me.CbTipoProducto.Location = New System.Drawing.Point(115, 45)
         Me.CbTipoProducto.Name = "CbTipoProducto"
         Me.CbTipoProducto.Size = New System.Drawing.Size(121, 21)
         Me.CbTipoProducto.TabIndex = 56
