@@ -23,6 +23,7 @@ Partial Class Etiquetas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.MSMenu = New System.Windows.Forms.MenuStrip()
+        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TbEtiquetaActual = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,8 +34,9 @@ Partial Class Etiquetas
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TbOrdenTrabajoInfo = New System.Windows.Forms.TextBox()
         Me.TbIdProduccionInfo = New System.Windows.Forms.TextBox()
-        Me.TbIdPlantaInfo = New System.Windows.Forms.TextBox()
-        Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CbPlanta = New System.Windows.Forms.ComboBox()
+        Me.TbFolioInicial = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.MSMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -43,8 +45,14 @@ Partial Class Etiquetas
         Me.MSMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MSMenu.Location = New System.Drawing.Point(0, 0)
         Me.MSMenu.Name = "MSMenu"
-        Me.MSMenu.Size = New System.Drawing.Size(541, 24)
+        Me.MSMenu.Size = New System.Drawing.Size(1109, 24)
         Me.MSMenu.TabIndex = 0
+        '
+        'NuevoToolStripMenuItem
+        '
+        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'SalirToolStripMenuItem
         '
@@ -55,23 +63,26 @@ Partial Class Etiquetas
         'TbEtiquetaActual
         '
         Me.TbEtiquetaActual.Enabled = False
-        Me.TbEtiquetaActual.Location = New System.Drawing.Point(112, 55)
+        Me.TbEtiquetaActual.Font = New System.Drawing.Font("Microsoft Sans Serif", 54.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TbEtiquetaActual.Location = New System.Drawing.Point(284, 295)
+        Me.TbEtiquetaActual.Multiline = True
         Me.TbEtiquetaActual.Name = "TbEtiquetaActual"
-        Me.TbEtiquetaActual.Size = New System.Drawing.Size(121, 20)
+        Me.TbEtiquetaActual.Size = New System.Drawing.Size(467, 120)
         Me.TbEtiquetaActual.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 58)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 50.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(271, 216)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(79, 13)
+        Me.Label2.Size = New System.Drawing.Size(482, 76)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Etiqueta Actual"
         '
         'TbIdProduccion
         '
-        Me.TbIdProduccion.Location = New System.Drawing.Point(112, 29)
+        Me.TbIdProduccion.Location = New System.Drawing.Point(91, 27)
         Me.TbIdProduccion.Name = "TbIdProduccion"
         Me.TbIdProduccion.Size = New System.Drawing.Size(121, 20)
         Me.TbIdProduccion.TabIndex = 8
@@ -79,7 +90,7 @@ Partial Class Etiquetas
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 32)
+        Me.Label4.Location = New System.Drawing.Point(12, 30)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(73, 13)
         Me.Label4.TabIndex = 9
@@ -88,7 +99,7 @@ Partial Class Etiquetas
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(239, 32)
+        Me.Label1.Location = New System.Drawing.Point(895, 134)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(75, 13)
         Me.Label1.TabIndex = 10
@@ -97,7 +108,7 @@ Partial Class Etiquetas
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(239, 56)
+        Me.Label3.Location = New System.Drawing.Point(866, 46)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(104, 13)
         Me.Label3.TabIndex = 11
@@ -106,7 +117,7 @@ Partial Class Etiquetas
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(239, 82)
+        Me.Label5.Location = New System.Drawing.Point(919, 89)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(51, 13)
         Me.Label5.TabIndex = 12
@@ -115,43 +126,57 @@ Partial Class Etiquetas
         'TbOrdenTrabajoInfo
         '
         Me.TbOrdenTrabajoInfo.Enabled = False
-        Me.TbOrdenTrabajoInfo.Location = New System.Drawing.Point(349, 53)
+        Me.TbOrdenTrabajoInfo.Location = New System.Drawing.Point(976, 43)
         Me.TbOrdenTrabajoInfo.Name = "TbOrdenTrabajoInfo"
-        Me.TbOrdenTrabajoInfo.Size = New System.Drawing.Size(100, 20)
+        Me.TbOrdenTrabajoInfo.Size = New System.Drawing.Size(121, 20)
         Me.TbOrdenTrabajoInfo.TabIndex = 13
         '
         'TbIdProduccionInfo
         '
         Me.TbIdProduccionInfo.Enabled = False
-        Me.TbIdProduccionInfo.Location = New System.Drawing.Point(349, 27)
+        Me.TbIdProduccionInfo.Location = New System.Drawing.Point(976, 131)
         Me.TbIdProduccionInfo.Name = "TbIdProduccionInfo"
-        Me.TbIdProduccionInfo.Size = New System.Drawing.Size(100, 20)
+        Me.TbIdProduccionInfo.Size = New System.Drawing.Size(121, 20)
         Me.TbIdProduccionInfo.TabIndex = 14
         '
-        'TbIdPlantaInfo
+        'CbPlanta
         '
-        Me.TbIdPlantaInfo.Enabled = False
-        Me.TbIdPlantaInfo.Location = New System.Drawing.Point(349, 79)
-        Me.TbIdPlantaInfo.Name = "TbIdPlantaInfo"
-        Me.TbIdPlantaInfo.Size = New System.Drawing.Size(100, 20)
-        Me.TbIdPlantaInfo.TabIndex = 15
+        Me.CbPlanta.Enabled = False
+        Me.CbPlanta.FormattingEnabled = True
+        Me.CbPlanta.Location = New System.Drawing.Point(976, 85)
+        Me.CbPlanta.Name = "CbPlanta"
+        Me.CbPlanta.Size = New System.Drawing.Size(121, 21)
+        Me.CbPlanta.TabIndex = 15
         '
-        'NuevoToolStripMenuItem
+        'TbFolioInicial
         '
-        Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
-        Me.NuevoToolStripMenuItem.Text = "Nuevo"
+        Me.TbFolioInicial.Enabled = False
+        Me.TbFolioInicial.Location = New System.Drawing.Point(302, 27)
+        Me.TbFolioInicial.Name = "TbFolioInicial"
+        Me.TbFolioInicial.Size = New System.Drawing.Size(121, 20)
+        Me.TbFolioInicial.TabIndex = 16
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(237, 30)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(59, 13)
+        Me.Label6.TabIndex = 10
+        Me.Label6.Text = "Folio Inicial"
         '
         'Etiquetas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(541, 143)
-        Me.Controls.Add(Me.TbIdPlantaInfo)
+        Me.ClientSize = New System.Drawing.Size(1109, 722)
+        Me.Controls.Add(Me.TbFolioInicial)
+        Me.Controls.Add(Me.CbPlanta)
         Me.Controls.Add(Me.TbIdProduccionInfo)
         Me.Controls.Add(Me.TbOrdenTrabajoInfo)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TbIdProduccion)
@@ -180,6 +205,8 @@ Partial Class Etiquetas
     Friend WithEvents Label5 As Label
     Friend WithEvents TbOrdenTrabajoInfo As TextBox
     Friend WithEvents TbIdProduccionInfo As TextBox
-    Friend WithEvents TbIdPlantaInfo As TextBox
     Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CbPlanta As ComboBox
+    Friend WithEvents TbFolioInicial As TextBox
+    Friend WithEvents Label6 As Label
 End Class
