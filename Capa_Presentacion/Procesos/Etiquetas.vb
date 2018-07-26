@@ -38,8 +38,6 @@ Public Class Etiquetas
     End Sub
 
     Private Sub Limpiar()
-        TbFolioInicial.Text = ""
-        TbFolioInicial.Enabled = False
         TbIdProduccion.Enabled = True
         TbIdProduccion.Text = ""
         TbEtiquetaActual.Text = ""
@@ -192,14 +190,6 @@ Public Class Etiquetas
     Private Sub TbIdProduccion_Enter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TbIdProduccion.KeyDown
         Select Case e.KeyData
             Case Keys.Enter
-                TbIdProduccion.Enabled = False
-                TbFolioInicial.Enabled = True
-                TbFolioInicial.Focus()
-        End Select
-    End Sub
-    Private Sub TbFolioInicial_Enter(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TbFolioInicial.KeyDown
-        Select Case e.KeyData
-            Case Keys.Enter
                 Dim EntidadEtiquetas As New Capa_Entidad.Etiquetas
                 Dim NegocioEtiquetas As New Capa_Negocio.Etiquetas
                 Dim Tabla As New DataTable
@@ -214,7 +204,6 @@ Public Class Etiquetas
                     TbIdProduccionInfo.Text = IdProduccion
                     TbOrdenTrabajoInfo.Text = IdOrdenTrabajo
                     CbPlanta.SelectedValue = IdPlantaOrigen
-                    TbFolioInicial.Enabled = False
                     TbEtiquetaActual.Enabled = True
                     TbEtiquetaActual.Focus()
                 Else
