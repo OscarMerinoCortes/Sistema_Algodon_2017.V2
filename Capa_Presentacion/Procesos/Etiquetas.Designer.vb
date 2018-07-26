@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Etiquetas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Etiquetas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MSMenu = New System.Windows.Forms.MenuStrip()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -35,8 +35,6 @@ Partial Class Etiquetas
         Me.TbOrdenTrabajoInfo = New System.Windows.Forms.TextBox()
         Me.TbIdProduccionInfo = New System.Windows.Forms.TextBox()
         Me.CbPlanta = New System.Windows.Forms.ComboBox()
-        Me.TbFolioInicial = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.MSMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -148,35 +146,16 @@ Partial Class Etiquetas
         Me.CbPlanta.Size = New System.Drawing.Size(121, 21)
         Me.CbPlanta.TabIndex = 15
         '
-        'TbFolioInicial
-        '
-        Me.TbFolioInicial.Enabled = False
-        Me.TbFolioInicial.Location = New System.Drawing.Point(302, 27)
-        Me.TbFolioInicial.Name = "TbFolioInicial"
-        Me.TbFolioInicial.Size = New System.Drawing.Size(121, 20)
-        Me.TbFolioInicial.TabIndex = 16
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(237, 30)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(59, 13)
-        Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Folio Inicial"
-        '
         'Etiquetas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1109, 722)
-        Me.Controls.Add(Me.TbFolioInicial)
         Me.Controls.Add(Me.CbPlanta)
         Me.Controls.Add(Me.TbIdProduccionInfo)
         Me.Controls.Add(Me.TbOrdenTrabajoInfo)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.TbIdProduccion)
@@ -207,6 +186,4 @@ Partial Class Etiquetas
     Friend WithEvents TbIdProduccionInfo As TextBox
     Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CbPlanta As ComboBox
-    Friend WithEvents TbFolioInicial As TextBox
-    Friend WithEvents Label6 As Label
 End Class
