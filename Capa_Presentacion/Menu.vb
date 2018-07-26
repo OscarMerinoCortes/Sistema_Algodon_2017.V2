@@ -1,4 +1,6 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Drawing.Drawing2D
+
 Public Class Menu
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         Clientes.ShowDialog()
