@@ -144,6 +144,7 @@ Public Class Produccion
                         DeshabilitarControles()
                         BtAbrirProduccion.Enabled = True
                         BtCerrarProduccion.Enabled = False
+                        TbFolioInicial.Enabled = True
                         If TbIdProduccion.Text <> "" Then
                             Consultar()
                         End If
