@@ -3,6 +3,7 @@ as
 select 
 	   Bo.IdBoleta,
 	   Bo.IdPlanta, 
+	   Bo.NoTransporte,
 	   Bo.FechaOrden, 
 	   Bo.Bruto, 
 	   Bo.Tara, 

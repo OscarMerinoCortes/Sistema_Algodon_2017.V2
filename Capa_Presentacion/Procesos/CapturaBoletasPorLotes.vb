@@ -117,6 +117,7 @@ Public Class CapturaBoletasPorLotes
         DgvModulos.Columns("Tara").HeaderText = "Tara"
         DgvModulos.Columns("Total").HeaderText = "Total"
         DgvModulos.Columns("Nombre").HeaderText = "Productor"
+        DgvModulos.Columns("NoTransporte").HeaderText = "No Transporte"
         DgvModulos.Columns("IdOrdenTrabajo").HeaderText = "Orden de Trabajo"
         DgvModulos.Columns("FlagCancelada").HeaderText = "Cancelado"
         DgvModulos.Columns("FlagRevisada").HeaderText = "Revisado"

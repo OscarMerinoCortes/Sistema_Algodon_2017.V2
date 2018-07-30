@@ -52,7 +52,7 @@ Public Class CapturaBoletasPorLotes
         Dim cmdGuardar As SqlCommand
         Try
             cnn.Open()
-            cmdGuardar = New SqlCommand("ActualizaBoletaPesoAuto", cnn)
+            cmdGuardar = New SqlCommand("Sp_ActualizaBoletaPesoAuto", cnn)
             cmdGuardar.CommandType = CommandType.StoredProcedure
             cmdGuardar.Parameters.Add(New SqlParameter("@Idboleta", EntidadCapturaBoletasPorLotes1.Idboleta))
             cmdGuardar.Parameters.Add(New SqlParameter("@NoTransporte", EntidadCapturaBoletasPorLotes1.NoTransporte))
