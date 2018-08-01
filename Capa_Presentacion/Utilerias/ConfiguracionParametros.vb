@@ -120,7 +120,7 @@ Public Class ConfiguracionParametros
         NuCaracterBoletaTara.Value = Tabla.Rows(0).Item("NoCaracterBoletasTara")
         NuInicialBoletaNeto.Value = Tabla.Rows(0).Item("InicialBoletasNeto")
         NuCaracterBoletaNeto.Value = Tabla.Rows(0).Item("NoCaracterBoletasNeto")
-        NuInicialPacas.Value = Tabla.Rows(0).Item("NoCaracteresPacas")
+        NuInicialPacas.Value = Tabla.Rows(0).Item("InicialPacas")
         NuCaracterPacas.Value = Tabla.Rows(0).Item("NoCaracteresPacas")
     End Sub
     Private Sub SeleccionaPanel(ByVal PanelSeleccion As Integer)
