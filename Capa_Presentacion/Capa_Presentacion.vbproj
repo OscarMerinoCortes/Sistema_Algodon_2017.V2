@@ -495,6 +495,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Utilerias\ConfiguracionParametros.Designer.vb">
+      <DependentUpon>ConfiguracionParametros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Utilerias\ConfiguracionParametros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="VarGlob.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -705,6 +711,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPTReporteClientes.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Utilerias\ConfiguracionParametros.resx">
+      <DependentUpon>ConfiguracionParametros.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="ALGODON_2VDataSet.xsc">
@@ -749,7 +758,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Administracion\" />
-    <Folder Include="Utilerias\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BusquedaUsuario.png" />

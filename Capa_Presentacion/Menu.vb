@@ -90,7 +90,7 @@ Public Class Menu
         CastigoResistenciaFibra.ShowDialog()
     End Sub
     Private Sub CapturaDeProducciónPacasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CapturaDeProducciónPacasToolStripMenuItem.Click
-        Produccion.ShowDialog()
+        Produccion.Show()
     End Sub
     Private Sub CapturaDeBoletasPorLotesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CapturaDeBoletasPorLotesToolStripMenuItem.Click
         CapturaBoletasPorLotes.ShowDialog()
@@ -127,6 +127,10 @@ Public Class Menu
     End Sub
 
     Private Sub ChequearEtiquetaDePacaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChequearEtiquetaDePacaToolStripMenuItem.Click
-        Etiquetas.ShowDialog()
+        Etiquetas.Show()
+    End Sub
+
+    Private Sub ConfiguracionDeParametrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguracionDeParametrosToolStripMenuItem.Click
+        ConfiguracionParametros.ShowDialog()
     End Sub
 End Class

@@ -143,6 +143,7 @@ Partial Class Menu
         Me.CambioDePerfilDeUnProductorAOtroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnvioDeMensajesDeTextoYCorreosAProductoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TsSalir = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConfiguracionDeParametrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MSMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -821,7 +822,7 @@ Partial Class Menu
         '
         'UtileriasToolStripMenuItem
         '
-        Me.UtileriasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BorrarPerfilToolStripMenuItem, Me.BorrarPacasToolStripMenuItem, Me.RespaldosToolStripMenuItem, Me.ConectarBaseDeDatosToolStripMenuItem, Me.CrearEstructuraToolStripMenuItem, Me.EnlaceABaseDeDatosToolStripMenuItem, Me.CambioDePerfilDePacasToolStripMenuItem, Me.CambioDePerfilDeUnProductorAOtroToolStripMenuItem, Me.EnvioDeMensajesDeTextoYCorreosAProductoresToolStripMenuItem})
+        Me.UtileriasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BorrarPerfilToolStripMenuItem, Me.BorrarPacasToolStripMenuItem, Me.RespaldosToolStripMenuItem, Me.ConectarBaseDeDatosToolStripMenuItem, Me.CrearEstructuraToolStripMenuItem, Me.EnlaceABaseDeDatosToolStripMenuItem, Me.CambioDePerfilDePacasToolStripMenuItem, Me.CambioDePerfilDeUnProductorAOtroToolStripMenuItem, Me.EnvioDeMensajesDeTextoYCorreosAProductoresToolStripMenuItem, Me.ConfiguracionDeParametrosToolStripMenuItem})
         Me.UtileriasToolStripMenuItem.Name = "UtileriasToolStripMenuItem"
         Me.UtileriasToolStripMenuItem.Size = New System.Drawing.Size(70, 23)
         Me.UtileriasToolStripMenuItem.Text = "Utilerias"
@@ -885,6 +886,12 @@ Partial Class Menu
         Me.TsSalir.Name = "TsSalir"
         Me.TsSalir.Size = New System.Drawing.Size(46, 23)
         Me.TsSalir.Text = "Salir"
+        '
+        'ConfiguracionDeParametrosToolStripMenuItem
+        '
+        Me.ConfiguracionDeParametrosToolStripMenuItem.Name = "ConfiguracionDeParametrosToolStripMenuItem"
+        Me.ConfiguracionDeParametrosToolStripMenuItem.Size = New System.Drawing.Size(394, 24)
+        Me.ConfiguracionDeParametrosToolStripMenuItem.Text = "Configuracion De Parametros"
         '
         'Menu
         '
@@ -1027,4 +1034,5 @@ Partial Class Menu
     Friend WithEvents ClasificacionToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PaquetesParaVentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PaquetesParaVentaPorRangosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ConfiguracionDeParametrosToolStripMenuItem As ToolStripMenuItem
 End Class
