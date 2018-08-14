@@ -58,9 +58,9 @@ Public Class ConfiguracionParametros
                     sqlcom1.Parameters.Add(New SqlParameter("@IdConfiguracion", EntidadConfiguracionParametros1.IdConfiguracion))
                     sqlcom1.Parameters.Add(New SqlParameter("@DireccionIP", EntidadConfiguracionParametros1.DireccionIP))
                     sqldat1.Fill(EntidadConfiguracionParametros1.TablaConsulta)
-                    'Case Capa_Operacion.Configuracion.Consulta.ConsultaTipoPersona
-                    '    sqldat1 = New SqlDataAdapter("sp_ConsultaTipoPersona", cnn)
-                    '    sqldat1.Fill(EntidadConfiguracionParametros1.TablaConsulta)
+                Case Capa_Operacion.Configuracion.Consulta.ConsultaInstancia
+                    sqldat1 = New SqlDataAdapter("Sp_obtieneNombreInstancia", cnn)
+                    sqldat1.Fill(EntidadConfiguracionParametros1.TablaConsulta)
                     'Case Capa_Operacion.Configuracion.Consulta.ConsultaMunicipioMovilizacion
                     '    sqlcom1 = New SqlCommand("sp_ConsultaMunicipiosMov", cnn)
                     '    sqldat1 = New SqlDataAdapter(sqlcom1)

@@ -1,6 +1,5 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Drawing.Drawing2D
-
 Public Class Menu
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         Clientes.ShowDialog()
@@ -132,5 +131,20 @@ Public Class Menu
 
     Private Sub ConfiguracionDeParametrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConfiguracionDeParametrosToolStripMenuItem.Click
         ConfiguracionParametros.ShowDialog()
+    End Sub
+
+    Private Sub SalidaDePacasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaDePacasToolStripMenuItem.Click
+        SalidaPacas.ShowDialog()
+    End Sub
+    Private Sub SalidaDeSemillaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaDeSemillaToolStripMenuItem.Click
+        SalidaSemilla.ShowDialog()
+    End Sub
+
+    Private Sub SalidaDePacasDeBorraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaDePacasDeBorraToolStripMenuItem.Click
+        SalidaPacasBorra.ShowDialog()
+    End Sub
+
+    Private Sub SalidaDeBasuraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaDeBasuraToolStripMenuItem.Click
+        SalidaBasura.ShowDialog()
     End Sub
 End Class

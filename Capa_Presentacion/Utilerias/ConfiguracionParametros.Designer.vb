@@ -70,6 +70,8 @@ Partial Class ConfiguracionParametros
         Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.TsIdConfiguracion = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TbNombreInstancia = New System.Windows.Forms.TextBox()
         Me.GbOpciones.SuspendLayout()
         Me.PanelParametrosBascula.SuspendLayout()
         Me.GbPesoPacas.SuspendLayout()
@@ -491,6 +493,8 @@ Partial Class ConfiguracionParametros
         '
         'PanelBaseDeDatos
         '
+        Me.PanelBaseDeDatos.Controls.Add(Me.TbNombreInstancia)
+        Me.PanelBaseDeDatos.Controls.Add(Me.Label15)
         Me.PanelBaseDeDatos.Controls.Add(Me.Label14)
         Me.PanelBaseDeDatos.Controls.Add(Me.CbBaseDatos)
         Me.PanelBaseDeDatos.Dock = System.Windows.Forms.DockStyle.Fill
@@ -502,7 +506,7 @@ Partial Class ConfiguracionParametros
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(64, 35)
+        Me.Label14.Location = New System.Drawing.Point(17, 64)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(79, 13)
         Me.Label14.TabIndex = 1
@@ -511,7 +515,7 @@ Partial Class ConfiguracionParametros
         'CbBaseDatos
         '
         Me.CbBaseDatos.FormattingEnabled = True
-        Me.CbBaseDatos.Location = New System.Drawing.Point(149, 32)
+        Me.CbBaseDatos.Location = New System.Drawing.Point(99, 61)
         Me.CbBaseDatos.Name = "CbBaseDatos"
         Me.CbBaseDatos.Size = New System.Drawing.Size(121, 21)
         Me.CbBaseDatos.TabIndex = 0
@@ -548,13 +552,29 @@ Partial Class ConfiguracionParametros
         Me.TsIdConfiguracion.Name = "TsIdConfiguracion"
         Me.TsIdConfiguracion.Size = New System.Drawing.Size(0, 17)
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(17, 25)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(72, 13)
+        Me.Label15.TabIndex = 2
+        Me.Label15.Text = "Instancia o IP"
+        '
+        'TbNombreInstancia
+        '
+        Me.TbNombreInstancia.Location = New System.Drawing.Point(99, 21)
+        Me.TbNombreInstancia.Name = "TbNombreInstancia"
+        Me.TbNombreInstancia.Size = New System.Drawing.Size(121, 20)
+        Me.TbNombreInstancia.TabIndex = 3
+        '
         'ConfiguracionParametros
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 623)
-        Me.Controls.Add(Me.PanelParametrosBascula)
         Me.Controls.Add(Me.PanelBaseDeDatos)
+        Me.Controls.Add(Me.PanelParametrosBascula)
         Me.Controls.Add(Me.GbOpciones)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.MenuStrip1)
@@ -645,4 +665,6 @@ Partial Class ConfiguracionParametros
     Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel4 As ToolStripStatusLabel
     Friend WithEvents TsIdConfiguracion As ToolStripStatusLabel
+    Friend WithEvents TbNombreInstancia As TextBox
+    Friend WithEvents Label15 As Label
 End Class

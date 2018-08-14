@@ -142,8 +142,9 @@ Partial Class Menu
         Me.CambioDePerfilDePacasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CambioDePerfilDeUnProductorAOtroToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnvioDeMensajesDeTextoYCorreosAProductoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TsSalir = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfiguracionDeParametrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TsSalir = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SStatus = New System.Windows.Forms.StatusStrip()
         Me.MSMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -881,17 +882,26 @@ Partial Class Menu
         Me.EnvioDeMensajesDeTextoYCorreosAProductoresToolStripMenuItem.Size = New System.Drawing.Size(394, 24)
         Me.EnvioDeMensajesDeTextoYCorreosAProductoresToolStripMenuItem.Text = "Envio de Mensajes de texto y correos a Productores"
         '
+        'ConfiguracionDeParametrosToolStripMenuItem
+        '
+        Me.ConfiguracionDeParametrosToolStripMenuItem.Name = "ConfiguracionDeParametrosToolStripMenuItem"
+        Me.ConfiguracionDeParametrosToolStripMenuItem.Size = New System.Drawing.Size(394, 24)
+        Me.ConfiguracionDeParametrosToolStripMenuItem.Text = "Configuracion De Parametros"
+        '
         'TsSalir
         '
         Me.TsSalir.Name = "TsSalir"
         Me.TsSalir.Size = New System.Drawing.Size(46, 23)
         Me.TsSalir.Text = "Salir"
         '
-        'ConfiguracionDeParametrosToolStripMenuItem
+        'SStatus
         '
-        Me.ConfiguracionDeParametrosToolStripMenuItem.Name = "ConfiguracionDeParametrosToolStripMenuItem"
-        Me.ConfiguracionDeParametrosToolStripMenuItem.Size = New System.Drawing.Size(394, 24)
-        Me.ConfiguracionDeParametrosToolStripMenuItem.Text = "Configuracion De Parametros"
+        Me.SStatus.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.SStatus.Location = New System.Drawing.Point(0, 769)
+        Me.SStatus.Name = "SStatus"
+        Me.SStatus.Size = New System.Drawing.Size(1578, 22)
+        Me.SStatus.TabIndex = 1
+        Me.SStatus.Text = "StatusStrip1"
         '
         'Menu
         '
@@ -901,6 +911,7 @@ Partial Class Menu
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(1578, 791)
+        Me.Controls.Add(Me.SStatus)
         Me.Controls.Add(Me.MSMenu)
         Me.DoubleBuffered = True
         Me.MainMenuStrip = Me.MSMenu
@@ -1035,4 +1046,5 @@ Partial Class Menu
     Friend WithEvents PaquetesParaVentaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PaquetesParaVentaPorRangosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ConfiguracionDeParametrosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SStatus As StatusStrip
 End Class

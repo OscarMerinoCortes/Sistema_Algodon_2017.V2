@@ -32,12 +32,14 @@ Public Class CapturaBoletasPorLotes
         Dim cmdGuardar As SqlCommand
         Try
             cnn.Open()
-            cmdGuardar = New SqlCommand("ActualizaBoletaPeso", cnn)
+            cmdGuardar = New SqlCommand("sp_ActualizaBoletaPeso", cnn)
             cmdGuardar.CommandType = CommandType.StoredProcedure
             cmdGuardar.Parameters.Add(New SqlParameter("@Idboleta", EntidadCapturaBoletasPorLotes1.Idboleta))
             cmdGuardar.Parameters.Add(New SqlParameter("@Bruto", EntidadCapturaBoletasPorLotes1.Bruto))
             cmdGuardar.Parameters.Add(New SqlParameter("@Tara", EntidadCapturaBoletasPorLotes1.Tara))
             cmdGuardar.Parameters.Add(New SqlParameter("@Total", EntidadCapturaBoletasPorLotes1.Neto))
+            cmdGuardar.Parameters.Add(New SqlParameter("@FlagRevisada", EntidadCapturaBoletasPorLotes1.FlagRevisada))
+            cmdGuardar.Parameters.Add(New SqlParameter("@FlagCancelada", EntidadCapturaBoletasPorLotes1.FlagCancelada))
             cmdGuardar.ExecuteNonQuery()
         Catch ex As Exception
         Finally

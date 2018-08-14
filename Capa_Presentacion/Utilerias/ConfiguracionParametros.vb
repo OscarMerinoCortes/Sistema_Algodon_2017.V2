@@ -9,6 +9,7 @@ Public Class ConfiguracionParametros
         GetSerialPortNames()
         GetNameHost()
         ConsultaParametros()
+        ConsultaInstancia()
         SeleccionaPanel(1)
     End Sub
     Private Sub GetSerialPortNames()
@@ -122,6 +123,18 @@ Public Class ConfiguracionParametros
         NuCaracterBoletaNeto.Value = Tabla.Rows(0).Item("NoCaracterBoletasNeto")
         NuInicialPacas.Value = Tabla.Rows(0).Item("InicialPacas")
         NuCaracterPacas.Value = Tabla.Rows(0).Item("NoCaracteresPacas")
+    End Sub
+    Private Sub ConsultaInstancia()
+        Dim EntidadConfiguracionParametros As New Capa_Entidad.ConfiguracionParametros
+        Dim NegocioConfiguracionParametros As New Capa_Negocio.ConfiguracionParametros
+        Dim Tabla As New DataTable
+        EntidadConfiguracionParametros.Consulta = Consulta.ConsultaInstancia
+        NegocioConfiguracionParametros.Consultar(EntidadConfiguracionParametros)
+        Tabla = EntidadConfiguracionParametros.TablaConsulta
+        If Tabla.Rows.Count = 0 Then
+            Exit Sub
+        End If
+        TbNombreInstancia.Text = Tabla.Rows(0).Item("NombreInstancia")
     End Sub
     Private Sub SeleccionaPanel(ByVal PanelSeleccion As Integer)
         Select Case PanelSeleccion

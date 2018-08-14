@@ -143,16 +143,21 @@ Public Class CapturaBoletasPorLotes
         Else
             Total = Bruto - Tara
             DgvModulos.Rows(IndexCell).Cells("Total").Value = Total
-            ActualizaPesoModuloManual(IndexCell, DgvModulos.Rows(IndexCell).Cells("IdBoleta").Value, Bruto, Tara, Total)
+            ActualizaPesoModuloManual(IndexCell, DgvModulos.Rows(IndexCell).Cells("IdBoleta").Value, Bruto, Tara, Total, DgvModulos.Rows(IndexCell).Cells("FlagRevisada").Value, DgvModulos.Rows(IndexCell).Cells("FlagCancelada").Value)
         End If
     End Sub
-    Private Sub ActualizaPesoModuloManual(ByVal IndexCell As Integer, ByVal IdBoleta As Integer, ByVal Bruto As Double, ByVal Tara As Double, ByVal Total As Double)
+    Private Sub ActualizaManual()
+
+    End Sub
+    Private Sub ActualizaPesoModuloManual(ByVal IndexCell As Integer, ByVal IdBoleta As Integer, ByVal Bruto As Double, ByVal Tara As Double, ByVal Total As Double, ByVal Revisada As Boolean, ByVal Cancelada As Boolean)
         Dim EntidadCapturaBoletasPorLotes As New Capa_Entidad.CapturaBoletasPorLotes
         Dim NegocioCapturaBoletasPorLotes As New Capa_Negocio.CapturaBoletasPorLotes
         EntidadCapturaBoletasPorLotes.Idboleta = IdBoleta
         EntidadCapturaBoletasPorLotes.Bruto = Bruto
         EntidadCapturaBoletasPorLotes.Tara = Tara
         EntidadCapturaBoletasPorLotes.Neto = Total
+        EntidadCapturaBoletasPorLotes.FlagRevisada = Revisada
+        EntidadCapturaBoletasPorLotes.FlagCancelada = Cancelada
         NegocioCapturaBoletasPorLotes.upsert(EntidadCapturaBoletasPorLotes)
     End Sub
     Private Sub ActualizaPesoModuloAutomatico(ByVal NoTransporte As Integer, ByVal IdBoleta As Integer, ByVal Bruto As Double, ByVal Tara As Double, ByVal Neto As Double, ByVal FechaActualizacion As DateTime, ByVal TipoFlete As String)
@@ -168,9 +173,7 @@ Public Class CapturaBoletasPorLotes
         NegocioCapturaBoletasPorLotes.upsertAuto(EntidadCapturaBoletasPorLotes)
     End Sub
     Private Sub GetSerialPortNames()
-
         ' muestra COM ports disponibles.
-
         Dim l As Integer
 
         Dim ncom As String

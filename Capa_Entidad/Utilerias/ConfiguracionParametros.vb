@@ -16,4 +16,5 @@
     Public NoCaracterBoletasNeto As Integer
     Public InicialPacas As Integer
     Public NoCaracteresPacas As Integer
+    Public NombreInstancia As String
 End Class

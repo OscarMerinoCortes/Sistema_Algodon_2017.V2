@@ -79,6 +79,9 @@ Partial Class Produccion
         Me.GbTipoCaptura = New System.Windows.Forms.GroupBox()
         Me.RbAutomatico = New System.Windows.Forms.RadioButton()
         Me.RbManual = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.MSMenu.SuspendLayout()
         Me.GbDatosGenerales.SuspendLayout()
         Me.GbDatosProduccion.SuspendLayout()
@@ -88,6 +91,9 @@ Partial Class Produccion
         Me.GbLotes.SuspendLayout()
         CType(Me.DgvPacas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GbTipoCaptura.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MSMenu
@@ -239,9 +245,10 @@ Partial Class Produccion
         Me.GbDatosGenerales.Controls.Add(Me.CbTipo)
         Me.GbDatosGenerales.Controls.Add(Me.DtpFechaProduccion)
         Me.GbDatosGenerales.Controls.Add(Me.Label4)
-        Me.GbDatosGenerales.Location = New System.Drawing.Point(12, 27)
+        Me.GbDatosGenerales.Dock = System.Windows.Forms.DockStyle.Left
+        Me.GbDatosGenerales.Location = New System.Drawing.Point(3, 16)
         Me.GbDatosGenerales.Name = "GbDatosGenerales"
-        Me.GbDatosGenerales.Size = New System.Drawing.Size(424, 208)
+        Me.GbDatosGenerales.Size = New System.Drawing.Size(462, 207)
         Me.GbDatosGenerales.TabIndex = 15
         Me.GbDatosGenerales.TabStop = False
         Me.GbDatosGenerales.Text = "Datos Generales"
@@ -334,14 +341,14 @@ Partial Class Produccion
         '
         'TbFolioCIA
         '
-        Me.TbFolioCIA.Location = New System.Drawing.Point(807, 134)
+        Me.TbFolioCIA.Location = New System.Drawing.Point(135, 125)
         Me.TbFolioCIA.Name = "TbFolioCIA"
         Me.TbFolioCIA.Size = New System.Drawing.Size(121, 20)
         Me.TbFolioCIA.TabIndex = 47
         '
         'TbKilos
         '
-        Me.TbKilos.Location = New System.Drawing.Point(807, 160)
+        Me.TbKilos.Location = New System.Drawing.Point(135, 151)
         Me.TbKilos.Multiline = True
         Me.TbKilos.Name = "TbKilos"
         Me.TbKilos.Size = New System.Drawing.Size(121, 27)
@@ -351,7 +358,7 @@ Partial Class Produccion
         '
         Me.Label22.AutoSize = True
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(705, 130)
+        Me.Label22.Location = New System.Drawing.Point(33, 121)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(96, 24)
         Me.Label22.TabIndex = 50
@@ -361,7 +368,7 @@ Partial Class Produccion
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(746, 160)
+        Me.Label24.Location = New System.Drawing.Point(74, 151)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(55, 24)
         Me.Label24.TabIndex = 52
@@ -389,9 +396,10 @@ Partial Class Produccion
         Me.GbDatosProduccion.Controls.Add(Me.Label21)
         Me.GbDatosProduccion.Controls.Add(Me.BtAbrirProduccion)
         Me.GbDatosProduccion.Controls.Add(Me.BtCerrarProduccion)
-        Me.GbDatosProduccion.Location = New System.Drawing.Point(442, 30)
+        Me.GbDatosProduccion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GbDatosProduccion.Location = New System.Drawing.Point(465, 16)
         Me.GbDatosProduccion.Name = "GbDatosProduccion"
-        Me.GbDatosProduccion.Size = New System.Drawing.Size(256, 205)
+        Me.GbDatosProduccion.Size = New System.Drawing.Size(261, 207)
         Me.GbDatosProduccion.TabIndex = 54
         Me.GbDatosProduccion.TabStop = False
         Me.GbDatosProduccion.Text = "Datos de Produccion"
@@ -444,9 +452,10 @@ Partial Class Produccion
         Me.GbModulos.Controls.Add(Me.TbTotalModulos)
         Me.GbModulos.Controls.Add(Me.Label25)
         Me.GbModulos.Controls.Add(Me.TbModulos)
-        Me.GbModulos.Location = New System.Drawing.Point(12, 241)
+        Me.GbModulos.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GbModulos.Location = New System.Drawing.Point(3, 223)
         Me.GbModulos.Name = "GbModulos"
-        Me.GbModulos.Size = New System.Drawing.Size(1052, 124)
+        Me.GbModulos.Size = New System.Drawing.Size(1070, 109)
         Me.GbModulos.TabIndex = 55
         Me.GbModulos.TabStop = False
         Me.GbModulos.Text = "Modulos"
@@ -454,7 +463,7 @@ Partial Class Produccion
         'TbTotalModulos
         '
         Me.TbTotalModulos.Enabled = False
-        Me.TbTotalModulos.Location = New System.Drawing.Point(101, 97)
+        Me.TbTotalModulos.Location = New System.Drawing.Point(98, 80)
         Me.TbTotalModulos.Name = "TbTotalModulos"
         Me.TbTotalModulos.Size = New System.Drawing.Size(100, 20)
         Me.TbTotalModulos.TabIndex = 56
@@ -462,7 +471,7 @@ Partial Class Produccion
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(6, 100)
+        Me.Label25.Location = New System.Drawing.Point(3, 83)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(89, 13)
         Me.Label25.TabIndex = 56
@@ -470,11 +479,12 @@ Partial Class Produccion
         '
         'TbModulos
         '
+        Me.TbModulos.Dock = System.Windows.Forms.DockStyle.Top
         Me.TbModulos.Enabled = False
-        Me.TbModulos.Location = New System.Drawing.Point(6, 19)
+        Me.TbModulos.Location = New System.Drawing.Point(3, 16)
         Me.TbModulos.Multiline = True
         Me.TbModulos.Name = "TbModulos"
-        Me.TbModulos.Size = New System.Drawing.Size(1039, 72)
+        Me.TbModulos.Size = New System.Drawing.Size(1064, 58)
         Me.TbModulos.TabIndex = 0
         '
         'BtActivarPrensa
@@ -524,12 +534,14 @@ Partial Class Produccion
         '
         Me.GbCapturaAutomatica.Controls.Add(Me.BtActivarPrensa)
         Me.GbCapturaAutomatica.Controls.Add(Me.BtIncidencias)
+        Me.GbCapturaAutomatica.Controls.Add(Me.GbLotes)
         Me.GbCapturaAutomatica.Controls.Add(Me.BtAgregarExcel)
         Me.GbCapturaAutomatica.Controls.Add(Me.BtImprimir)
         Me.GbCapturaAutomatica.Controls.Add(Me.NumericUpDown1)
-        Me.GbCapturaAutomatica.Location = New System.Drawing.Point(742, 371)
+        Me.GbCapturaAutomatica.Dock = System.Windows.Forms.DockStyle.Right
+        Me.GbCapturaAutomatica.Location = New System.Drawing.Point(754, 16)
         Me.GbCapturaAutomatica.Name = "GbCapturaAutomatica"
-        Me.GbCapturaAutomatica.Size = New System.Drawing.Size(322, 155)
+        Me.GbCapturaAutomatica.Size = New System.Drawing.Size(319, 414)
         Me.GbCapturaAutomatica.TabIndex = 62
         Me.GbCapturaAutomatica.TabStop = False
         Me.GbCapturaAutomatica.Text = "Captura de Lotes Automatico"
@@ -540,9 +552,9 @@ Partial Class Produccion
         Me.GbLotes.Controls.Add(Me.BtInicio)
         Me.GbLotes.Controls.Add(Me.BtSiguiente)
         Me.GbLotes.Controls.Add(Me.BtAnterior)
-        Me.GbLotes.Location = New System.Drawing.Point(742, 532)
+        Me.GbLotes.Location = New System.Drawing.Point(6, 150)
         Me.GbLotes.Name = "GbLotes"
-        Me.GbLotes.Size = New System.Drawing.Size(322, 90)
+        Me.GbLotes.Size = New System.Drawing.Size(310, 104)
         Me.GbLotes.TabIndex = 63
         Me.GbLotes.TabStop = False
         Me.GbLotes.Text = "Lotes"
@@ -592,25 +604,31 @@ Partial Class Produccion
         Me.DgvPacas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
         Me.DgvPacas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DgvPacas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvPacas.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgvPacas.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DgvPacas.Location = New System.Drawing.Point(12, 371)
+        Me.DgvPacas.Location = New System.Drawing.Point(3, 16)
         Me.DgvPacas.MultiSelect = False
         Me.DgvPacas.Name = "DgvPacas"
         Me.DgvPacas.ReadOnly = True
         Me.DgvPacas.RowHeadersVisible = False
         Me.DgvPacas.RowHeadersWidth = 40
         Me.DgvPacas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvPacas.Size = New System.Drawing.Size(724, 409)
+        Me.DgvPacas.Size = New System.Drawing.Size(745, 395)
         Me.DgvPacas.TabIndex = 64
         '
         'GbTipoCaptura
         '
         Me.GbTipoCaptura.Controls.Add(Me.RbAutomatico)
         Me.GbTipoCaptura.Controls.Add(Me.RbManual)
+        Me.GbTipoCaptura.Controls.Add(Me.Label24)
+        Me.GbTipoCaptura.Controls.Add(Me.TbFolioCIA)
+        Me.GbTipoCaptura.Controls.Add(Me.TbKilos)
+        Me.GbTipoCaptura.Controls.Add(Me.Label22)
+        Me.GbTipoCaptura.Dock = System.Windows.Forms.DockStyle.Right
         Me.GbTipoCaptura.Enabled = False
-        Me.GbTipoCaptura.Location = New System.Drawing.Point(704, 30)
+        Me.GbTipoCaptura.Location = New System.Drawing.Point(726, 16)
         Me.GbTipoCaptura.Name = "GbTipoCaptura"
-        Me.GbTipoCaptura.Size = New System.Drawing.Size(360, 92)
+        Me.GbTipoCaptura.Size = New System.Drawing.Size(347, 207)
         Me.GbTipoCaptura.TabIndex = 65
         Me.GbTipoCaptura.TabStop = False
         Me.GbTipoCaptura.Text = "Tipo Captura"
@@ -637,23 +655,49 @@ Partial Class Produccion
         Me.RbManual.Text = "Manual"
         Me.RbManual.UseVisualStyleBackColor = True
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.DgvPacas)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Location = New System.Drawing.Point(3, 16)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(751, 414)
+        Me.GroupBox1.TabIndex = 66
+        Me.GroupBox1.TabStop = False
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.GroupBox1)
+        Me.GroupBox2.Controls.Add(Me.GbCapturaAutomatica)
+        Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox2.Location = New System.Drawing.Point(0, 359)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(1076, 433)
+        Me.GroupBox2.TabIndex = 67
+        Me.GroupBox2.TabStop = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.GbDatosProduccion)
+        Me.GroupBox3.Controls.Add(Me.GbTipoCaptura)
+        Me.GroupBox3.Controls.Add(Me.GbDatosGenerales)
+        Me.GroupBox3.Controls.Add(Me.GbModulos)
+        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.GroupBox3.Location = New System.Drawing.Point(0, 24)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(1076, 335)
+        Me.GroupBox3.TabIndex = 68
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "GroupBox3"
+        '
         'Produccion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1076, 792)
-        Me.Controls.Add(Me.GbTipoCaptura)
-        Me.Controls.Add(Me.DgvPacas)
-        Me.Controls.Add(Me.Label24)
-        Me.Controls.Add(Me.GbLotes)
-        Me.Controls.Add(Me.GbCapturaAutomatica)
-        Me.Controls.Add(Me.Label22)
-        Me.Controls.Add(Me.GbModulos)
-        Me.Controls.Add(Me.GbDatosProduccion)
-        Me.Controls.Add(Me.TbKilos)
-        Me.Controls.Add(Me.GbDatosGenerales)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.MSMenu)
-        Me.Controls.Add(Me.TbFolioCIA)
         Me.MainMenuStrip = Me.MSMenu
         Me.Name = "Produccion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -672,6 +716,9 @@ Partial Class Produccion
         CType(Me.DgvPacas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GbTipoCaptura.ResumeLayout(False)
         Me.GbTipoCaptura.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -734,4 +781,7 @@ Partial Class Produccion
     Friend WithEvents RbManual As RadioButton
     Friend WithEvents Label8 As Label
     Friend WithEvents TbFolioInicial As TextBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
 End Class
