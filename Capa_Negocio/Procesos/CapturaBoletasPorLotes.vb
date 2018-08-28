@@ -18,4 +18,8 @@
         Dim DatosCapturaBoletasPorLotes As New Capa_Datos.CapturaBoletasPorLotes
         DatosCapturaBoletasPorLotes.UpsertAuto(EntidadCapturaBoletasPorLotes)
     End Sub
+    Public Overridable Sub ActualizaPesoOrden(ByRef EntidadCapturaBoletasPorLotes As Capa_Entidad.CapturaBoletasPorLotes)
+        Dim DatosCapturaBoletasPorLotes As New Capa_Datos.CapturaBoletasPorLotes
+        DatosCapturaBoletasPorLotes.ActualizaPesoOrden(EntidadCapturaBoletasPorLotes)
+    End Sub
 End Class

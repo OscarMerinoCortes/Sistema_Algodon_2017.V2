@@ -8,4 +8,5 @@
     Public FlagRevisada As Boolean
     Public FlagCancelada As Boolean
     Public TipoFlete As String
+    Public IdOrdenTrabajo As Integer
 End Class

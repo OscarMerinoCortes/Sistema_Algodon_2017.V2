@@ -690,7 +690,6 @@ Public Class Produccion
             TbKilos.Text = ""
         End If
     End Sub
-
     Private Sub BtActualizarFolio_Click(sender As Object, e As EventArgs) Handles BtActualizarFolio.Click
         UpsertFolioInicial()
     End Sub

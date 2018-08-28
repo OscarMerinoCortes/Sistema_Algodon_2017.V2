@@ -11,5 +11,6 @@
     Public CantidadPacas As Integer
     Public Descripcion As String
     Public chkrevisado As Boolean
+    Public FlagRevisado As Boolean
     Public IdEstatus As Integer
 End Class

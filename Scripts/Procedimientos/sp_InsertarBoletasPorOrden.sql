@@ -19,7 +19,7 @@ create procedure sp_InsertarBoletasPorOrden
 as 
 begin 
 set nocount on
-merge [dbo].[BoletasPorOrden] as target
+merge [dbo].[OrdenTrabajoDetalle] as target
 using (select  @IdBoleta,@IdOrdenTrabajo,@IdPlanta,@FechaOrden,@Bruto,@Tara,@Total,@IdProductor,@IdBodega,@NoTransporte,@FlagCancelada,@FlagRevisada,@IdEstatus,@IdUSuarioCreacion,@FechaCreacion,@IdUsuarioActualizacion,@FechaActualizacion) AS 
 SOURCE (IdBoleta,IdOrdenTrabajo,IdPlanta,FechaOrden,Bruto,Tara,Total,IdProductor,IdBodega,NoTransporte,FlagCancelada,FlagRevisada,IdEstatus,IdUSuarioCreacion,FechaCreacion,IdUsuarioActualizacion,FechaActualizacion)
 ON (target.IdBoleta = SOURCE.IdBoleta)
@@ -41,7 +41,8 @@ IdUsuarioActualizacion = source.IdUsuarioActualizacion,
 FechaActualizacion = source.FechaActualizacion
 WHEN NOT MATCHED THEN
 INSERT (IdOrdenTrabajo,IdPlanta,FechaOrden,Bruto,Tara,Total,IdProductor,IdBodega,NoTransporte,FlagCancelada,FlagRevisada,IdEstatus,IdUSuarioCreacion,FechaCreacion,IdUsuarioActualizacion,FechaActualizacion)
-        VALUES (source.IdOrdenTrabajo,source.IdPlanta,source.FechaOrden,source.Bruto,source.Tara,source.Total,source.IdProductor,source.IdBodega,source.NoTransporte,source.FlagCancelada,source.FlagRevisada,source.IdEstatus,source.IdUSuarioCreacion,source.FechaCreacion,source.IdUsuarioActualizacion,source.FechaActualizacion);
+        VALUES (source.IdOrdenTrabajo,source.IdPlanta,source.FechaOrden,source.Bruto,source.Tara,source.Total,source.IdProductor,source.IdBodega,source.NoTransporte,source.FlagCancelada,source.FlagRevisada,source.IdEstatus,source.IdUSuarioCreacion,source.
+FechaCreacion,source.IdUsuarioActualizacion,source.FechaActualizacion);
 		SET @IdBoleta = SCOPE_IDENTITY()
 		END
 RETURN @IdBoleta

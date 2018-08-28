@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CapturaBoletasPorLotes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,12 @@ Partial Class CapturaBoletasPorLotes
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MSMenu = New System.Windows.Forms.MenuStrip()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.IncidenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GbGenerales = New System.Windows.Forms.GroupBox()
         Me.LbStatus = New System.Windows.Forms.Label()
@@ -35,7 +36,6 @@ Partial Class CapturaBoletasPorLotes
         Me.DgvModulos = New System.Windows.Forms.DataGridView()
         Me.TiActualizaDgvModulos = New System.Windows.Forms.Timer(Me.components)
         Me.SpCapturaAuto = New System.IO.Ports.SerialPort(Me.components)
-        Me.IncidenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MSMenu.SuspendLayout()
         Me.GbGenerales.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -55,6 +55,12 @@ Partial Class CapturaBoletasPorLotes
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
         Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
+        '
+        'IncidenciasToolStripMenuItem
+        '
+        Me.IncidenciasToolStripMenuItem.Name = "IncidenciasToolStripMenuItem"
+        Me.IncidenciasToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
+        Me.IncidenciasToolStripMenuItem.Text = "Incidencias"
         '
         'SalirToolStripMenuItem
         '
@@ -149,12 +155,6 @@ Partial Class CapturaBoletasPorLotes
         '
         'SpCapturaAuto
         '
-        '
-        'IncidenciasToolStripMenuItem
-        '
-        Me.IncidenciasToolStripMenuItem.Name = "IncidenciasToolStripMenuItem"
-        Me.IncidenciasToolStripMenuItem.Size = New System.Drawing.Size(78, 20)
-        Me.IncidenciasToolStripMenuItem.Text = "Incidencias"
         '
         'CapturaBoletasPorLotes
         '
