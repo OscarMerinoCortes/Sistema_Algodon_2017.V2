@@ -114,6 +114,7 @@
     <Compile Include="Procesos\Produccion.vb" />
     <Compile Include="Reportes\Reportes.vb" />
     <Compile Include="Tarjeta.vb" />
+    <Compile Include="Utilerias\ConfiguracionParametros.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -138,7 +139,6 @@
     <Folder Include="Administracion\" />
     <Folder Include="Almacenes\" />
     <Folder Include="Comercializacion\Ventas\" />
-    <Folder Include="Utilerias\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Capa_Operacion\Capa_Operacion.vbproj">

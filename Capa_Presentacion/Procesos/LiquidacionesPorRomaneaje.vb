@@ -50,14 +50,13 @@ Public Class LiquidacionesPorRomaneaje
         TbTotalHueso.Text = ""
         TbNumBorregos.Text = ""
         TbNumPacas.Text = ""
-        TbPluma.Text = ""
+        TbTotalPluma.Text = ""
         TbBorregosPluma.Text = ""
-        TbPacasPluma.Text = ""
-        TbMerma.Text = ""
+        TbTotalMerma.Text = ""
         TbPorcentajeMerma.Text = ""
         TbPorcentajePluma.Text = ""
         TbPorcentajeSemilla.Text = ""
-        TbSemilla.Text = ""
+        TbTotalSemilla.Text = ""
         TbPorcentajeTotal.Text = ""
         TbComentarios.Text = ""
         DgvModulos.DataSource = ""
@@ -83,16 +82,14 @@ Public Class LiquidacionesPorRomaneaje
         TbTotalHueso.Text = Tabla.Rows(0).Item("TotalHueso")
         TbNumPacas.Text = Tabla.Rows(0).Item("Pacas")
         TbNumBorregos.Text = 0
-        TbPacasPluma.Text = Tabla.Rows(0).Item("Pluma")
         TbBorregosPluma.Text = Tabla.Rows(0).Item("PlumaBorregos")
-        TbPluma.Text = Tabla.Rows(0).Item("Pluma")
-        TbSemilla.Text = Tabla.Rows(0).Item("Semilla")
-        TbMerma.Text = Tabla.Rows(0).Item("Merma")
+        TbTotalPluma.Text = Tabla.Rows(0).Item("Pluma")
+        TbTotalSemilla.Text = Tabla.Rows(0).Item("Semilla")
+        TbTotalMerma.Text = Tabla.Rows(0).Item("Merma")
         TbPorcentajePluma.Text = Tabla.Rows(0).Item("PorcentajePluma")
         TbPorcentajeSemilla.Text = Tabla.Rows(0).Item("PorcentajeSemilla")
         TbPorcentajeMerma.Text = Tabla.Rows(0).Item("PorcentajeMerma")
         TbPorcentajeTotal.Text = Tabla.Rows(0).Item("PorcentajePluma") + Tabla.Rows(0).Item("PorcentajeSemilla") + Tabla.Rows(0).Item("PorcentajeMerma")
-
         ConsultarModulos()
     End Sub
     Private Sub ConsultarModulos()
@@ -122,12 +119,25 @@ Public Class LiquidacionesPorRomaneaje
         EntidadLiquidacionesPorRomaneaje.IdOrdenTrabajo = TbIdOrden.Text
         EntidadLiquidacionesPorRomaneaje.Fecha = DtFechaLiquidacion.Value
         EntidadLiquidacionesPorRomaneaje.Comentarios = TbComentarios.Text
+        '----------------------------------------------------------------
+        EntidadLiquidacionesPorRomaneaje.TotalHueso = CDbl(TbTotalHueso.Text)
+        EntidadLiquidacionesPorRomaneaje.TotalPluma = CDbl(TbTotalPluma.Text)
+        EntidadLiquidacionesPorRomaneaje.TotalSemilla = CDbl(TbTotalSemilla.Text)
+        EntidadLiquidacionesPorRomaneaje.TotalMerma = CDbl(TbTotalMerma.Text)
+        EntidadLiquidacionesPorRomaneaje.TotalPacas = CInt(TbNumPacas.Text)
+        EntidadLiquidacionesPorRomaneaje.TotalBoletas = CInt(TbTotalBoletas.Text)
+        EntidadLiquidacionesPorRomaneaje.TotalBorregos = CInt(TbNumBorregos.Text)
+        EntidadLiquidacionesPorRomaneaje.TotalPlumaBorregos = CDbl(TbBorregosPluma.Text)
+        EntidadLiquidacionesPorRomaneaje.PorcentajePluma = CDbl(TbPorcentajePluma.Text)
+        EntidadLiquidacionesPorRomaneaje.PorcentajeSemilla = CDbl(TbPorcentajeSemilla.Text)
+        EntidadLiquidacionesPorRomaneaje.PorcentajeMerma = CDbl(TbPorcentajeMerma.Text)
+        '---------------------------------------------
         EntidadLiquidacionesPorRomaneaje.IdEstatus = 1
         EntidadLiquidacionesPorRomaneaje.IdUsuarioCreacion = 1
         EntidadLiquidacionesPorRomaneaje.FechaCreacion = Now
         EntidadLiquidacionesPorRomaneaje.IdUsuarioActualizacion = 1
         EntidadLiquidacionesPorRomaneaje.FechaActualizacion = Now
-        NegocioLiquidacionesPorRomaneaje.Guardar(EntidadLiquidacionesPorRomaneaje)
+        NegocioLiquidacionesPorRomaneaje.Upsert(EntidadLiquidacionesPorRomaneaje)
         TbIdLiquidacion.Text = EntidadLiquidacionesPorRomaneaje.IdOrdenTrabajo
         MsgBox("Realizado Correctamente")
     End Sub
@@ -156,19 +166,9 @@ Public Class LiquidacionesPorRomaneaje
                         CbTipo.Text = Tabla.Rows(0).Item("Tipo")
                         DtFechaLiquidacion.Value = Tabla.Rows(0).Item("Fecha")
                         TbComentarios.Text = Tabla.Rows(0).Item("Comentarios")
-                        TbTotalHueso.Text = Tabla.Rows(0).Item("TotalHueso")
-                        TbNumPacas.Text = Tabla.Rows(0).Item("Pacas")
-                        TbNumBorregos.Text = 0
-                        TbPacasPluma.Text = Tabla.Rows(0).Item("Pluma")
-                        TbBorregosPluma.Text = Tabla.Rows(0).Item("PlumaBorregos")
-                        TbPluma.Text = Tabla.Rows(0).Item("Pluma")
-                        TbSemilla.Text = Tabla.Rows(0).Item("Semilla")
-                        TbMerma.Text = Tabla.Rows(0).Item("Merma")
-                        TbPorcentajePluma.Text = Tabla.Rows(0).Item("PorcentajePluma")
-                        TbPorcentajeSemilla.Text = Tabla.Rows(0).Item("PorcentajeSemilla")
-                        TbPorcentajeMerma.Text = Tabla.Rows(0).Item("PorcentajeMerma")
-                        TbPorcentajeTotal.Text = Tabla.Rows(0).Item("PorcentajePluma") + Tabla.Rows(0).Item("PorcentajeSemilla") + Tabla.Rows(0).Item("PorcentajeMerma")
                         ConsultarModulos()
+                        CalculosResumen()
+                        TbTotalBoletas.Text = CInt(DgvModulos.RowCount)
                     End If
                 Else
                     MsgBox("Ingrese el ID de la orden de trabajo...")
@@ -178,5 +178,30 @@ Public Class LiquidacionesPorRomaneaje
     End Sub
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         Limpiar()
+    End Sub
+
+    Private Sub CalculosResumen()
+        Dim EntidadLiquidacionesPorRomaneaje As New Capa_Entidad.LiquidacionesPorRomaneaje
+        Dim NegocioLiquidacionesPorRomaneaje As New Capa_Negocio.LiquidacionesPorRomaneaje
+        Dim Tabla As New DataTable
+        EntidadLiquidacionesPorRomaneaje.Consulta = Consulta.ConsultaExterna
+        EntidadLiquidacionesPorRomaneaje.IdOrdenTrabajo = CInt(TbIdOrden.Text)
+        NegocioLiquidacionesPorRomaneaje.Consultar(EntidadLiquidacionesPorRomaneaje)
+        Tabla = EntidadLiquidacionesPorRomaneaje.TablaConsulta
+        TbTotalHueso.Text = Format(Tabla.Rows(0).Item("TotalHueso"), "##,##00.00")
+        TbTotalPluma.Text = Format(Tabla.Rows(0).Item("TotalPluma"), "##,##00.00")
+        TbPorcentajePluma.Text = Tabla.Rows(0).Item("PorcentajePluma")
+        TbPorcentajeSemilla.Text = Tabla.Rows(0).Item("PorcentajeSemilla")
+        TbTotalSemilla.Text = Format(Tabla.Rows(0).Item("TotalSemilla"), "##,##00.00")
+        TbPorcentajeMerma.Text = Tabla.Rows(0).Item("PorcentajeMerma")
+        TbTotalMerma.Text = Format(Tabla.Rows(0).Item("TotalMerma"), "##,##00.00")
+        TbPorcentajeTotal.Text = CInt((CInt(TbPorcentajeMerma.Text) + CInt(TbPorcentajePluma.Text) + CInt(TbPorcentajeSemilla.Text)))
+        TbNumPacas.Text = Tabla.Rows(0).Item("TotalPacas")
+        TbNumBorregos.Text = Tabla.Rows(0).Item("TotalBorregos")
+        TbBorregosPluma.Text = Format(Tabla.Rows(0).Item("TotalPlumaBorregos"), "##,##00.00")
+    End Sub
+
+    Private Sub ImprimirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImprimirToolStripMenuItem.Click
+
     End Sub
 End Class

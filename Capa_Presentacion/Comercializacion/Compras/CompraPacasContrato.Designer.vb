@@ -734,9 +734,8 @@ Partial Class CompraPacasContrato
         Me.Controls.Add(Me.MSMenu)
         Me.MinimumSize = New System.Drawing.Size(1415, 651)
         Me.Name = "CompraPacasContrato"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Compra de Pacas Por Contrato"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GbDatosGenerales.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         CType(Me.DataGridView8, System.ComponentModel.ISupportInitialize).EndInit()

@@ -688,7 +688,6 @@ Partial Class Produccion
         Me.GroupBox3.Size = New System.Drawing.Size(1076, 335)
         Me.GroupBox3.TabIndex = 68
         Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "GroupBox3"
         '
         'Produccion
         '
