@@ -9,5 +9,6 @@ TrashId int,
 Clase varchar(4),
 UHML float,
 Strength float,
-SCI int
+SCI int,
+FlagTerminado bit
 )

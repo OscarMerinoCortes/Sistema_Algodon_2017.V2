@@ -144,10 +144,16 @@ Public Class CapturaBoletasPorLotes
             Total = Bruto - Tara
             DgvModulos.Rows(IndexCell).Cells("Total").Value = Total
             ActualizaPesoModuloManual(IndexCell, DgvModulos.Rows(IndexCell).Cells("IdBoleta").Value, Bruto, Tara, Total, DgvModulos.Rows(IndexCell).Cells("FlagRevisada").Value, DgvModulos.Rows(IndexCell).Cells("FlagCancelada").Value)
+            ActualizaPesoOrdenTrabajo(DgvModulos.Rows(IndexCell).Cells("IdOrdenTrabajo").Value)
         End If
     End Sub
-    Private Sub ActualizaManual()
-
+    Private Sub ActualizaPesoOrdenTrabajo(ByVal IdOrdenTrabajo As Integer)
+        Dim EntidadCapturaBoletasPorLotes As New Capa_Entidad.CapturaBoletasPorLotes
+        Dim NegocioCapturaBoletasPorLotes As New Capa_Negocio.CapturaBoletasPorLotes
+        If IdOrdenTrabajo > 0 Then
+            EntidadCapturaBoletasPorLotes.IdOrdenTrabajo = IdOrdenTrabajo
+            NegocioCapturaBoletasPorLotes.ActualizaPesoOrden(EntidadCapturaBoletasPorLotes)
+        End If
     End Sub
     Private Sub ActualizaPesoModuloManual(ByVal IndexCell As Integer, ByVal IdBoleta As Integer, ByVal Bruto As Double, ByVal Tara As Double, ByVal Total As Double, ByVal Revisada As Boolean, ByVal Cancelada As Boolean)
         Dim EntidadCapturaBoletasPorLotes As New Capa_Entidad.CapturaBoletasPorLotes
@@ -163,6 +169,7 @@ Public Class CapturaBoletasPorLotes
     Private Sub ActualizaPesoModuloAutomatico(ByVal NoTransporte As Integer, ByVal IdBoleta As Integer, ByVal Bruto As Double, ByVal Tara As Double, ByVal Neto As Double, ByVal FechaActualizacion As DateTime, ByVal TipoFlete As String)
         Dim EntidadCapturaBoletasPorLotes As New Capa_Entidad.CapturaBoletasPorLotes
         Dim NegocioCapturaBoletasPorLotes As New Capa_Negocio.CapturaBoletasPorLotes
+        Dim Tabla As DataTable
         EntidadCapturaBoletasPorLotes.NoTransporte = NoTransporte
         EntidadCapturaBoletasPorLotes.Idboleta = IdBoleta
         EntidadCapturaBoletasPorLotes.Bruto = Bruto
@@ -171,6 +178,10 @@ Public Class CapturaBoletasPorLotes
         EntidadCapturaBoletasPorLotes.FechaActualizacion = FechaActualizacion
         EntidadCapturaBoletasPorLotes.TipoFlete = TipoFlete
         NegocioCapturaBoletasPorLotes.upsertAuto(EntidadCapturaBoletasPorLotes)
+        Tabla = EntidadCapturaBoletasPorLotes.TablaConsulta
+
+        ActualizaPesoOrdenTrabajo(Tabla.Rows(0).Item("IdOrdenTrabajo"))
+
     End Sub
     Private Sub GetSerialPortNames()
         ' muestra COM ports disponibles.

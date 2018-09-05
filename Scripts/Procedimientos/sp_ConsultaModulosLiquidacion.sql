@@ -9,5 +9,5 @@ select bo.IdOrdenTrabajo,
 	   Bo.Total, 
 	   Bo.FechaOrden, 
 	   bo.FlagRevisada 
-from [dbo].[BoletasPorOrden] Bo inner join [dbo].[Clientes] Cl  on Bo.IdProductor = Cl.IdCliente
+from [dbo].[OrdenTrabajoDetalle] Bo inner join [dbo].[Clientes] Cl  on Bo.IdProductor = Cl.IdCliente
 where bo.IdOrdenTrabajo = @IdOrdenTrabajo and   bo.FlagCancelada = 0

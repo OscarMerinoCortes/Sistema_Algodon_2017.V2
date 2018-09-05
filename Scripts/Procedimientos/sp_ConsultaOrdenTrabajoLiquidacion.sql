@@ -1,4 +1,4 @@
-create proc sp_ConsultaOrdenTrabajoLiquidacion
+CREATE proc sp_ConsultaOrdenTrabajoLiquidacion
 @IdOrdenTrabajo as int
 as
 if exists (select idordentrabajo from LiquidacionesPorRomaneaje where IdOrdenTrabajo = @IdOrdenTrabajo) 
@@ -24,7 +24,7 @@ if exists (select idordentrabajo from LiquidacionesPorRomaneaje where IdOrdenTra
 			   PR.IdCliente, 
 			   Aso.IdAsociacion as IdPorCuenta
 		from LiquidacionesPorRomaneaje Lpr right join Produccion Pr  on Lpr.IdOrdenTrabajo = Pr.IdOrdenTrabajo
-										   right join BoletasPorOrden Bo on Pr.IdOrdenTrabajo = Bo.IdOrdenTrabajo
+										   right join OrdenTrabajoDetalle Bo on Pr.IdOrdenTrabajo = Bo.IdOrdenTrabajo
 										   right join Clientes Cl on pr.IdCliente = Cl.IdCliente
 										   right join Asociaciones Aso on cl.IdCuentaDe = Aso.IdAsociacion
 		where Pr.IdOrdenTrabajo = @IdOrdenTrabajo
@@ -71,7 +71,7 @@ else
 			   pr.porcentajemerma,
 			   PR.IdCliente, 
 			   Aso.IdAsociacion as IdPorCuenta
-		from Produccion Pr right join BoletasPorOrden Bo on Pr.IdOrdenTrabajo = Bo.IdOrdenTrabajo
+		from Produccion Pr right join OrdenTrabajoDetalle Bo on Pr.IdOrdenTrabajo = Bo.IdOrdenTrabajo
 						   right join Clientes Cl on pr.IdCliente = Cl.IdCliente
 						   right join Asociaciones Aso on cl.IdCuentaDe = Aso.IdAsociacion
 		where Pr.IdOrdenTrabajo = @IdOrdenTrabajo

@@ -9,9 +9,8 @@ select a.BaleId,
 	   a.UHML as LargoFibra,
 	   a.Strength as ResistenciaFibra,
 	   a.SCI,
+	   a.FlagTerminado,
 	   a.IdHviDetalle
 from [dbo].[CalculoClasificacion] a
 where a.IdPaqueteEncabezado = @IdPaquete
 order by a.BaleId asc
-
-select * from [CalculoClasificacion]
