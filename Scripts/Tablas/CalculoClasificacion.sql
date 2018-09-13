@@ -1,14 +1,15 @@
-create table CalculoClasificacion(
-IdCalculoClasificacion int not null primary key identity(1,1),
-IdPaqueteEncabezado int not null,
-IdHviDetalle int not null,
-BaleId int,
-Mic float,
-ColorGrade varchar(4),
-TrashId int,
-Clase varchar(4),
-UHML float,
-Strength float,
-SCI int,
-FlagTerminado bit
-)
+CREATE TABLE [dbo].[CalculoClasificacion](
+	[IdCalculoClasificacion] [int] IDENTITY(1,1) NOT NULL,
+	[IdPaqueteEncabezado] [int] NOT NULL,
+	[IdHviDetalle] [int] NOT NULL,
+	[IdOrdenTrabajo] [int] NOT NULL,
+	[BaleId] [int] NULL,
+	[Mic] [float] NULL,
+	[ColorGrade] [varchar](4) NULL,
+	[TrashId] [int] NULL,
+	[Clase] [varchar](4) NULL,
+	[UHML] [float] NULL,
+	[Strength] [float] NULL,
+	[SCI] [int] NULL,
+	[FlagTerminado] [bit] NULL
+	)

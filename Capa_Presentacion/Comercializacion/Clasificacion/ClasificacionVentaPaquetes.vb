@@ -80,6 +80,7 @@ Public Class ClasificacionVentaPaquetes
         TablaClasificacionGrid.Columns.Add(New DataColumn("SCI", System.Type.GetType("System.Int32")))
         TablaClasificacionGrid.Columns.Add(New DataColumn("FlagTerminado", System.Type.GetType("System.Boolean")))
         TablaClasificacionGrid.Columns.Add(New DataColumn("IdHviDetalle", System.Type.GetType("System.Int32")))
+        TablaClasificacionGrid.Columns.Add(New DataColumn("IdOrdenTrabajo", System.Type.GetType("System.Int32")))
     End Sub
     Private Sub ContarPacas()
         TbCantidadPacas.Text = DgvPacasClasificacion1.Rows.Count
@@ -103,6 +104,8 @@ Public Class ClasificacionVentaPaquetes
             rengloninsertar("SCI") = DgvPacasClasificacion1.Rows(index).Cells("SCI").Value
             rengloninsertar("FlagTerminado") = IIf(DgvPacasClasificacion1.Rows(index).Cells("FlagTerminado").Value = Nothing, False, DgvPacasClasificacion1.Rows(index).Cells("FlagTerminado").Value)
             rengloninsertar("IdHviDetalle") = DgvPacasClasificacion1.Rows(index).Cells("IdHviDetalle").Value
+            rengloninsertar("IdOrdenTrabajo") = DgvPacasClasificacion1.Rows(index).Cells("IdOrdenTrabajo").Value
+
             TablaClasificacionGrid.Rows.Add(rengloninsertar)
         Next
         TablaClasificacionGlobal = TablaClasificacionGrid
@@ -172,7 +175,7 @@ Public Class ClasificacionVentaPaquetes
         If Tabla.Rows.Count = 0 Then
             MsgBox("La paca no se encuentra en la base de datos HVI.")
         ElseIf VerificaPacaRepetida(VerificaDuplicado) = False Then
-            DgvPacasClasificacion1.Rows.Add(Tabla.Rows(0).Item("BaleId"), Tabla.Rows(0).Item("Mic"), Tabla.Rows(0).Item("ColorGrade"), Tabla.Rows(0).Item("TrashId"), Tabla.Rows(0).Item("Clase"), Tabla.Rows(0).Item("LargoFibra"), Tabla.Rows(0).Item("ResistenciaFibra"), Tabla.Rows(0).Item("SCI"), Tabla.Rows(0).Item("IdHviDet"), Tabla.Rows(0).Item("FlagTerminado"))
+            DgvPacasClasificacion1.Rows.Add(Tabla.Rows(0).Item("BaleId"), Tabla.Rows(0).Item("Mic"), Tabla.Rows(0).Item("ColorGrade"), Tabla.Rows(0).Item("TrashId"), Tabla.Rows(0).Item("Clase"), Tabla.Rows(0).Item("LargoFibra"), Tabla.Rows(0).Item("ResistenciaFibra"), Tabla.Rows(0).Item("SCI"), Tabla.Rows(0).Item("IdHviDet"), Tabla.Rows(0).Item("IdOrdenTrabajo"), Tabla.Rows(0).Item("FlagTerminado"))
         Else
             MsgBox("El numero de paca ya se encuentra registrado.")
         End If
@@ -309,18 +312,22 @@ Public Class ClasificacionVentaPaquetes
             colIdHviDetalle.Visible = False
             DgvPacasClasificacion1.Columns.Insert(8, colIdHviDetalle)
 
+            Dim colIdOrdenTrabajo As New DataGridViewTextBoxColumn
+            colIdOrdenTrabajo.Name = "IdOrdenTrabajo"
+            colIdOrdenTrabajo.Visible = False
+            DgvPacasClasificacion1.Columns.Insert(9, colIdOrdenTrabajo)
+
             Dim colSel As New DataGridViewCheckBoxColumn()
             colSel.Name = "Sel"
-            DgvPacasClasificacion1.Columns.Insert(9, colSel)
+            DgvPacasClasificacion1.Columns.Insert(10, colSel)
 
             Dim colTerminado As New DataGridViewCheckBoxColumn()
             colTerminado.Name = "FlagTerminado"
             colTerminado.FalseValue = False
             colTerminado.Visible = False
-            DgvPacasClasificacion1.Columns.Insert(10, colTerminado)
+            DgvPacasClasificacion1.Columns.Insert(11, colTerminado)
         End If
     End Sub
-
     Private Sub EliminarPacasSeleccionadasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarPacasSeleccionadasToolStripMenuItem.Click
         EliminarRegistro2()
         ContarPacas()
