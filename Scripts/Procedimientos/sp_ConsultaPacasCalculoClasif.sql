@@ -10,7 +10,8 @@ select a.BaleId,
 	   a.Strength as ResistenciaFibra,
 	   a.SCI,
 	   a.FlagTerminado,
-	   a.IdHviDetalle
+	   a.IdHviDetalle,
+	   a.IdOrdenTrabajo
 from [dbo].[CalculoClasificacion] a
 where a.IdPaqueteEncabezado = @IdPaquete
 order by a.BaleId asc

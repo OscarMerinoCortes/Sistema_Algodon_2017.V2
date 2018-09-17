@@ -82,6 +82,7 @@ Public Class ClasificacionVentaPaquetes
                     cmdGuardar.Parameters.Add(New SqlParameter("@IdCalculoClasificacion", 0))
                     cmdGuardar.Parameters.Add(New SqlParameter("@IdPaqueteEncabezado", EntidadClasificacionVentaPaquetes1.IdPaquete))
                     cmdGuardar.Parameters.Add(New SqlParameter("@IdHviDetalle", MiTableRow("IdHviDetalle")))
+                    cmdGuardar.Parameters.Add(New SqlParameter("@IdOrdenTrabajo", MiTableRow("IdOrdenTrabajo")))
                     cmdGuardar.Parameters.Add(New SqlParameter("@BaleId", MiTableRow("BaleId")))
                     cmdGuardar.Parameters.Add(New SqlParameter("@Mic", MiTableRow("Mic")))
                     cmdGuardar.Parameters.Add(New SqlParameter("@ColorGrade", MiTableRow("ColorGrade")))

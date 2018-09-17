@@ -80,6 +80,7 @@ Public Class ClasificacionVentaPaquetes
         TablaClasificacionGrid.Columns.Add(New DataColumn("SCI", System.Type.GetType("System.Int32")))
         TablaClasificacionGrid.Columns.Add(New DataColumn("FlagTerminado", System.Type.GetType("System.Boolean")))
         TablaClasificacionGrid.Columns.Add(New DataColumn("IdHviDetalle", System.Type.GetType("System.Int32")))
+        TablaClasificacionGrid.Columns.Add(New DataColumn("IdOrdenTrabajo", System.Type.GetType("System.Int32")))
     End Sub
     Private Sub ContarPacas()
         TbCantidadPacas.Text = DgvPacasClasificacion1.Rows.Count
@@ -103,6 +104,8 @@ Public Class ClasificacionVentaPaquetes
             rengloninsertar("SCI") = DgvPacasClasificacion1.Rows(index).Cells("SCI").Value
             rengloninsertar("FlagTerminado") = IIf(DgvPacasClasificacion1.Rows(index).Cells("FlagTerminado").Value = Nothing, False, DgvPacasClasificacion1.Rows(index).Cells("FlagTerminado").Value)
             rengloninsertar("IdHviDetalle") = DgvPacasClasificacion1.Rows(index).Cells("IdHviDetalle").Value
+            rengloninsertar("IdOrdenTrabajo") = DgvPacasClasificacion1.Rows(index).Cells("IdOrdenTrabajo").Value
+
             TablaClasificacionGrid.Rows.Add(rengloninsertar)
         Next
         TablaClasificacionGlobal = TablaClasificacionGrid
@@ -172,7 +175,7 @@ Public Class ClasificacionVentaPaquetes
         If Tabla.Rows.Count = 0 Then
             MsgBox("La paca no se encuentra en la base de datos HVI.")
         ElseIf VerificaPacaRepetida(VerificaDuplicado) = False Then
-            DgvPacasClasificacion1.Rows.Add(Tabla.Rows(0).Item("BaleId"), Tabla.Rows(0).Item("Mic"), Tabla.Rows(0).Item("ColorGrade"), Tabla.Rows(0).Item("TrashId"), Tabla.Rows(0).Item("Clase"), Tabla.Rows(0).Item("LargoFibra"), Tabla.Rows(0).Item("ResistenciaFibra"), Tabla.Rows(0).Item("SCI"), Tabla.Rows(0).Item("FlagTerminado"), Tabla.Rows(0).Item("IdHviDet"))
+            DgvPacasClasificacion1.Rows.Add(Tabla.Rows(0).Item("BaleId"), Tabla.Rows(0).Item("Mic"), Tabla.Rows(0).Item("ColorGrade"), Tabla.Rows(0).Item("TrashId"), Tabla.Rows(0).Item("Clase"), Tabla.Rows(0).Item("LargoFibra"), Tabla.Rows(0).Item("ResistenciaFibra"), Tabla.Rows(0).Item("SCI"), Tabla.Rows(0).Item("IdHviDet"), Tabla.Rows(0).Item("IdOrdenTrabajo"), Tabla.Rows(0).Item("FlagTerminado"))
         Else
             MsgBox("El numero de paca ya se encuentra registrado.")
         End If
@@ -224,6 +227,12 @@ Public Class ClasificacionVentaPaquetes
                 End If
             End If
             DgvPacasClasificacion1.Rows(Contador).Selected = False
+        Next Contador
+    End Sub
+    Private Sub desmarcaCheck()
+        Dim Contador As Integer
+        For Contador = 0 To DgvPacasClasificacion1.RowCount - 1
+            DgvPacasClasificacion1.Rows(Contador).Cells("Sel").Value = False
         Next Contador
     End Sub
     Private Sub EliminarRegistro3()
@@ -303,17 +312,22 @@ Public Class ClasificacionVentaPaquetes
             colIdHviDetalle.Visible = False
             DgvPacasClasificacion1.Columns.Insert(8, colIdHviDetalle)
 
+            Dim colIdOrdenTrabajo As New DataGridViewTextBoxColumn
+            colIdOrdenTrabajo.Name = "IdOrdenTrabajo"
+            colIdOrdenTrabajo.Visible = False
+            DgvPacasClasificacion1.Columns.Insert(9, colIdOrdenTrabajo)
+
             Dim colSel As New DataGridViewCheckBoxColumn()
             colSel.Name = "Sel"
-            DgvPacasClasificacion1.Columns.Insert(9, colSel)
+            DgvPacasClasificacion1.Columns.Insert(10, colSel)
 
             Dim colTerminado As New DataGridViewCheckBoxColumn()
             colTerminado.Name = "FlagTerminado"
             colTerminado.FalseValue = False
-            DgvPacasClasificacion1.Columns.Insert(10, colTerminado)
+            colTerminado.Visible = False
+            DgvPacasClasificacion1.Columns.Insert(11, colTerminado)
         End If
     End Sub
-
     Private Sub EliminarPacasSeleccionadasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EliminarPacasSeleccionadasToolStripMenuItem.Click
         EliminarRegistro2()
         ContarPacas()
@@ -323,30 +337,33 @@ Public Class ClasificacionVentaPaquetes
     End Sub
     Private Sub Guardar()
         'If DgvPacasClasificacion1.RowCount > 0 Then
+        'If TbIdPaquete.Text <> "" Then
         Dim EntidadClasificacionVentaPaquetes As New Capa_Entidad.ClasificacionVentaPaquetes
-        Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
-        If IdentificaColor() > 0 And chkfinalizado.Checked = True Then
-            MsgBox("Por favor, verificar que los datos esten correctos.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
-        Else
-            EntidadClasificacionVentaPaquetes.IdPaquete = IIf(TbIdPaquete.Text = "", 0, TbIdPaquete.Text)
-            EntidadClasificacionVentaPaquetes.IdPlanta = CbPlanta.SelectedValue
-            EntidadClasificacionVentaPaquetes.IdClase = CbClases.SelectedValue
-            EntidadClasificacionVentaPaquetes.CantidadPacas = TbCantidadPacas.Text
-            EntidadClasificacionVentaPaquetes.Descripcion = TbDescripcion.Text
-            EntidadClasificacionVentaPaquetes.FlagRevisado = chkfinalizado.Checked
-            EntidadClasificacionVentaPaquetes.IdEstatus = CbEstatus.SelectedValue
-            EntidadClasificacionVentaPaquetes.IdUsuarioCreacion = 1
-            EntidadClasificacionVentaPaquetes.FechaCreacion = Now
-            EntidadClasificacionVentaPaquetes.IdUsuarioActualizacion = 1
-            EntidadClasificacionVentaPaquetes.FechaActualizacion = Now
-            DataGridViewToTable()
-            EntidadClasificacionVentaPaquetes.TablaGeneral = TablaClasificacionGlobal
-            NegocioClasificacionVentaPaquetes.GuardarTablas(EntidadClasificacionVentaPaquetes)
-            TbIdPaquete.Text = EntidadClasificacionVentaPaquetes.IdPaquete
-            'MsgBox("Paquete guardado con exito.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Aviso")
-            DgvPacasClasificacion1.Enabled = False
-        End If
-
+            Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
+            If IdentificaColor() > 0 And chkfinalizado.Checked = True Then
+                MsgBox("Por favor, verificar que los datos esten correctos.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
+            Else
+                EntidadClasificacionVentaPaquetes.IdPaquete = IIf(TbIdPaquete.Text = "", 0, TbIdPaquete.Text)
+                EntidadClasificacionVentaPaquetes.IdPlanta = CbPlanta.SelectedValue
+                EntidadClasificacionVentaPaquetes.IdClase = CbClases.SelectedValue
+                EntidadClasificacionVentaPaquetes.CantidadPacas = TbCantidadPacas.Text
+                EntidadClasificacionVentaPaquetes.Descripcion = TbDescripcion.Text
+                EntidadClasificacionVentaPaquetes.chkrevisado = chkfinalizado.Checked
+                EntidadClasificacionVentaPaquetes.IdEstatus = CbEstatus.SelectedValue
+                EntidadClasificacionVentaPaquetes.IdUsuarioCreacion = 1
+                EntidadClasificacionVentaPaquetes.FechaCreacion = Now
+                EntidadClasificacionVentaPaquetes.IdUsuarioActualizacion = 1
+                EntidadClasificacionVentaPaquetes.FechaActualizacion = Now
+                DataGridViewToTable()
+                EntidadClasificacionVentaPaquetes.TablaGeneral = TablaClasificacionGlobal
+                NegocioClasificacionVentaPaquetes.GuardarTablas(EntidadClasificacionVentaPaquetes)
+                TbIdPaquete.Text = EntidadClasificacionVentaPaquetes.IdPaquete
+                'MsgBox("Paquete guardado con exito.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Aviso")
+                DgvPacasClasificacion1.Enabled = False
+            End If
+        'Else
+        '    MsgBox("El campo No Paca esta vacio, no se puede guardar informacion!", MsgBoxStyle.Information, "Aviso")
+        'End If
         'Else
         '    MsgBox("No hay datos para guardar.", MsgBoxStyle.Exclamation)
         'End If
@@ -385,6 +402,7 @@ Public Class ClasificacionVentaPaquetes
         Return dt
     End Function
     Private Sub Consultar()
+        DgvPacasClasificacion1.Rows.Clear()
         Dim EntidadClasificacionVentaPaquetes As New Capa_Entidad.ClasificacionVentaPaquetes
         Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
         If TbIdPaquete.Text <> "" Then
@@ -418,11 +436,24 @@ Public Class ClasificacionVentaPaquetes
             MsgBox("Por favor, verificar que los datos esten correctos.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
         End If
         IdentificaColor()
-        If chkfinalizado.Checked = True Then  DgvPacasClasificacion1.Enabled = False
+        If chkfinalizado.Checked = True Then DgvPacasClasificacion1.Enabled = False
+        desmarcaCheck()
     End Sub
 
     Private Sub chkfinalizado_CheckedChanged(sender As Object, e As EventArgs) Handles chkfinalizado.CheckedChanged
+        Dim index As Integer
+        If chkfinalizado.Checked = True Then
 
+            For Each row As DataGridViewRow In DgvPacasClasificacion1.Rows
+                Index = Convert.ToUInt64(row.Index)
+                DgvPacasClasificacion1.Rows(Index).Cells("FlagTerminado").Value = True
+            Next
+        Else
+            For Each row As DataGridViewRow In DgvPacasClasificacion1.Rows
+                index = Convert.ToUInt64(row.Index)
+                DgvPacasClasificacion1.Rows(index).Cells("FlagTerminado").Value = False
+            Next
+        End If
     End Sub
 
     Private Sub BtRevisarClases_Click(sender As Object, e As EventArgs) Handles BtRevisarClases.Click

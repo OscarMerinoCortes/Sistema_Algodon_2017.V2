@@ -1,7 +1,8 @@
-CREATE procedure [dbo].[sp_InsertarClasificacionPacas]
+create procedure [dbo].[sp_InsertarClasificacionPacas]
 @IdCalculoClasificacion int,
 @IdPaqueteEncabezado int,
 @IdHviDetalle int,
+@IdOrdenTrabajo int,
 @BaleId int,
 @Mic float,
 @ColorGrade varchar(4),
@@ -15,7 +16,7 @@ as
 begin 
 set nocount on
 merge [dbo].[CalculoClasificacion] as target
-using (select @IdCalculoClasificacion,@IdPaqueteEncabezado,@IdHviDetalle,@BaleId,@Mic,@ColorGrade,@TrashId,@Clase,@UHML,@Strength,@SCI,@FlagTerminado) AS SOURCE (IdCalculoClasificacion,IdPaqueteEncabezado,IdHviDetalle,BaleId,Mic,ColorGrade,TrashId,Clase,UHML,Strength,SCI,FlagTerminado)
+using (select @IdCalculoClasificacion,@IdPaqueteEncabezado,@IdHviDetalle,@IdOrdenTrabajo,@BaleId,@Mic,@ColorGrade,@TrashId,@Clase,@UHML,@Strength,@SCI,@FlagTerminado) AS SOURCE (IdCalculoClasificacion,IdPaqueteEncabezado,IdHviDetalle,IdOrdenTrabajo,BaleId,Mic,ColorGrade,TrashId,Clase,UHML,Strength,SCI,FlagTerminado)
 ON (target.BaleId = SOURCE.BaleId)
 WHEN MATCHED THEN
 UPDATE SET Mic = Source.Mic,
@@ -27,6 +28,6 @@ UPDATE SET Mic = Source.Mic,
 		   sci = source.sci,
 		   flagterminado= source.flagterminado
 WHEN NOT MATCHED THEN
-INSERT (IdPaqueteEncabezado,IdHviDetalle,BaleId,Mic,ColorGrade,TrashId,Clase,UHML,Strength,SCI,flagterminado)
-        VALUES (source.IdPaqueteEncabezado,source.IdHviDetalle,source.BaleId,source.Mic,source.ColorGrade,source.TrashId,source.Clase,source.UHML,source.Strength,source.SCI,source.flagterminado);		
+INSERT (IdPaqueteEncabezado,IdHviDetalle,IdOrdenTrabajo,BaleId,Mic,ColorGrade,TrashId,Clase,UHML,Strength,SCI,flagterminado)
+        VALUES (source.IdPaqueteEncabezado,source.IdHviDetalle,source.IdOrdenTrabajo,source.BaleId,source.Mic,source.ColorGrade,source.TrashId,source.Clase,source.UHML,source.Strength,source.SCI,source.flagterminado);		
 END
