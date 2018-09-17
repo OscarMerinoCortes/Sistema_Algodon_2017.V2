@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LiquidacionesPorRomaneaje
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class LiquidacionesPorRomaneaje
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.MSMenu = New System.Windows.Forms.MenuStrip()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,6 +45,8 @@ Partial Class LiquidacionesPorRomaneaje
         Me.Label1 = New System.Windows.Forms.Label()
         Me.CbPlanta = New System.Windows.Forms.ComboBox()
         Me.GbResumen = New System.Windows.Forms.GroupBox()
+        Me.TbTotalBoletas = New System.Windows.Forms.TextBox()
+        Me.LbTotalBoletas = New System.Windows.Forms.Label()
         Me.ChClaseMicros = New System.Windows.Forms.CheckBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -73,8 +75,6 @@ Partial Class LiquidacionesPorRomaneaje
         Me.GbComentarios = New System.Windows.Forms.GroupBox()
         Me.GbModulos = New System.Windows.Forms.GroupBox()
         Me.DgvModulos = New System.Windows.Forms.DataGridView()
-        Me.LbTotalBoletas = New System.Windows.Forms.Label()
-        Me.TbTotalBoletas = New System.Windows.Forms.TextBox()
         Me.MSMenu.SuspendLayout()
         Me.GbDatosGenerales.SuspendLayout()
         Me.GbResumen.SuspendLayout()
@@ -308,6 +308,24 @@ Partial Class LiquidacionesPorRomaneaje
         Me.GbResumen.TabIndex = 2
         Me.GbResumen.TabStop = False
         Me.GbResumen.Text = "Resumen"
+        '
+        'TbTotalBoletas
+        '
+        Me.TbTotalBoletas.Enabled = False
+        Me.TbTotalBoletas.Location = New System.Drawing.Point(100, 98)
+        Me.TbTotalBoletas.Name = "TbTotalBoletas"
+        Me.TbTotalBoletas.Size = New System.Drawing.Size(100, 20)
+        Me.TbTotalBoletas.TabIndex = 19
+        Me.TbTotalBoletas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'LbTotalBoletas
+        '
+        Me.LbTotalBoletas.AutoSize = True
+        Me.LbTotalBoletas.Location = New System.Drawing.Point(8, 101)
+        Me.LbTotalBoletas.Name = "LbTotalBoletas"
+        Me.LbTotalBoletas.Size = New System.Drawing.Size(69, 13)
+        Me.LbTotalBoletas.TabIndex = 18
+        Me.LbTotalBoletas.Text = "Total Boletas"
         '
         'ChClaseMicros
         '
@@ -573,24 +591,6 @@ Partial Class LiquidacionesPorRomaneaje
         Me.DgvModulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DgvModulos.Size = New System.Drawing.Size(518, 453)
         Me.DgvModulos.TabIndex = 30
-        '
-        'LbTotalBoletas
-        '
-        Me.LbTotalBoletas.AutoSize = True
-        Me.LbTotalBoletas.Location = New System.Drawing.Point(8, 101)
-        Me.LbTotalBoletas.Name = "LbTotalBoletas"
-        Me.LbTotalBoletas.Size = New System.Drawing.Size(69, 13)
-        Me.LbTotalBoletas.TabIndex = 18
-        Me.LbTotalBoletas.Text = "Total Boletas"
-        '
-        'TbTotalBoletas
-        '
-        Me.TbTotalBoletas.Enabled = False
-        Me.TbTotalBoletas.Location = New System.Drawing.Point(100, 98)
-        Me.TbTotalBoletas.Name = "TbTotalBoletas"
-        Me.TbTotalBoletas.Size = New System.Drawing.Size(100, 20)
-        Me.TbTotalBoletas.TabIndex = 19
-        Me.TbTotalBoletas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'LiquidacionesPorRomaneaje
         '

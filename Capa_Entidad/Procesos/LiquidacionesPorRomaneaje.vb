@@ -16,4 +16,5 @@
     Public PorcentajeSemilla As Double
     Public PorcentajeMerma As Double
     Public IdEstatus As Integer
+    Public Bandera As Boolean
 End Class

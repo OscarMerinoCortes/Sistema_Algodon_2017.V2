@@ -27,7 +27,7 @@ Public Class CompraPacasContrato
         CbModalidadCompra.DataSource = Tabla2
         CbModalidadCompra.ValueMember = "IdModoEncabezado"
         CbModalidadCompra.DisplayMember = "Descripcion"
-        CbModalidadCompra.SelectedValue = 0
+        CbModalidadCompra.SelectedValue = 11
     End Sub
     Private Sub BtCastigosPorMicros_Click(sender As Object, e As EventArgs) Handles BtCastigosPorMicros.Click
         CastigosMicros.ShowDialog()
