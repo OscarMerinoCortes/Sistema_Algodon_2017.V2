@@ -134,13 +134,39 @@ Public Class ClasificacionVentaPaquetes
             Exit Sub
         End If
     End Sub
+    Function VerificaExistenciaPacaEnPaquete(ByVal IdPaca As Integer)
+        Dim ExistePaca As Integer
+        Dim EntidadClasificacionVentaPaquetes As New Capa_Entidad.ClasificacionVentaPaquetes
+        Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
+        Dim Tabla As New DataTable
+        EntidadClasificacionVentaPaquetes.Consulta = Consulta.ConsultaPacaExistente
+        EntidadClasificacionVentaPaquetes.NumeroPaca = CInt(IIf(TbNoPaca.Text = "", 0, TbNoPaca.Text))
+        NegocioClasificacionVentaPaquetes.Consultar(EntidadClasificacionVentaPaquetes)
+        Tabla = EntidadClasificacionVentaPaquetes.TablaConsulta
+        ExistePaca = Tabla.Rows(0).Item("IdPaqueteEncabezado")
+        Return ExistePaca
+    End Function
     Private Sub TbNoPaca_TextChanged(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TbNoPaca.KeyDown
         Select Case e.KeyData
             Case Keys.Enter
                 If TbNoPaca.Text <> "" Then
-                    InsertaPaca()
-                    TbNoPaca.Text = ""
-                    Guardar()
+                    Dim IdPaquete = VerificaExistenciaPacaEnPaquete(TbNoPaca.Text)
+                    If IdPaquete = 0 Then
+                        InsertaPaca()
+                        TbNoPaca.Text = ""
+                        Guardar()
+                    Else
+                        Dim result As Integer = MessageBox.Show("La paca No. " & TbNoPaca.Text & " Ya existe en el paquete " & IdPaquete & ", ¿Deseas cambiarla al Paquete actual?", "Aviso", MessageBoxButtons.YesNo)
+                        If result = DialogResult.No Then
+
+                        ElseIf result = DialogResult.Yes Then
+                            ActualizaPaca()
+                            InsertaPaca()
+                            Guardar()
+                            MessageBox.Show("El paquete ha sido actualizado!")
+                        End If
+                        TbNoPaca.Text = ""
+                    End If
                 Else
                     MsgBox("Ingrese el ID de la orden de trabajo...")
                     Exit Sub
@@ -162,6 +188,15 @@ Public Class ClasificacionVentaPaquetes
                 End If
         End Select
         ContarPacas()
+    End Sub
+    Private Sub ActualizaPaca()
+        Dim EntidadClasificacionVentaPaquetes As New Capa_Entidad.ClasificacionVentaPaquetes
+        Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
+        'Dim Tabla As New DataTable
+        EntidadClasificacionVentaPaquetes.Actualiza = Actuliza.ActualizaIdPaca
+        EntidadClasificacionVentaPaquetes.NumeroPaca = CInt(IIf(TbNoPaca.Text = "", 0, TbNoPaca.Text))
+        EntidadClasificacionVentaPaquetes.IdPaquete = CInt(IIf(TbIdPaquete.Text = "", 0, TbIdPaquete.Text))
+        NegocioClasificacionVentaPaquetes.Actualizar(EntidadClasificacionVentaPaquetes)
     End Sub
     Private Sub InsertaPaca()
         Dim EntidadClasificacionVentaPaquetes As New Capa_Entidad.ClasificacionVentaPaquetes
@@ -339,28 +374,28 @@ Public Class ClasificacionVentaPaquetes
         'If DgvPacasClasificacion1.RowCount > 0 Then
         'If TbIdPaquete.Text <> "" Then
         Dim EntidadClasificacionVentaPaquetes As New Capa_Entidad.ClasificacionVentaPaquetes
-            Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
-            If IdentificaColor() > 0 And chkfinalizado.Checked = True Then
-                MsgBox("Por favor, verificar que los datos esten correctos.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
-            Else
-                EntidadClasificacionVentaPaquetes.IdPaquete = IIf(TbIdPaquete.Text = "", 0, TbIdPaquete.Text)
-                EntidadClasificacionVentaPaquetes.IdPlanta = CbPlanta.SelectedValue
-                EntidadClasificacionVentaPaquetes.IdClase = CbClases.SelectedValue
-                EntidadClasificacionVentaPaquetes.CantidadPacas = TbCantidadPacas.Text
-                EntidadClasificacionVentaPaquetes.Descripcion = TbDescripcion.Text
-                EntidadClasificacionVentaPaquetes.chkrevisado = chkfinalizado.Checked
-                EntidadClasificacionVentaPaquetes.IdEstatus = CbEstatus.SelectedValue
-                EntidadClasificacionVentaPaquetes.IdUsuarioCreacion = 1
-                EntidadClasificacionVentaPaquetes.FechaCreacion = Now
-                EntidadClasificacionVentaPaquetes.IdUsuarioActualizacion = 1
-                EntidadClasificacionVentaPaquetes.FechaActualizacion = Now
-                DataGridViewToTable()
-                EntidadClasificacionVentaPaquetes.TablaGeneral = TablaClasificacionGlobal
-                NegocioClasificacionVentaPaquetes.GuardarTablas(EntidadClasificacionVentaPaquetes)
-                TbIdPaquete.Text = EntidadClasificacionVentaPaquetes.IdPaquete
-                'MsgBox("Paquete guardado con exito.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Aviso")
-                DgvPacasClasificacion1.Enabled = False
-            End If
+        Dim NegocioClasificacionVentaPaquetes As New Capa_Negocio.ClasificacionVentaPaquetes
+        If IdentificaColor() > 0 And chkfinalizado.Checked = True Then
+            MsgBox("Por favor, verificar que los datos esten correctos.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Exclamation, "Aviso")
+        Else
+            EntidadClasificacionVentaPaquetes.IdPaquete = IIf(TbIdPaquete.Text = "", 0, TbIdPaquete.Text)
+            EntidadClasificacionVentaPaquetes.IdPlanta = CbPlanta.SelectedValue
+            EntidadClasificacionVentaPaquetes.IdClase = CbClases.SelectedValue
+            EntidadClasificacionVentaPaquetes.CantidadPacas = TbCantidadPacas.Text
+            EntidadClasificacionVentaPaquetes.Descripcion = TbDescripcion.Text
+            EntidadClasificacionVentaPaquetes.chkrevisado = chkfinalizado.Checked
+            EntidadClasificacionVentaPaquetes.IdEstatus = CbEstatus.SelectedValue
+            EntidadClasificacionVentaPaquetes.IdUsuarioCreacion = 1
+            EntidadClasificacionVentaPaquetes.FechaCreacion = Now
+            EntidadClasificacionVentaPaquetes.IdUsuarioActualizacion = 1
+            EntidadClasificacionVentaPaquetes.FechaActualizacion = Now
+            DataGridViewToTable()
+            EntidadClasificacionVentaPaquetes.TablaGeneral = TablaClasificacionGlobal
+            NegocioClasificacionVentaPaquetes.GuardarTablas(EntidadClasificacionVentaPaquetes)
+            TbIdPaquete.Text = EntidadClasificacionVentaPaquetes.IdPaquete
+            MsgBox("Paquete guardado con exito.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Aviso")
+            DgvPacasClasificacion1.Enabled = False
+        End If
         'Else
         '    MsgBox("El campo No Paca esta vacio, no se puede guardar informacion!", MsgBoxStyle.Information, "Aviso")
         'End If
@@ -459,6 +494,4 @@ Public Class ClasificacionVentaPaquetes
     Private Sub BtRevisarClases_Click(sender As Object, e As EventArgs) Handles BtRevisarClases.Click
         IdentificaColor()
     End Sub
-
-
 End Class

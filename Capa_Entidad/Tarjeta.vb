@@ -1,4 +1,5 @@
 ﻿Public Class Tarjeta
+    Public Property Actualiza As Capa_Operacion.Configuracion.Actuliza
     Public Property Consulta As Capa_Operacion.Configuracion.Consulta
     Public Property Reporte As Capa_Operacion.Configuracion.Reporte
     Public Property Eliminar As Capa_Operacion.Configuracion.Eliminar
