@@ -67,6 +67,7 @@ Public Class LiquidacionesPorRomaneaje
             cmdGuardar.CommandType = CommandType.StoredProcedure
             cmdGuardar.Parameters.Add(New SqlParameter("@IdLiquidacion", EntidadLiquidacionesPorRomaneaje1.IdLiquidacion))
             cmdGuardar.Parameters.Add(New SqlParameter("@IdOrdenTrabajo", EntidadLiquidacionesPorRomaneaje1.IdOrdenTrabajo))
+            cmdGuardar.Parameters.Add(New SqlParameter("@IdCliente", EntidadLiquidacionesPorRomaneaje1.IdCliente))
             cmdGuardar.Parameters.Add(New SqlParameter("@Fecha", EntidadLiquidacionesPorRomaneaje1.Fecha))
             cmdGuardar.Parameters.Add(New SqlParameter("@Comentarios", EntidadLiquidacionesPorRomaneaje1.Comentarios))
             cmdGuardar.Parameters.Add(New SqlParameter("@TotalHueso", EntidadLiquidacionesPorRomaneaje1.TotalHueso))

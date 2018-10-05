@@ -205,6 +205,7 @@ Public Class LiquidacionesPorRomaneaje
         Dim NegocioLiquidacionesPorRomaneaje As New Capa_Negocio.LiquidacionesPorRomaneaje
         EntidadLiquidacionesPorRomaneaje.IdLiquidacion = IIf(TbIdLiquidacion.Text = "", 0, TbIdLiquidacion.Text)
         EntidadLiquidacionesPorRomaneaje.IdOrdenTrabajo = TbIdOrden.Text
+        EntidadLiquidacionesPorRomaneaje.IdCliente = CInt(CbNombreCliente.SelectedValue)
         EntidadLiquidacionesPorRomaneaje.Fecha = DtFechaLiquidacion.Value
         EntidadLiquidacionesPorRomaneaje.Comentarios = TbComentarios.Text
         '----------------------------------------------------------------

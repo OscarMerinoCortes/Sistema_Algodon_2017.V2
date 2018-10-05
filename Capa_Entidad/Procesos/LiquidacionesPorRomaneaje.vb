@@ -2,6 +2,7 @@
     Inherits Tarjeta
     Public IdLiquidacion As Integer
     Public IdOrdenTrabajo As Integer
+    Public IdCliente As Integer
     Public Fecha As Date
     Public Comentarios As String
     Public TotalHueso As Double

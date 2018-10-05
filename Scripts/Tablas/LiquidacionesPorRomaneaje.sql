@@ -2,6 +2,7 @@ create table LiquidacionesPorRomaneaje
 (
 IdLiquidacion int PRIMARY KEY IDENTITY (1,1),
 IdOrdenTrabajo int,
+IdCliente int,
 Fecha datetime,
 Comentarios varchar(100),
 TotalHueso float,
