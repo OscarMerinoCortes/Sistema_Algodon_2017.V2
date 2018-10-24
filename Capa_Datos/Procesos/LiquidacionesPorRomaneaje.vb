@@ -34,6 +34,21 @@ Public Class LiquidacionesPorRomaneaje
                     sqlcom1.Parameters.Clear()
                     sqlcom1.Parameters.Add(New SqlParameter("@IdOrdenTrabajo", EntidadLiquidacionesPorRomaneaje1.IdOrdenTrabajo))
                     sqldat1.Fill(EntidadLiquidacionesPorRomaneaje1.TablaConsulta)
+                Case Capa_Operacion.Configuracion.Consulta.ConsultaPorId
+                    sqlcom1 = New SqlCommand("sp_ConsultaCheckBoleta", cnn)
+                    sqldat1 = New SqlDataAdapter(sqlcom1)
+                    sqlcom1.CommandType = CommandType.StoredProcedure
+                    sqlcom1.Parameters.Clear()
+                    sqlcom1.Parameters.Add(New SqlParameter("@IdOrdenTrabajo", EntidadLiquidacionesPorRomaneaje1.IdOrdenTrabajo))
+                    sqldat1.Fill(EntidadLiquidacionesPorRomaneaje1.TablaConsulta)
+                    For Each MiTableRow2 As DataRow In EntidadLiquidacionesPorRomaneaje1.TablaConsulta.Rows
+                        If CStr(MiTableRow2.Item("FlagTerminado")) = False Then
+                            EntidadLiquidacionesPorRomaneaje1.Bandera = False
+                            Exit Select
+                        Else
+                            EntidadLiquidacionesPorRomaneaje1.Bandera = True
+                        End If
+                    Next
             End Select
         Catch ex As Exception
         Finally
@@ -52,6 +67,7 @@ Public Class LiquidacionesPorRomaneaje
             cmdGuardar.CommandType = CommandType.StoredProcedure
             cmdGuardar.Parameters.Add(New SqlParameter("@IdLiquidacion", EntidadLiquidacionesPorRomaneaje1.IdLiquidacion))
             cmdGuardar.Parameters.Add(New SqlParameter("@IdOrdenTrabajo", EntidadLiquidacionesPorRomaneaje1.IdOrdenTrabajo))
+            cmdGuardar.Parameters.Add(New SqlParameter("@IdCliente", EntidadLiquidacionesPorRomaneaje1.IdCliente))
             cmdGuardar.Parameters.Add(New SqlParameter("@Fecha", EntidadLiquidacionesPorRomaneaje1.Fecha))
             cmdGuardar.Parameters.Add(New SqlParameter("@Comentarios", EntidadLiquidacionesPorRomaneaje1.Comentarios))
             cmdGuardar.Parameters.Add(New SqlParameter("@TotalHueso", EntidadLiquidacionesPorRomaneaje1.TotalHueso))
