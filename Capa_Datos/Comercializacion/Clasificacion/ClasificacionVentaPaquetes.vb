@@ -143,6 +143,7 @@ Public Class ClasificacionVentaPaquetes
                     cmdGuardar.Parameters.Add(New SqlParameter("@Strength", MiTableRow("Strength")))
                     cmdGuardar.Parameters.Add(New SqlParameter("@SCI", MiTableRow("SCI")))
                     cmdGuardar.Parameters.Add(New SqlParameter("@flagterminado", MiTableRow("flagterminado")))
+                    cmdGuardar.Parameters.Add(New SqlParameter("@EstatusCompra", MiTableRow("EstatusCompra")))
                     cmdGuardar.ExecuteNonQuery()
                 Next
             End If

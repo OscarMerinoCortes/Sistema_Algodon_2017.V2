@@ -81,6 +81,7 @@ Public Class ClasificacionVentaPaquetes
         TablaClasificacionGrid.Columns.Add(New DataColumn("FlagTerminado", System.Type.GetType("System.Boolean")))
         TablaClasificacionGrid.Columns.Add(New DataColumn("IdHviDetalle", System.Type.GetType("System.Int32")))
         TablaClasificacionGrid.Columns.Add(New DataColumn("IdOrdenTrabajo", System.Type.GetType("System.Int32")))
+        TablaClasificacionGrid.Columns.Add(New DataColumn("EstatusCompra", System.Type.GetType("System.Int32")))
     End Sub
     Private Sub ContarPacas()
         TbCantidadPacas.Text = DgvPacasClasificacion1.Rows.Count
@@ -105,6 +106,7 @@ Public Class ClasificacionVentaPaquetes
             rengloninsertar("FlagTerminado") = IIf(DgvPacasClasificacion1.Rows(index).Cells("FlagTerminado").Value = Nothing, False, DgvPacasClasificacion1.Rows(index).Cells("FlagTerminado").Value)
             rengloninsertar("IdHviDetalle") = DgvPacasClasificacion1.Rows(index).Cells("IdHviDetalle").Value
             rengloninsertar("IdOrdenTrabajo") = DgvPacasClasificacion1.Rows(index).Cells("IdOrdenTrabajo").Value
+            rengloninsertar("EstatusCompra") = 1
 
             TablaClasificacionGrid.Rows.Add(rengloninsertar)
         Next
@@ -163,7 +165,7 @@ Public Class ClasificacionVentaPaquetes
                             ActualizaPaca()
                             InsertaPaca()
                             Guardar()
-                            MessageBox.Show("El paquete ha sido actualizado!")
+                            'MessageBox.Show("El paquete ha sido actualizado!")
                         End If
                         TbNoPaca.Text = ""
                     End If
@@ -214,6 +216,7 @@ Public Class ClasificacionVentaPaquetes
         Else
             MsgBox("El numero de paca ya se encuentra registrado.")
         End If
+        DgvPacasClasificacion1.Sort(DgvPacasClasificacion1.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
         IdentificaColor()
     End Sub
     Public Function VerificaPacaRepetida(ByVal VerificaDuplicado As Boolean)
@@ -393,7 +396,7 @@ Public Class ClasificacionVentaPaquetes
             EntidadClasificacionVentaPaquetes.TablaGeneral = TablaClasificacionGlobal
             NegocioClasificacionVentaPaquetes.GuardarTablas(EntidadClasificacionVentaPaquetes)
             TbIdPaquete.Text = EntidadClasificacionVentaPaquetes.IdPaquete
-            MsgBox("Paquete guardado con exito.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Aviso")
+            'MsgBox("Paquete guardado con exito.", MsgBoxStyle.OkOnly Or MsgBoxStyle.Information, "Aviso")
             DgvPacasClasificacion1.Enabled = False
         End If
         'Else

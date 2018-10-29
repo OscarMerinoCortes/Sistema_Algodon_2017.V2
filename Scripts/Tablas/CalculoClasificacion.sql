@@ -1,4 +1,4 @@
-CREATE TABLE [dbo].[CalculoClasificacion](
+create TABLE [dbo].[CalculoClasificacion](
 	[IdCalculoClasificacion] [int] IDENTITY(1,1) NOT NULL,
 	[IdPaqueteEncabezado] [int] NOT NULL,
 	[IdHviDetalle] [int] NOT NULL,
@@ -11,5 +11,6 @@ CREATE TABLE [dbo].[CalculoClasificacion](
 	[UHML] [float] NULL,
 	[Strength] [float] NULL,
 	[SCI] [int] NULL,
-	[FlagTerminado] [bit] NULL
+	[FlagTerminado] [bit] NULL,
+	[EstatusCompra] [int] Null
 	)

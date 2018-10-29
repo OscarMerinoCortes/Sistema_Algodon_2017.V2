@@ -147,4 +147,8 @@ Public Class Menu
     Private Sub SalidaDeBasuraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalidaDeBasuraToolStripMenuItem.Click
         SalidaBasura.ShowDialog()
     End Sub
+
+    Private Sub VentaDePacasPorContratoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentaDePacasPorContratoToolStripMenuItem.Click
+        VentaPacasContrato.ShowDialog()
+    End Sub
 End Class
