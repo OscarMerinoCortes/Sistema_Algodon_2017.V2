@@ -9,6 +9,10 @@
         Dim DatosClasificacionVentaPaquetes As New Capa_Datos.ClasificacionVentaPaquetes
         DatosClasificacionVentaPaquetes.Consultar(EntidadClasificacionVentaPaquetes)
     End Sub
+    Public Overridable Sub Actualizar(ByRef EntidadClasificacionVentaPaquetes As Capa_Entidad.ClasificacionVentaPaquetes)
+        Dim DatosClasificacionVentaPaquetes As New Capa_Datos.ClasificacionVentaPaquetes
+        DatosClasificacionVentaPaquetes.Update(EntidadClasificacionVentaPaquetes)
+    End Sub
     Public Overridable Sub GuardarTablas(ByRef EntidadClasificacionVentaPaquetes As Capa_Entidad.ClasificacionVentaPaquetes)
         Dim EntidadClasificacionVentaPaquetes1 As New Capa_Entidad.ClasificacionVentaPaquetes
         Dim DatosClasificacionVentaPaquetes As New Capa_Datos.ClasificacionVentaPaquetes

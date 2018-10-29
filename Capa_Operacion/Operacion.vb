@@ -109,5 +109,8 @@ Namespace Configuracion
         LlenaComboRegimen = 3
         LlenaComboBaseDatos = 4
     End Enum
+    Public Enum Actuliza
+        ActualizaIdPaca = 1
+    End Enum
 End Namespace
 
