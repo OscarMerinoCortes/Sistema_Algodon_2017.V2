@@ -96,6 +96,12 @@ Namespace Configuracion
         ConsultaEncabezado = 32
         ConsultaBaseDatos = 33
         ConsultaInstancia = 34
+        ConsultaLiquidaciones = 35
+        'Para consulta de castigos
+        ConsultaResistenciaFibra = 36
+        ConsultaLargoFibra = 37
+        ConsultaMicros = 38
+        ConsultaModalidadCompra = 39
     End Enum
     Public Enum LlenaCombo
         LlenaComboCliente = 1

@@ -288,6 +288,36 @@
     <Compile Include="Comercializacion\Compras\CompraPacasContrato.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Comercializacion\Compras\CompraPago\CompraPago.Designer.vb">
+      <DependentUpon>CompraPago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\CompraPago\CompraPago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosLargoFibra.Designer.vb">
+      <DependentUpon>CastigosLargoFibra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosLargoFibra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosMicro.Designer.vb">
+      <DependentUpon>CastigosMicro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosMicro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosResistenciaFibra.Designer.vb">
+      <DependentUpon>CastigosResistenciaFibra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosResistenciaFibra.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\ModalidadCompra.Designer.vb">
+      <DependentUpon>ModalidadCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\ModalidadCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Comercializacion\Compras\PaquetesHVI.Designer.vb">
       <DependentUpon>PaquetesHVI.vb</DependentUpon>
     </Compile>
@@ -310,30 +340,6 @@
       <DependentUpon>ContratoSemillas.vb</DependentUpon>
     </Compile>
     <Compile Include="Comercializacion\ContratoSemillas.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosMicros.Designer.vb">
-      <DependentUpon>CastigosMicros.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosMicros.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosLargoFibra.Designer.vb">
-      <DependentUpon>CastigosLargoFibra.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosLargoFibra.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosResistenciasFibras.Designer.vb">
-      <DependentUpon>CastigosResistenciasFibras.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Comercializacion\Compras\ModificacionIndividual\CastigosResistenciasFibras.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Comercializacion\Compras\ModificacionIndividual\ClasesDif.Designer.vb">
-      <DependentUpon>ClasesDif.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Comercializacion\Compras\ModificacionIndividual\ClasesDif.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Comercializacion\Ventas\VentaPacas.Designer.vb">
@@ -502,6 +508,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="VarGlob.vb" />
+    <Compile Include="VarGlob2.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Almacenes\SalidaBasura.resx">
@@ -606,6 +613,21 @@
     <EmbeddedResource Include="Comercializacion\Compras\CompraPacasContrato.resx">
       <DependentUpon>CompraPacasContrato.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Comercializacion\Compras\CompraPago\CompraPago.resx">
+      <DependentUpon>CompraPago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\CastigosLargoFibra.resx">
+      <DependentUpon>CastigosLargoFibra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\CastigosMicro.resx">
+      <DependentUpon>CastigosMicro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\CastigosResistenciaFibra.resx">
+      <DependentUpon>CastigosResistenciaFibra.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\ModalidadCompra.resx">
+      <DependentUpon>ModalidadCompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Comercializacion\Compras\PaquetesHVI.resx">
       <DependentUpon>PaquetesHVI.vb</DependentUpon>
     </EmbeddedResource>
@@ -617,18 +639,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Comercializacion\ContratoSemillas.resx">
       <DependentUpon>ContratoSemillas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\CastigosLargoFibra.resx">
-      <DependentUpon>CastigosLargoFibra.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\CastigosMicros.resx">
-      <DependentUpon>CastigosMicros.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\CastigosResistenciasFibras.resx">
-      <DependentUpon>CastigosResistenciasFibras.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Comercializacion\Compras\ModificacionIndividual\ClasesDif.resx">
-      <DependentUpon>ClasesDif.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Comercializacion\Ventas\VentaPacas.resx">
       <DependentUpon>VentaPacas.vb</DependentUpon>
@@ -763,6 +773,13 @@
     <None Include="Resources\BusquedaUsuario.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Iconos\if_exit-enter-leave-door-in_2931189.ico" />
+    <Content Include="Iconos\if_multimedia-27_809537.ico" />
+    <Content Include="Iconos\if_new_981081.ico" />
+    <Content Include="Iconos\if_Recyclebin_Close_171530.ico" />
+    <Content Include="Iconos\if_search_322497.ico" />
+    <Content Include="Iconos\logo cotton2 %281%29.ico" />
+    <Content Include="Iconos\logo cotton2.ico" />
     <Content Include="Imagenes\Black Icon Package Icon 28.ico" />
     <None Include="Resources\BusquedaUsuario1.png" />
   </ItemGroup>

@@ -86,6 +86,8 @@
     <Compile Include="Comercializacion\Clasificacion\ClasificacionVentaPaquetes.vb" />
     <Compile Include="Comercializacion\Compras\ClasificacionPacasExcel.vb" />
     <Compile Include="Comercializacion\Compras\CompraPacas.vb" />
+    <Compile Include="Comercializacion\Compras\CompraPacasContrato.vb" />
+    <Compile Include="Comercializacion\Compras\ModificacionIndividual\ConsultaCastigos.vb" />
     <Compile Include="Comercializacion\Compras\PaquetesHVI.vb" />
     <Compile Include="Comercializacion\ContratosAlgodon.vb" />
     <Compile Include="Comercializacion\ContratosAlgodonCompradores.vb" />

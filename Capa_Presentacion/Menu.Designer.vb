@@ -914,6 +914,7 @@ Partial Class Menu
         Me.Controls.Add(Me.SStatus)
         Me.Controls.Add(Me.MSMenu)
         Me.DoubleBuffered = True
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MSMenu
         Me.Name = "Menu"
         Me.Text = "Menu Principal"

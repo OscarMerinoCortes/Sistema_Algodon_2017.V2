@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class CompraPacasContrato
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,8 +20,9 @@ Partial Class CompraPacasContrato
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CompraPacasContrato))
         Me.GbDatosGenerales = New System.Windows.Forms.GroupBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.DgvContratos = New System.Windows.Forms.DataGridView()
@@ -29,34 +30,22 @@ Partial Class CompraPacasContrato
         Me.BtnBuscarProd = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TbNoPacas = New System.Windows.Forms.TextBox()
-        Me.TbIdLiquidacion = New System.Windows.Forms.TextBox()
+        Me.TbIdContrato = New System.Windows.Forms.TextBox()
         Me.BtCastLarFib = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.BtDifClases = New System.Windows.Forms.Button()
+        Me.BtCastigoMicros = New System.Windows.Forms.Button()
         Me.BtCastigoResFibra = New System.Windows.Forms.Button()
-        Me.BtCastigosMicros = New System.Windows.Forms.Button()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TbFactura = New System.Windows.Forms.TextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.TbPrecioDolar = New System.Windows.Forms.TextBox()
+        Me.BtModalidadCompra = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.TbPrecioQuintal = New System.Windows.Forms.TextBox()
-        Me.TbSemilla = New System.Windows.Forms.TextBox()
-        Me.TbPluma = New System.Windows.Forms.TextBox()
         Me.TbNombreProductor = New System.Windows.Forms.TextBox()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.CbModalidadCompra = New System.Windows.Forms.ComboBox()
         Me.TbHastaPaca = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.DtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TbDesdePaca = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.TbHueso = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CbPlanta = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -92,13 +81,13 @@ Partial Class CompraPacasContrato
         Me.TP1LiquidacionesAComprar = New System.Windows.Forms.TabPage()
         Me.DgvDatosLiquidacion = New System.Windows.Forms.DataGridView()
         Me.TP2LiquidacionesCompradas = New System.Windows.Forms.TabPage()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgvLiqCompradas = New System.Windows.Forms.DataGridView()
         Me.TP3PacasAComprar = New System.Windows.Forms.TabPage()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.DgvPacasComprar = New System.Windows.Forms.DataGridView()
         Me.TP4IndividualCompradas = New System.Windows.Forms.TabPage()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.DgvIndCompradas = New System.Windows.Forms.DataGridView()
         Me.TP5PacasSinClasificar = New System.Windows.Forms.TabPage()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.DgvPacasSinClasif = New System.Windows.Forms.DataGridView()
         Me.GbDatosGenerales.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         CType(Me.DgvContratos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -115,13 +104,13 @@ Partial Class CompraPacasContrato
         Me.TP1LiquidacionesAComprar.SuspendLayout()
         CType(Me.DgvDatosLiquidacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TP2LiquidacionesCompradas.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvLiqCompradas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TP3PacasAComprar.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvPacasComprar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TP4IndividualCompradas.SuspendLayout()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvIndCompradas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TP5PacasSinClasificar.SuspendLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvPacasSinClasif, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GbDatosGenerales
@@ -131,7 +120,7 @@ Partial Class CompraPacasContrato
         Me.GbDatosGenerales.Dock = System.Windows.Forms.DockStyle.Top
         Me.GbDatosGenerales.Location = New System.Drawing.Point(0, 24)
         Me.GbDatosGenerales.Name = "GbDatosGenerales"
-        Me.GbDatosGenerales.Size = New System.Drawing.Size(1751, 179)
+        Me.GbDatosGenerales.Size = New System.Drawing.Size(1561, 179)
         Me.GbDatosGenerales.TabIndex = 4
         Me.GbDatosGenerales.TabStop = False
         Me.GbDatosGenerales.Text = "Datos Generales"
@@ -140,12 +129,12 @@ Partial Class CompraPacasContrato
         '
         Me.GroupBox6.Controls.Add(Me.DgvContratos)
         Me.GroupBox6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox6.Location = New System.Drawing.Point(1059, 16)
+        Me.GroupBox6.Location = New System.Drawing.Point(1070, 16)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(689, 160)
+        Me.GroupBox6.Size = New System.Drawing.Size(488, 160)
         Me.GroupBox6.TabIndex = 2
         Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Comtratos"
+        Me.GroupBox6.Text = "Contratos"
         '
         'DgvContratos
         '
@@ -160,11 +149,10 @@ Partial Class CompraPacasContrato
         Me.DgvContratos.Location = New System.Drawing.Point(6, 19)
         Me.DgvContratos.MultiSelect = False
         Me.DgvContratos.Name = "DgvContratos"
-        Me.DgvContratos.ReadOnly = True
         Me.DgvContratos.RowHeadersVisible = False
         Me.DgvContratos.RowHeadersWidth = 40
         Me.DgvContratos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgvContratos.Size = New System.Drawing.Size(674, 135)
+        Me.DgvContratos.Size = New System.Drawing.Size(478, 135)
         Me.DgvContratos.TabIndex = 12
         '
         'GroupBox5
@@ -172,34 +160,22 @@ Partial Class CompraPacasContrato
         Me.GroupBox5.Controls.Add(Me.BtnBuscarProd)
         Me.GroupBox5.Controls.Add(Me.Label6)
         Me.GroupBox5.Controls.Add(Me.TbNoPacas)
-        Me.GroupBox5.Controls.Add(Me.TbIdLiquidacion)
+        Me.GroupBox5.Controls.Add(Me.TbIdContrato)
         Me.GroupBox5.Controls.Add(Me.BtCastLarFib)
         Me.GroupBox5.Controls.Add(Me.Label12)
-        Me.GroupBox5.Controls.Add(Me.BtDifClases)
+        Me.GroupBox5.Controls.Add(Me.BtCastigoMicros)
         Me.GroupBox5.Controls.Add(Me.BtCastigoResFibra)
-        Me.GroupBox5.Controls.Add(Me.BtCastigosMicros)
-        Me.GroupBox5.Controls.Add(Me.Label15)
-        Me.GroupBox5.Controls.Add(Me.Label8)
-        Me.GroupBox5.Controls.Add(Me.TbFactura)
-        Me.GroupBox5.Controls.Add(Me.Label13)
-        Me.GroupBox5.Controls.Add(Me.TbPrecioDolar)
+        Me.GroupBox5.Controls.Add(Me.BtModalidadCompra)
         Me.GroupBox5.Controls.Add(Me.Label14)
-        Me.GroupBox5.Controls.Add(Me.Label7)
         Me.GroupBox5.Controls.Add(Me.TbPrecioQuintal)
-        Me.GroupBox5.Controls.Add(Me.TbSemilla)
-        Me.GroupBox5.Controls.Add(Me.TbPluma)
         Me.GroupBox5.Controls.Add(Me.TbNombreProductor)
-        Me.GroupBox5.Controls.Add(Me.Label17)
         Me.GroupBox5.Controls.Add(Me.Label5)
-        Me.GroupBox5.Controls.Add(Me.CbModalidadCompra)
         Me.GroupBox5.Controls.Add(Me.TbHastaPaca)
         Me.GroupBox5.Controls.Add(Me.Label4)
         Me.GroupBox5.Controls.Add(Me.Label11)
         Me.GroupBox5.Controls.Add(Me.DtpFecha)
         Me.GroupBox5.Controls.Add(Me.Label10)
         Me.GroupBox5.Controls.Add(Me.TbDesdePaca)
-        Me.GroupBox5.Controls.Add(Me.Label9)
-        Me.GroupBox5.Controls.Add(Me.TbHueso)
         Me.GroupBox5.Controls.Add(Me.Label2)
         Me.GroupBox5.Controls.Add(Me.CbPlanta)
         Me.GroupBox5.Controls.Add(Me.Label1)
@@ -210,13 +186,13 @@ Partial Class CompraPacasContrato
         Me.GroupBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox5.Location = New System.Drawing.Point(3, 16)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(1056, 160)
+        Me.GroupBox5.Size = New System.Drawing.Size(1067, 160)
         Me.GroupBox5.TabIndex = 0
         Me.GroupBox5.TabStop = False
         '
         'BtnBuscarProd
         '
-        Me.BtnBuscarProd.Location = New System.Drawing.Point(475, 38)
+        Me.BtnBuscarProd.Location = New System.Drawing.Point(505, 39)
         Me.BtnBuscarProd.Name = "BtnBuscarProd"
         Me.BtnBuscarProd.Size = New System.Drawing.Size(41, 23)
         Me.BtnBuscarProd.TabIndex = 55
@@ -226,7 +202,7 @@ Partial Class CompraPacasContrato
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(531, 18)
+        Me.Label6.Location = New System.Drawing.Point(275, 120)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(57, 13)
         Me.Label6.TabIndex = 46
@@ -235,170 +211,96 @@ Partial Class CompraPacasContrato
         'TbNoPacas
         '
         Me.TbNoPacas.Enabled = False
-        Me.TbNoPacas.Location = New System.Drawing.Point(602, 15)
+        Me.TbNoPacas.Location = New System.Drawing.Point(354, 117)
         Me.TbNoPacas.Name = "TbNoPacas"
-        Me.TbNoPacas.Size = New System.Drawing.Size(114, 20)
+        Me.TbNoPacas.Size = New System.Drawing.Size(192, 20)
         Me.TbNoPacas.TabIndex = 39
         '
-        'TbIdLiquidacion
+        'TbIdContrato
         '
-        Me.TbIdLiquidacion.Enabled = False
-        Me.TbIdLiquidacion.Location = New System.Drawing.Point(295, 16)
-        Me.TbIdLiquidacion.Name = "TbIdLiquidacion"
-        Me.TbIdLiquidacion.Size = New System.Drawing.Size(97, 20)
-        Me.TbIdLiquidacion.TabIndex = 34
+        Me.TbIdContrato.Enabled = False
+        Me.TbIdContrato.Location = New System.Drawing.Point(354, 67)
+        Me.TbIdContrato.Name = "TbIdContrato"
+        Me.TbIdContrato.Size = New System.Drawing.Size(192, 20)
+        Me.TbIdContrato.TabIndex = 34
         '
         'BtCastLarFib
         '
-        Me.BtCastLarFib.Location = New System.Drawing.Point(978, 54)
+        Me.BtCastLarFib.Location = New System.Drawing.Point(986, 15)
         Me.BtCastLarFib.MaximumSize = New System.Drawing.Size(75, 62)
         Me.BtCastLarFib.MinimumSize = New System.Drawing.Size(75, 62)
         Me.BtCastLarFib.Name = "BtCastLarFib"
         Me.BtCastLarFib.Size = New System.Drawing.Size(75, 62)
         Me.BtCastLarFib.TabIndex = 54
-        Me.BtCastLarFib.Text = "Castigos de Largo Fibra"
+        Me.BtCastLarFib.Text = "Castigos por largo de fibra"
         Me.BtCastLarFib.UseVisualStyleBackColor = True
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(228, 18)
+        Me.Label12.Location = New System.Drawing.Point(275, 70)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(61, 13)
+        Me.Label12.Size = New System.Drawing.Size(59, 13)
         Me.Label12.TabIndex = 37
-        Me.Label12.Text = "Liquidacion"
+        Me.Label12.Text = "Id Contrato"
         '
-        'BtDifClases
+        'BtCastigoMicros
         '
-        Me.BtDifClases.Location = New System.Drawing.Point(897, 54)
-        Me.BtDifClases.MaximumSize = New System.Drawing.Size(75, 62)
-        Me.BtDifClases.MinimumSize = New System.Drawing.Size(75, 62)
-        Me.BtDifClases.Name = "BtDifClases"
-        Me.BtDifClases.Size = New System.Drawing.Size(75, 62)
-        Me.BtDifClases.TabIndex = 53
-        Me.BtDifClases.Text = "Diferencias Por Clases"
-        Me.BtDifClases.UseVisualStyleBackColor = True
+        Me.BtCastigoMicros.Location = New System.Drawing.Point(905, 15)
+        Me.BtCastigoMicros.MaximumSize = New System.Drawing.Size(75, 62)
+        Me.BtCastigoMicros.MinimumSize = New System.Drawing.Size(75, 62)
+        Me.BtCastigoMicros.Name = "BtCastigoMicros"
+        Me.BtCastigoMicros.Size = New System.Drawing.Size(75, 62)
+        Me.BtCastigoMicros.TabIndex = 53
+        Me.BtCastigoMicros.Text = "Castigo por micros"
+        Me.BtCastigoMicros.UseVisualStyleBackColor = True
         '
         'BtCastigoResFibra
         '
-        Me.BtCastigoResFibra.Location = New System.Drawing.Point(816, 54)
+        Me.BtCastigoResFibra.Location = New System.Drawing.Point(824, 15)
         Me.BtCastigoResFibra.MaximumSize = New System.Drawing.Size(75, 62)
         Me.BtCastigoResFibra.MinimumSize = New System.Drawing.Size(75, 62)
         Me.BtCastigoResFibra.Name = "BtCastigoResFibra"
         Me.BtCastigoResFibra.Size = New System.Drawing.Size(75, 62)
         Me.BtCastigoResFibra.TabIndex = 52
-        Me.BtCastigoResFibra.Text = "Castigos Por Resistencia de Fibra"
+        Me.BtCastigoResFibra.Text = "Castigos por resistencia de fibra"
         Me.BtCastigoResFibra.UseVisualStyleBackColor = True
         '
-        'BtCastigosMicros
+        'BtModalidadCompra
         '
-        Me.BtCastigosMicros.Location = New System.Drawing.Point(735, 54)
-        Me.BtCastigosMicros.MaximumSize = New System.Drawing.Size(75, 62)
-        Me.BtCastigosMicros.MinimumSize = New System.Drawing.Size(75, 62)
-        Me.BtCastigosMicros.Name = "BtCastigosMicros"
-        Me.BtCastigosMicros.Size = New System.Drawing.Size(75, 62)
-        Me.BtCastigosMicros.TabIndex = 51
-        Me.BtCastigosMicros.Text = "Castigos Por Micros"
-        Me.BtCastigosMicros.UseVisualStyleBackColor = True
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(275, 125)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(74, 13)
-        Me.Label15.TabIndex = 50
-        Me.Label15.Text = "Factura Venta"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(531, 44)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(40, 13)
-        Me.Label8.TabIndex = 49
-        Me.Label8.Text = "Semilla"
-        '
-        'TbFactura
-        '
-        Me.TbFactura.Location = New System.Drawing.Point(354, 122)
-        Me.TbFactura.Name = "TbFactura"
-        Me.TbFactura.Size = New System.Drawing.Size(162, 20)
-        Me.TbFactura.TabIndex = 45
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(275, 99)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(65, 13)
-        Me.Label13.TabIndex = 42
-        Me.Label13.Text = "Precio Dolar"
-        '
-        'TbPrecioDolar
-        '
-        Me.TbPrecioDolar.Location = New System.Drawing.Point(354, 96)
-        Me.TbPrecioDolar.Name = "TbPrecioDolar"
-        Me.TbPrecioDolar.Size = New System.Drawing.Size(162, 20)
-        Me.TbPrecioDolar.TabIndex = 40
+        Me.BtModalidadCompra.Location = New System.Drawing.Point(740, 15)
+        Me.BtModalidadCompra.MaximumSize = New System.Drawing.Size(75, 62)
+        Me.BtModalidadCompra.MinimumSize = New System.Drawing.Size(75, 62)
+        Me.BtModalidadCompra.Name = "BtModalidadCompra"
+        Me.BtModalidadCompra.Size = New System.Drawing.Size(75, 62)
+        Me.BtModalidadCompra.TabIndex = 51
+        Me.BtModalidadCompra.Text = "Modalidad de compra"
+        Me.BtModalidadCompra.UseVisualStyleBackColor = True
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(275, 73)
+        Me.Label14.Location = New System.Drawing.Point(275, 96)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(73, 13)
         Me.Label14.TabIndex = 48
         Me.Label14.Text = "Precio Quintal"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(531, 70)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(36, 13)
-        Me.Label7.TabIndex = 47
-        Me.Label7.Text = "Pluma"
-        '
         'TbPrecioQuintal
         '
-        Me.TbPrecioQuintal.Location = New System.Drawing.Point(354, 70)
+        Me.TbPrecioQuintal.Enabled = False
+        Me.TbPrecioQuintal.Location = New System.Drawing.Point(354, 93)
         Me.TbPrecioQuintal.Name = "TbPrecioQuintal"
-        Me.TbPrecioQuintal.Size = New System.Drawing.Size(162, 20)
+        Me.TbPrecioQuintal.Size = New System.Drawing.Size(192, 20)
         Me.TbPrecioQuintal.TabIndex = 44
-        '
-        'TbSemilla
-        '
-        Me.TbSemilla.Enabled = False
-        Me.TbSemilla.Location = New System.Drawing.Point(602, 41)
-        Me.TbSemilla.Name = "TbSemilla"
-        Me.TbSemilla.Size = New System.Drawing.Size(114, 20)
-        Me.TbSemilla.TabIndex = 43
-        '
-        'TbPluma
-        '
-        Me.TbPluma.Enabled = False
-        Me.TbPluma.Location = New System.Drawing.Point(602, 67)
-        Me.TbPluma.Name = "TbPluma"
-        Me.TbPluma.Size = New System.Drawing.Size(114, 20)
-        Me.TbPluma.TabIndex = 41
         '
         'TbNombreProductor
         '
         Me.TbNombreProductor.Enabled = False
         Me.TbNombreProductor.Location = New System.Drawing.Point(204, 41)
         Me.TbNombreProductor.Name = "TbNombreProductor"
-        Me.TbNombreProductor.Size = New System.Drawing.Size(265, 20)
+        Me.TbNombreProductor.Size = New System.Drawing.Size(295, 20)
         Me.TbNombreProductor.TabIndex = 39
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(9, 97)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(110, 13)
-        Me.Label17.TabIndex = 36
-        Me.Label17.Text = "Modalidad de Compra"
         '
         'Label5
         '
@@ -408,14 +310,6 @@ Partial Class CompraPacasContrato
         Me.Label5.Size = New System.Drawing.Size(53, 13)
         Me.Label5.TabIndex = 35
         Me.Label5.Text = "Productor"
-        '
-        'CbModalidadCompra
-        '
-        Me.CbModalidadCompra.FormattingEnabled = True
-        Me.CbModalidadCompra.Location = New System.Drawing.Point(123, 94)
-        Me.CbModalidadCompra.Name = "CbModalidadCompra"
-        Me.CbModalidadCompra.Size = New System.Drawing.Size(139, 21)
-        Me.CbModalidadCompra.TabIndex = 33
         '
         'TbHastaPaca
         '
@@ -428,7 +322,7 @@ Partial Class CompraPacasContrato
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(890, 11)
+        Me.Label4.Location = New System.Drawing.Point(9, 96)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 30
@@ -446,9 +340,9 @@ Partial Class CompraPacasContrato
         'DtpFecha
         '
         Me.DtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtpFecha.Location = New System.Drawing.Point(933, 8)
+        Me.DtpFecha.Location = New System.Drawing.Point(123, 95)
         Me.DtpFecha.Name = "DtpFecha"
-        Me.DtpFecha.Size = New System.Drawing.Size(105, 20)
+        Me.DtpFecha.Size = New System.Drawing.Size(139, 20)
         Me.DtpFecha.TabIndex = 29
         '
         'Label10
@@ -467,23 +361,6 @@ Partial Class CompraPacasContrato
         Me.TbDesdePaca.Name = "TbDesdePaca"
         Me.TbDesdePaca.Size = New System.Drawing.Size(45, 20)
         Me.TbDesdePaca.TabIndex = 25
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(531, 96)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(38, 13)
-        Me.Label9.TabIndex = 23
-        Me.Label9.Text = "Hueso"
-        '
-        'TbHueso
-        '
-        Me.TbHueso.Enabled = False
-        Me.TbHueso.Location = New System.Drawing.Point(602, 93)
-        Me.TbHueso.Name = "TbHueso"
-        Me.TbHueso.Size = New System.Drawing.Size(114, 20)
-        Me.TbHueso.TabIndex = 21
         '
         'Label2
         '
@@ -534,31 +411,35 @@ Partial Class CompraPacasContrato
         Me.MSMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.GuardarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MSMenu.Location = New System.Drawing.Point(0, 0)
         Me.MSMenu.Name = "MSMenu"
-        Me.MSMenu.Size = New System.Drawing.Size(1751, 24)
+        Me.MSMenu.Size = New System.Drawing.Size(1561, 24)
         Me.MSMenu.TabIndex = 3
         '
         'NuevoToolStripMenuItem
         '
+        Me.NuevoToolStripMenuItem.Image = CType(resources.GetObject("NuevoToolStripMenuItem.Image"), System.Drawing.Image)
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(54, 20)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'GuardarToolStripMenuItem
         '
+        Me.GuardarToolStripMenuItem.Image = CType(resources.GetObject("GuardarToolStripMenuItem.Image"), System.Drawing.Image)
         Me.GuardarToolStripMenuItem.Name = "GuardarToolStripMenuItem"
-        Me.GuardarToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.GuardarToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
         Me.GuardarToolStripMenuItem.Text = "Guardar"
         '
         'ConsultarToolStripMenuItem
         '
+        Me.ConsultarToolStripMenuItem.Image = CType(resources.GetObject("ConsultarToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
+        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(86, 20)
         Me.ConsultarToolStripMenuItem.Text = "Consultar"
         '
         'SalirToolStripMenuItem
         '
+        Me.SalirToolStripMenuItem.Image = CType(resources.GetObject("SalirToolStripMenuItem.Image"), System.Drawing.Image)
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'GbCompras
@@ -568,7 +449,7 @@ Partial Class CompraPacasContrato
         Me.GbCompras.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.GbCompras.Location = New System.Drawing.Point(0, 544)
         Me.GbCompras.Name = "GbCompras"
-        Me.GbCompras.Size = New System.Drawing.Size(1751, 186)
+        Me.GbCompras.Size = New System.Drawing.Size(1561, 186)
         Me.GbCompras.TabIndex = 5
         Me.GbCompras.TabStop = False
         '
@@ -590,9 +471,9 @@ Partial Class CompraPacasContrato
         Me.GroupBox4.Controls.Add(Me.DgvAgrupadasClases)
         Me.GroupBox4.Controls.Add(Me.Label16)
         Me.GroupBox4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox4.Location = New System.Drawing.Point(395, 16)
+        Me.GroupBox4.Location = New System.Drawing.Point(292, 16)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(1353, 167)
+        Me.GroupBox4.Size = New System.Drawing.Size(1266, 167)
         Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
         '
@@ -602,7 +483,7 @@ Partial Class CompraPacasContrato
         Me.Label23.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label23.Location = New System.Drawing.Point(1068, 102)
+        Me.Label23.Location = New System.Drawing.Point(671, 85)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(99, 13)
         Me.Label23.TabIndex = 16
@@ -614,7 +495,7 @@ Partial Class CompraPacasContrato
         Me.Label22.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label22.Location = New System.Drawing.Point(1068, 76)
+        Me.Label22.Location = New System.Drawing.Point(671, 59)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(107, 13)
         Me.Label22.TabIndex = 15
@@ -623,7 +504,7 @@ Partial Class CompraPacasContrato
         'TbKilosComp
         '
         Me.TbKilosComp.Enabled = False
-        Me.TbKilosComp.Location = New System.Drawing.Point(1188, 99)
+        Me.TbKilosComp.Location = New System.Drawing.Point(791, 82)
         Me.TbKilosComp.Name = "TbKilosComp"
         Me.TbKilosComp.Size = New System.Drawing.Size(100, 20)
         Me.TbKilosComp.TabIndex = 14
@@ -631,7 +512,7 @@ Partial Class CompraPacasContrato
         'TbPacasComp
         '
         Me.TbPacasComp.Enabled = False
-        Me.TbPacasComp.Location = New System.Drawing.Point(1188, 73)
+        Me.TbPacasComp.Location = New System.Drawing.Point(791, 56)
         Me.TbPacasComp.Name = "TbPacasComp"
         Me.TbPacasComp.Size = New System.Drawing.Size(100, 20)
         Me.TbPacasComp.TabIndex = 13
@@ -639,7 +520,7 @@ Partial Class CompraPacasContrato
         'TbPacasMarc
         '
         Me.TbPacasMarc.Enabled = False
-        Me.TbPacasMarc.Location = New System.Drawing.Point(1188, 47)
+        Me.TbPacasMarc.Location = New System.Drawing.Point(791, 30)
         Me.TbPacasMarc.Name = "TbPacasMarc"
         Me.TbPacasMarc.Size = New System.Drawing.Size(100, 20)
         Me.TbPacasMarc.TabIndex = 12
@@ -650,7 +531,7 @@ Partial Class CompraPacasContrato
         Me.Label21.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label21.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label21.Location = New System.Drawing.Point(1068, 50)
+        Me.Label21.Location = New System.Drawing.Point(671, 33)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(100, 13)
         Me.Label21.TabIndex = 11
@@ -662,7 +543,7 @@ Partial Class CompraPacasContrato
         Me.Label20.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label20.Location = New System.Drawing.Point(811, 102)
+        Me.Label20.Location = New System.Drawing.Point(414, 85)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(132, 13)
         Me.Label20.TabIndex = 10
@@ -671,7 +552,7 @@ Partial Class CompraPacasContrato
         'TbPacasCompCont
         '
         Me.TbPacasCompCont.Enabled = False
-        Me.TbPacasCompCont.Location = New System.Drawing.Point(953, 99)
+        Me.TbPacasCompCont.Location = New System.Drawing.Point(556, 82)
         Me.TbPacasCompCont.Name = "TbPacasCompCont"
         Me.TbPacasCompCont.Size = New System.Drawing.Size(100, 20)
         Me.TbPacasCompCont.TabIndex = 9
@@ -679,7 +560,7 @@ Partial Class CompraPacasContrato
         'TbPacasDisp
         '
         Me.TbPacasDisp.Enabled = False
-        Me.TbPacasDisp.Location = New System.Drawing.Point(953, 73)
+        Me.TbPacasDisp.Location = New System.Drawing.Point(556, 56)
         Me.TbPacasDisp.Name = "TbPacasDisp"
         Me.TbPacasDisp.Size = New System.Drawing.Size(100, 20)
         Me.TbPacasDisp.TabIndex = 8
@@ -687,7 +568,7 @@ Partial Class CompraPacasContrato
         'TbPacasCont
         '
         Me.TbPacasCont.Enabled = False
-        Me.TbPacasCont.Location = New System.Drawing.Point(953, 47)
+        Me.TbPacasCont.Location = New System.Drawing.Point(556, 30)
         Me.TbPacasCont.Name = "TbPacasCont"
         Me.TbPacasCont.Size = New System.Drawing.Size(100, 20)
         Me.TbPacasCont.TabIndex = 7
@@ -698,7 +579,7 @@ Partial Class CompraPacasContrato
         Me.Label19.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label19.Location = New System.Drawing.Point(811, 76)
+        Me.Label19.Location = New System.Drawing.Point(414, 59)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(109, 13)
         Me.Label19.TabIndex = 6
@@ -710,7 +591,7 @@ Partial Class CompraPacasContrato
         Me.Label18.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.SystemColors.Control
-        Me.Label18.Location = New System.Drawing.Point(811, 50)
+        Me.Label18.Location = New System.Drawing.Point(414, 33)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(113, 13)
         Me.Label18.TabIndex = 5
@@ -720,9 +601,9 @@ Partial Class CompraPacasContrato
         '
         Me.DgvInformacion.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.DgvInformacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvInformacion.Location = New System.Drawing.Point(778, 17)
+        Me.DgvInformacion.Location = New System.Drawing.Point(401, 17)
         Me.DgvInformacion.Name = "DgvInformacion"
-        Me.DgvInformacion.Size = New System.Drawing.Size(566, 141)
+        Me.DgvInformacion.Size = New System.Drawing.Size(851, 141)
         Me.DgvInformacion.TabIndex = 4
         '
         'DgvAgrupadasClases
@@ -730,7 +611,7 @@ Partial Class CompraPacasContrato
         Me.DgvAgrupadasClases.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvAgrupadasClases.Location = New System.Drawing.Point(3, 17)
         Me.DgvAgrupadasClases.Name = "DgvAgrupadasClases"
-        Me.DgvAgrupadasClases.Size = New System.Drawing.Size(769, 141)
+        Me.DgvAgrupadasClases.Size = New System.Drawing.Size(392, 141)
         Me.DgvAgrupadasClases.TabIndex = 3
         '
         'Label16
@@ -751,7 +632,7 @@ Partial Class CompraPacasContrato
         Me.GroupBox2.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupBox2.Location = New System.Drawing.Point(3, 16)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(392, 167)
+        Me.GroupBox2.Size = New System.Drawing.Size(289, 167)
         Me.GroupBox2.TabIndex = 0
         Me.GroupBox2.TabStop = False
         '
@@ -760,7 +641,7 @@ Partial Class CompraPacasContrato
         Me.DgvAgrupadasCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvAgrupadasCliente.Location = New System.Drawing.Point(7, 17)
         Me.DgvAgrupadasCliente.Name = "DgvAgrupadasCliente"
-        Me.DgvAgrupadasCliente.Size = New System.Drawing.Size(379, 141)
+        Me.DgvAgrupadasCliente.Size = New System.Drawing.Size(282, 141)
         Me.DgvAgrupadasCliente.TabIndex = 4
         '
         'Label3
@@ -780,7 +661,7 @@ Partial Class CompraPacasContrato
         Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox1.Location = New System.Drawing.Point(0, 203)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1751, 341)
+        Me.GroupBox1.Size = New System.Drawing.Size(1561, 341)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         '
@@ -795,7 +676,7 @@ Partial Class CompraPacasContrato
         Me.TcCompras.Location = New System.Drawing.Point(3, 16)
         Me.TcCompras.Name = "TcCompras"
         Me.TcCompras.SelectedIndex = 0
-        Me.TcCompras.Size = New System.Drawing.Size(1745, 322)
+        Me.TcCompras.Size = New System.Drawing.Size(1555, 322)
         Me.TcCompras.TabIndex = 1
         '
         'TP1LiquidacionesAComprar
@@ -805,108 +686,163 @@ Partial Class CompraPacasContrato
         Me.TP1LiquidacionesAComprar.Location = New System.Drawing.Point(4, 22)
         Me.TP1LiquidacionesAComprar.Name = "TP1LiquidacionesAComprar"
         Me.TP1LiquidacionesAComprar.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP1LiquidacionesAComprar.Size = New System.Drawing.Size(1737, 296)
+        Me.TP1LiquidacionesAComprar.Size = New System.Drawing.Size(1547, 296)
         Me.TP1LiquidacionesAComprar.TabIndex = 0
         Me.TP1LiquidacionesAComprar.Text = "Liquidaciones a Comprar"
         '
         'DgvDatosLiquidacion
         '
+        Me.DgvDatosLiquidacion.AllowUserToAddRows = False
+        Me.DgvDatosLiquidacion.AllowUserToDeleteRows = False
+        Me.DgvDatosLiquidacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvDatosLiquidacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DgvDatosLiquidacion.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DgvDatosLiquidacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DgvDatosLiquidacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvDatosLiquidacion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgvDatosLiquidacion.ImeMode = System.Windows.Forms.ImeMode.NoControl
         Me.DgvDatosLiquidacion.Location = New System.Drawing.Point(3, 3)
+        Me.DgvDatosLiquidacion.MultiSelect = False
         Me.DgvDatosLiquidacion.Name = "DgvDatosLiquidacion"
-        Me.DgvDatosLiquidacion.Size = New System.Drawing.Size(1731, 290)
-        Me.DgvDatosLiquidacion.TabIndex = 3
+        Me.DgvDatosLiquidacion.RowHeadersVisible = False
+        Me.DgvDatosLiquidacion.RowHeadersWidth = 40
+        Me.DgvDatosLiquidacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvDatosLiquidacion.Size = New System.Drawing.Size(1541, 290)
+        Me.DgvDatosLiquidacion.TabIndex = 13
         '
         'TP2LiquidacionesCompradas
         '
-        Me.TP2LiquidacionesCompradas.Controls.Add(Me.DataGridView1)
+        Me.TP2LiquidacionesCompradas.Controls.Add(Me.DgvLiqCompradas)
         Me.TP2LiquidacionesCompradas.Location = New System.Drawing.Point(4, 22)
         Me.TP2LiquidacionesCompradas.Name = "TP2LiquidacionesCompradas"
         Me.TP2LiquidacionesCompradas.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP2LiquidacionesCompradas.Size = New System.Drawing.Size(1737, 296)
+        Me.TP2LiquidacionesCompradas.Size = New System.Drawing.Size(1547, 296)
         Me.TP2LiquidacionesCompradas.TabIndex = 1
         Me.TP2LiquidacionesCompradas.Text = "Liquidaciones Compradas"
         Me.TP2LiquidacionesCompradas.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'DgvLiqCompradas
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1731, 290)
-        Me.DataGridView1.TabIndex = 0
+        Me.DgvLiqCompradas.AllowUserToAddRows = False
+        Me.DgvLiqCompradas.AllowUserToDeleteRows = False
+        Me.DgvLiqCompradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvLiqCompradas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DgvLiqCompradas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DgvLiqCompradas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvLiqCompradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvLiqCompradas.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DgvLiqCompradas.Location = New System.Drawing.Point(4, 3)
+        Me.DgvLiqCompradas.MultiSelect = False
+        Me.DgvLiqCompradas.Name = "DgvLiqCompradas"
+        Me.DgvLiqCompradas.ReadOnly = True
+        Me.DgvLiqCompradas.RowHeadersVisible = False
+        Me.DgvLiqCompradas.RowHeadersWidth = 40
+        Me.DgvLiqCompradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvLiqCompradas.Size = New System.Drawing.Size(1530, 290)
+        Me.DgvLiqCompradas.TabIndex = 14
         '
         'TP3PacasAComprar
         '
-        Me.TP3PacasAComprar.Controls.Add(Me.DataGridView2)
+        Me.TP3PacasAComprar.Controls.Add(Me.DgvPacasComprar)
         Me.TP3PacasAComprar.Location = New System.Drawing.Point(4, 22)
         Me.TP3PacasAComprar.Name = "TP3PacasAComprar"
         Me.TP3PacasAComprar.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP3PacasAComprar.Size = New System.Drawing.Size(1737, 296)
+        Me.TP3PacasAComprar.Size = New System.Drawing.Size(1547, 296)
         Me.TP3PacasAComprar.TabIndex = 2
         Me.TP3PacasAComprar.Text = "Pacas a Comprar"
         Me.TP3PacasAComprar.UseVisualStyleBackColor = True
         '
-        'DataGridView2
+        'DgvPacasComprar
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView2.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(1731, 290)
-        Me.DataGridView2.TabIndex = 0
+        Me.DgvPacasComprar.AllowUserToAddRows = False
+        Me.DgvPacasComprar.AllowUserToDeleteRows = False
+        Me.DgvPacasComprar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvPacasComprar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DgvPacasComprar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DgvPacasComprar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvPacasComprar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvPacasComprar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DgvPacasComprar.Location = New System.Drawing.Point(4, 3)
+        Me.DgvPacasComprar.MultiSelect = False
+        Me.DgvPacasComprar.Name = "DgvPacasComprar"
+        Me.DgvPacasComprar.RowHeadersVisible = False
+        Me.DgvPacasComprar.RowHeadersWidth = 40
+        Me.DgvPacasComprar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvPacasComprar.Size = New System.Drawing.Size(1537, 290)
+        Me.DgvPacasComprar.TabIndex = 14
         '
         'TP4IndividualCompradas
         '
-        Me.TP4IndividualCompradas.Controls.Add(Me.DataGridView3)
+        Me.TP4IndividualCompradas.Controls.Add(Me.DgvIndCompradas)
         Me.TP4IndividualCompradas.Location = New System.Drawing.Point(4, 22)
         Me.TP4IndividualCompradas.Name = "TP4IndividualCompradas"
         Me.TP4IndividualCompradas.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP4IndividualCompradas.Size = New System.Drawing.Size(1737, 296)
+        Me.TP4IndividualCompradas.Size = New System.Drawing.Size(1547, 296)
         Me.TP4IndividualCompradas.TabIndex = 3
         Me.TP4IndividualCompradas.Text = "Individual Compradas (por paca)"
         Me.TP4IndividualCompradas.UseVisualStyleBackColor = True
         '
-        'DataGridView3
+        'DgvIndCompradas
         '
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView3.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(1731, 290)
-        Me.DataGridView3.TabIndex = 1
+        Me.DgvIndCompradas.AllowUserToAddRows = False
+        Me.DgvIndCompradas.AllowUserToDeleteRows = False
+        Me.DgvIndCompradas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvIndCompradas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DgvIndCompradas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DgvIndCompradas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvIndCompradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvIndCompradas.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DgvIndCompradas.Location = New System.Drawing.Point(4, 3)
+        Me.DgvIndCompradas.MultiSelect = False
+        Me.DgvIndCompradas.Name = "DgvIndCompradas"
+        Me.DgvIndCompradas.ReadOnly = True
+        Me.DgvIndCompradas.RowHeadersVisible = False
+        Me.DgvIndCompradas.RowHeadersWidth = 40
+        Me.DgvIndCompradas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvIndCompradas.Size = New System.Drawing.Size(1530, 290)
+        Me.DgvIndCompradas.TabIndex = 14
         '
         'TP5PacasSinClasificar
         '
-        Me.TP5PacasSinClasificar.Controls.Add(Me.DataGridView4)
+        Me.TP5PacasSinClasificar.Controls.Add(Me.DgvPacasSinClasif)
         Me.TP5PacasSinClasificar.Location = New System.Drawing.Point(4, 22)
         Me.TP5PacasSinClasificar.Name = "TP5PacasSinClasificar"
         Me.TP5PacasSinClasificar.Padding = New System.Windows.Forms.Padding(3)
-        Me.TP5PacasSinClasificar.Size = New System.Drawing.Size(1737, 296)
+        Me.TP5PacasSinClasificar.Size = New System.Drawing.Size(1547, 296)
         Me.TP5PacasSinClasificar.TabIndex = 4
         Me.TP5PacasSinClasificar.Text = "Pacas Sin Clasificar"
         Me.TP5PacasSinClasificar.UseVisualStyleBackColor = True
         '
-        'DataGridView4
+        'DgvPacasSinClasif
         '
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DataGridView4.Location = New System.Drawing.Point(3, 3)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.Size = New System.Drawing.Size(1731, 290)
-        Me.DataGridView4.TabIndex = 1
+        Me.DgvPacasSinClasif.AllowUserToAddRows = False
+        Me.DgvPacasSinClasif.AllowUserToDeleteRows = False
+        Me.DgvPacasSinClasif.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvPacasSinClasif.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DgvPacasSinClasif.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DgvPacasSinClasif.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvPacasSinClasif.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvPacasSinClasif.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DgvPacasSinClasif.Location = New System.Drawing.Point(4, 3)
+        Me.DgvPacasSinClasif.MultiSelect = False
+        Me.DgvPacasSinClasif.Name = "DgvPacasSinClasif"
+        Me.DgvPacasSinClasif.ReadOnly = True
+        Me.DgvPacasSinClasif.RowHeadersVisible = False
+        Me.DgvPacasSinClasif.RowHeadersWidth = 40
+        Me.DgvPacasSinClasif.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvPacasSinClasif.Size = New System.Drawing.Size(1530, 290)
+        Me.DgvPacasSinClasif.TabIndex = 14
         '
         'CompraPacasContrato
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1751, 730)
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ClientSize = New System.Drawing.Size(1561, 730)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.GbCompras)
         Me.Controls.Add(Me.GbDatosGenerales)
         Me.Controls.Add(Me.MSMenu)
+        Me.MaximizeBox = False
         Me.MinimumSize = New System.Drawing.Size(1415, 651)
         Me.Name = "CompraPacasContrato"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -931,13 +867,13 @@ Partial Class CompraPacasContrato
         Me.TP1LiquidacionesAComprar.ResumeLayout(False)
         CType(Me.DgvDatosLiquidacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TP2LiquidacionesCompradas.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvLiqCompradas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TP3PacasAComprar.ResumeLayout(False)
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvPacasComprar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TP4IndividualCompradas.ResumeLayout(False)
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvIndCompradas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TP5PacasSinClasificar.ResumeLayout(False)
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvPacasSinClasif, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -953,43 +889,27 @@ Partial Class CompraPacasContrato
     Friend WithEvents TcCompras As TabControl
     Friend WithEvents TP1LiquidacionesAComprar As TabPage
     Friend WithEvents TP2LiquidacionesCompradas As TabPage
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents TP3PacasAComprar As TabPage
-    Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents TP4IndividualCompradas As TabPage
-    Friend WithEvents DataGridView3 As DataGridView
     Friend WithEvents TP5PacasSinClasificar As TabPage
-    Friend WithEvents DataGridView4 As DataGridView
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents BtCastLarFib As Button
-    Friend WithEvents BtDifClases As Button
+    Friend WithEvents BtCastigoMicros As Button
     Friend WithEvents BtCastigoResFibra As Button
-    Friend WithEvents BtCastigosMicros As Button
-    Friend WithEvents Label15 As Label
-    Friend WithEvents Label8 As Label
+    Friend WithEvents BtModalidadCompra As Button
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TbFactura As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents TbPrecioQuintal As TextBox
-    Friend WithEvents TbSemilla As TextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents TbPluma As TextBox
-    Friend WithEvents TbPrecioDolar As TextBox
     Friend WithEvents TbNoPacas As TextBox
-    Friend WithEvents Label17 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents CbModalidadCompra As ComboBox
     Friend WithEvents TbHastaPaca As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents DtpFecha As DateTimePicker
     Friend WithEvents Label10 As Label
     Friend WithEvents TbDesdePaca As TextBox
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TbHueso As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents CbPlanta As ComboBox
     Friend WithEvents Label1 As Label
@@ -998,10 +918,9 @@ Partial Class CompraPacasContrato
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents TbNombreProductor As TextBox
     Friend WithEvents Label12 As Label
-    Friend WithEvents TbIdLiquidacion As TextBox
+    Friend WithEvents TbIdContrato As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents DgvDatosLiquidacion As DataGridView
     Friend WithEvents DgvAgrupadasCliente As DataGridView
     Friend WithEvents DgvAgrupadasClases As DataGridView
     Friend WithEvents Label23 As Label
@@ -1019,4 +938,9 @@ Partial Class CompraPacasContrato
     Friend WithEvents DgvInformacion As DataGridView
     Friend WithEvents BtnBuscarProd As Button
     Friend WithEvents DgvContratos As DataGridView
+    Friend WithEvents DgvDatosLiquidacion As DataGridView
+    Friend WithEvents DgvLiqCompradas As DataGridView
+    Friend WithEvents DgvPacasComprar As DataGridView
+    Friend WithEvents DgvIndCompradas As DataGridView
+    Friend WithEvents DgvPacasSinClasif As DataGridView
 End Class

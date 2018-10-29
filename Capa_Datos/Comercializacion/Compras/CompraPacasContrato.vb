@@ -73,21 +73,22 @@ Public Class CompraPacasContrato
         Try
             cnn.Open()
             Select Case EntidadCompraPacasContrato1.Consulta
-                'Case Capa_Operacion.Configuracion.Consulta.ConsultaBasica
-                '    sqldat1 = New SqlDataAdapter("sp_ConsultaContratosSemilla", cnn)
-                '    sqldat1.Fill(EntidadContratoSemillas1.TablaConsulta)              
-                'Case Capa_Operacion.Configuracion.Consulta.ConsultaExterna
-                '    sqldat1 = New SqlDataAdapter("sp_ConsultaPlantas", cnn)
-                '    sqldat1.Fill(EntidadPaquetesHVI1.TablaConsulta)
-                    'Case Capa_Operacion.Configuracion.Consulta.ConsultaCompradores
-                    '    sqlcom1 = New SqlCommand("sp_ConsultaCompradores", cnn)
-                    '    sqldat1 = New SqlDataAdapter(sqlcom1)
-                    '    sqlcom1.CommandType = CommandType.StoredProcedure
-                    '    sqlcom1.Parameters.Clear()
-                    '    sqlcom1.Parameters.Add(New SqlParameter("@Nombre", ""))
-                    '    sqldat1.Fill(EntidadContratoSemillas1.TablaConsulta)
                 Case Capa_Operacion.Configuracion.Consulta.ConsultaPorId
                     sqlcom1 = New SqlCommand("sp_ConContProd", cnn)
+                    sqldat1 = New SqlDataAdapter(sqlcom1)
+                    sqlcom1.CommandType = CommandType.StoredProcedure
+                    sqlcom1.Parameters.Clear()
+                    sqlcom1.Parameters.Add(New SqlParameter("@IdProductor", EntidadCompraPacasContrato1.IdProductor))
+                    sqldat1.Fill(EntidadCompraPacasContrato1.TablaConsulta)
+                Case Capa_Operacion.Configuracion.Consulta.ConsultaLiquidaciones
+                    sqlcom1 = New SqlCommand("sp_ConLiqProd", cnn)
+                    sqldat1 = New SqlDataAdapter(sqlcom1)
+                    sqlcom1.CommandType = CommandType.StoredProcedure
+                    sqlcom1.Parameters.Clear()
+                    sqlcom1.Parameters.Add(New SqlParameter("@IdProductor", EntidadCompraPacasContrato1.IdProductor))
+                    sqldat1.Fill(EntidadCompraPacasContrato1.TablaConsulta)
+                Case Capa_Operacion.Configuracion.Consulta.ConsultaPaca
+                    sqlcom1 = New SqlCommand("sp_ConPacProdDetCla", cnn)
                     sqldat1 = New SqlDataAdapter(sqlcom1)
                     sqlcom1.CommandType = CommandType.StoredProcedure
                     sqlcom1.Parameters.Clear()
