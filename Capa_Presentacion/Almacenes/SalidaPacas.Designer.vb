@@ -46,10 +46,10 @@ Partial Class SalidaPacas
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GbDatosGenerales = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgvCapturaLotes = New System.Windows.Forms.DataGridView()
         Me.MSMenu.SuspendLayout()
         Me.GbDatosGenerales.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgvCapturaLotes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ComboBox1
@@ -57,7 +57,7 @@ Partial Class SalidaPacas
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Location = New System.Drawing.Point(124, 45)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(200, 21)
         Me.ComboBox1.TabIndex = 0
         '
         'MSMenu
@@ -66,7 +66,7 @@ Partial Class SalidaPacas
         Me.MSMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.GuardarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MSMenu.Location = New System.Drawing.Point(0, 0)
         Me.MSMenu.Name = "MSMenu"
-        Me.MSMenu.Size = New System.Drawing.Size(959, 24)
+        Me.MSMenu.Size = New System.Drawing.Size(1205, 24)
         Me.MSMenu.TabIndex = 1
         '
         'NuevoToolStripMenuItem
@@ -122,7 +122,7 @@ Partial Class SalidaPacas
         '
         Me.TextBox2.Location = New System.Drawing.Point(124, 72)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(121, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(200, 20)
         Me.TextBox2.TabIndex = 5
         '
         'DateTimePicker1
@@ -137,7 +137,7 @@ Partial Class SalidaPacas
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Location = New System.Drawing.Point(124, 124)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox2.Size = New System.Drawing.Size(200, 21)
         Me.ComboBox2.TabIndex = 7
         '
         'Label3
@@ -169,15 +169,15 @@ Partial Class SalidaPacas
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(440, 19)
+        Me.TextBox3.Location = New System.Drawing.Point(436, 19)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(200, 20)
         Me.TextBox3.TabIndex = 11
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(354, 22)
+        Me.Label6.Location = New System.Drawing.Point(350, 22)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(60, 13)
         Me.Label6.TabIndex = 12
@@ -185,15 +185,15 @@ Partial Class SalidaPacas
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(440, 45)
+        Me.TextBox4.Location = New System.Drawing.Point(436, 45)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox4.Size = New System.Drawing.Size(200, 20)
         Me.TextBox4.TabIndex = 13
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(354, 48)
+        Me.Label7.Location = New System.Drawing.Point(350, 48)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(49, 13)
         Me.Label7.TabIndex = 14
@@ -201,22 +201,22 @@ Partial Class SalidaPacas
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(440, 71)
+        Me.TextBox5.Location = New System.Drawing.Point(436, 71)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox5.Size = New System.Drawing.Size(200, 20)
         Me.TextBox5.TabIndex = 15
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(440, 97)
+        Me.TextBox6.Location = New System.Drawing.Point(436, 97)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox6.Size = New System.Drawing.Size(200, 20)
         Me.TextBox6.TabIndex = 16
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(354, 74)
+        Me.Label8.Location = New System.Drawing.Point(350, 74)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(72, 13)
         Me.Label8.TabIndex = 17
@@ -225,7 +225,7 @@ Partial Class SalidaPacas
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(354, 100)
+        Me.Label9.Location = New System.Drawing.Point(350, 100)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(80, 13)
         Me.Label9.TabIndex = 18
@@ -253,25 +253,37 @@ Partial Class SalidaPacas
         Me.GbDatosGenerales.Controls.Add(Me.Label5)
         Me.GbDatosGenerales.Location = New System.Drawing.Point(12, 27)
         Me.GbDatosGenerales.Name = "GbDatosGenerales"
-        Me.GbDatosGenerales.Size = New System.Drawing.Size(929, 192)
+        Me.GbDatosGenerales.Size = New System.Drawing.Size(1186, 160)
         Me.GbDatosGenerales.TabIndex = 19
         Me.GbDatosGenerales.TabStop = False
         Me.GbDatosGenerales.Text = "Datos Generales"
         '
-        'DataGridView1
+        'DgvCapturaLotes
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 225)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(929, 338)
-        Me.DataGridView1.TabIndex = 20
+        Me.DgvCapturaLotes.AllowUserToAddRows = False
+        Me.DgvCapturaLotes.AllowUserToDeleteRows = False
+        Me.DgvCapturaLotes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgvCapturaLotes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.DgvCapturaLotes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical
+        Me.DgvCapturaLotes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgvCapturaLotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgvCapturaLotes.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DgvCapturaLotes.Location = New System.Drawing.Point(12, 193)
+        Me.DgvCapturaLotes.MultiSelect = False
+        Me.DgvCapturaLotes.Name = "DgvCapturaLotes"
+        Me.DgvCapturaLotes.ReadOnly = True
+        Me.DgvCapturaLotes.RowHeadersVisible = False
+        Me.DgvCapturaLotes.RowHeadersWidth = 40
+        Me.DgvCapturaLotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgvCapturaLotes.Size = New System.Drawing.Size(1186, 372)
+        Me.DgvCapturaLotes.TabIndex = 20
         '
         'SalidaPacas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(959, 620)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(1205, 579)
+        Me.Controls.Add(Me.DgvCapturaLotes)
         Me.Controls.Add(Me.GbDatosGenerales)
         Me.Controls.Add(Me.MSMenu)
         Me.MainMenuStrip = Me.MSMenu
@@ -282,7 +294,7 @@ Partial Class SalidaPacas
         Me.MSMenu.PerformLayout()
         Me.GbDatosGenerales.ResumeLayout(False)
         Me.GbDatosGenerales.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgvCapturaLotes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -312,5 +324,5 @@ Partial Class SalidaPacas
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents GbDatosGenerales As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DgvCapturaLotes As DataGridView
 End Class
